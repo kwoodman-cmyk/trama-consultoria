@@ -364,13 +364,13 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
     raf = requestAnimationFrame(loop);
   }
 
-  // ── boot (pause on mobile) ────────────────────────────────────────────────
-  const mq = window.matchMedia('(max-width: 768px)');
-  function onBreakpoint(e) {
-    if (e.matches) { cancelAnimationFrame(raf); }
-    else { resize(); raf = requestAnimationFrame(loop); }
-  }
-  mq.addEventListener('change', onBreakpoint);
-  window.addEventListener('resize', () => { if (!mq.matches) resize(); });
-  if (!mq.matches) { resize(); raf = requestAnimationFrame(loop); }
+  // ── boot ─────────────────────────────────────────────────────────────────
+  const ro = new ResizeObserver(() => {
+    cancelAnimationFrame(raf);
+    resize();
+    raf = requestAnimationFrame(loop);
+  });
+  ro.observe(canvas);
+  resize();
+  raf = requestAnimationFrame(loop);
 })();
