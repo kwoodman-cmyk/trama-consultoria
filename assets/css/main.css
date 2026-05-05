@@ -587,8 +587,25 @@ footer {
   /* ── hero ── */
   .hero { padding: 100px 20px 60px; min-height: auto; }
   .hero-layout { grid-template-columns: 1fr; gap: 20px; }
-  .hero-right { order: -1; height: 260px; width: 100%; }
-  .hero-canvas { border-radius: 8px; }
+  .hero-right {
+    order: -1;
+    height: 260px;
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    margin-right: -20px;
+    overflow: visible;
+    border-radius: 0;
+  }
+  .hero-right::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 80px;
+    background: linear-gradient(to bottom, transparent 0%, #0F1117 100%);
+    pointer-events: none;
+    z-index: 1;
+  }
+  .hero-canvas { border-radius: 0; border: none; }
   .hero-layout .hero-content { max-width: 100%; }
   .hero-h1 { font-size: clamp(36px, 10vw, 50px); line-height: 1.1; }
   .hero-sub { font-size: 16px; max-width: 100%; margin-bottom: 32px; }

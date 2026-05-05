@@ -147,7 +147,8 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   // ── graph ───────────────────────────────────────────────────────────────
   function initGraph() {
     const cx = cW / 2, cy = cH / 2;
-    const maxR = Math.min(cW, cH) * 0.36;
+    const MARGIN = 48;
+    const maxR = Math.min(Math.min(cW, cH) * 0.36, cW / 2 - MARGIN, cH / 2 - MARGIN);
 
     nodes = [{ x: cx, y: cy, bx: cx, by: cy, label: 'TRAMA', r: 22, central: true, phase: 0 }];
 
@@ -155,8 +156,8 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
       const offset = i % 2 ? 0.18 : -0.18;
       const a  = (i / LABELS.length) * Math.PI * 2 - Math.PI / 2 + offset;
       const r  = maxR * (0.74 + (i % 3) * 0.1);
-      const bx = cx + Math.cos(a) * r;
-      const by = cy + Math.sin(a) * r;
+      const bx = Math.max(MARGIN, Math.min(cW - MARGIN, cx + Math.cos(a) * r));
+      const by = Math.max(MARGIN, Math.min(cH - MARGIN, cy + Math.sin(a) * r));
       nodes.push({ x: bx, y: by, bx, by, label: lbl, r: 6 + (i % 3) * 2, central: false, phase: i * 0.72 });
     });
 
