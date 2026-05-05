@@ -1,0 +1,12 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "trama-web",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["serve", "-s", "C:/Users/Kevin/Desktop/trama-consultoria"],
+      "port": 3000,
+      "autoPort": true
+    }
+  ]
+}
