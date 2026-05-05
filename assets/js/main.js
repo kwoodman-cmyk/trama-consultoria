@@ -375,3 +375,149 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   resize();
   raf = requestAnimationFrame(loop);
 })();
+// ─── HAMBURGER MENU ───────────────────────────────────────────────────────
+(function () {
+  const btn     = document.getElementById('nav-hamburger');
+  const drawer  = document.getElementById('nav-drawer');
+  const overlay = document.getElementById('nav-overlay');
+  if (!btn || !drawer || !overlay) return;
+
+  function openDrawer() {
+    btn.classList.add('open');
+    drawer.classList.add('open');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeDrawer() {
+    btn.classList.remove('open');
+    drawer.classList.remove('open');
+    overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  btn.addEventListener('click', () => {
+    drawer.classList.contains('open') ? closeDrawer() : openDrawer();
+  });
+
+  overlay.addEventListener('click', closeDrawer);
+
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDrawer(); });
+})();
+
+// ─── CUSTOM CURSOR (desktop only) ────────────────────────────────────────
+(function () {
+  if (!window.matchMedia('(hover: hover) and (pointer: fine)').matches) return;
+
+  const dot = document.createElement('div');
+  Object.assign(dot.style, {
+    position: 'fixed', zIndex: '9999', pointerEvents: 'none',
+    width: '8px', height: '8px', borderRadius: '50%',
+    background: '#BB442A',
+    transform: 'translate(-50%,-50%)',
+    left: '-100px', top: '-100px',
+    transition: 'opacity 0.2s'
+  });
+
+  const ring = document.createElement('div');
+  Object.assign(ring.style, {
+    position: 'fixed', zIndex: '9998', pointerEvents: 'none',
+    width: '32px', height: '32px', borderRadius: '50%',
+    border: '1.5px solid rgba(187,68,42,0.5)',
+    transform: 'translate(-50%,-50%)',
+    left: '-100px', top: '-100px',
+    transition: 'width 0.2s ease, height 0.2s ease, border-color 0.2s ease, opacity 0.2s ease'
+  });
+
+  document.body.appendChild(dot);
+  document.body.appendChild(ring);
+
+  let mx = -100, my = -100, rx = -100, ry = -100;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    dot.style.left = mx + 'px';
+    dot.style.top  = my + 'px';
+  });
+
+  function setRingDefault() {
+    ring.style.width  = '32px';
+    ring.style.height = '32px';
+    ring.style.borderColor = 'rgba(187,68,42,0.5)';
+    dot.style.opacity = '1';
+  }
+
+  document.querySelectorAll('a, button, .caso-mini, .blog-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      ring.style.width  = '48px';
+      ring.style.height = '48px';
+      ring.style.borderColor = 'rgba(187,68,42,0.8)';
+      dot.style.opacity = '0';
+    });
+    el.addEventListener('mouseleave', setRingDefault);
+  });
+
+  const canvasEl = document.getElementById('hero-canvas');
+  if (canvasEl) {
+    canvasEl.addEventListener('mouseenter', () => {
+      ring.style.width  = '64px';
+      ring.style.height = '64px';
+      ring.style.borderColor = '#BB442A';
+      dot.style.opacity = '0';
+    });
+    canvasEl.addEventListener('mouseleave', setRingDefault);
+  }
+
+  (function animCursor() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animCursor);
+  })();
+})();
+
+// ─── ANIMATED COUNTERS ────────────────────────────────────────────────────
+(function () {
+  const metricsEl = document.querySelector('.metrics');
+  if (!metricsEl) return;
+
+  function easeOutQuart(t) { return 1 - Math.pow(1 - t, 4); }
+
+  function animateCounter(el) {
+    const target   = parseFloat(el.dataset.target);
+    const suffix   = el.dataset.suffix   || '';
+    const prefix   = el.dataset.prefix   || '';
+    const decimals = parseInt(el.dataset.decimals || '0', 10);
+    const duration = 1800;
+    const start    = performance.now();
+
+    function tick(now) {
+      const elapsed  = Math.min(now - start, duration);
+      const progress = easeOutQuart(elapsed / duration);
+      const value    = target * progress;
+      const num      = decimals > 0 ? value.toFixed(decimals) : Math.floor(value).toString();
+      el.innerHTML   = prefix + '<em>' + num + '</em>' + suffix;
+      if (elapsed < duration) {
+        requestAnimationFrame(tick);
+      } else {
+        const final = decimals > 0 ? target.toFixed(decimals) : String(Math.round(target));
+        el.innerHTML = prefix + '<em>' + final + '</em>' + suffix;
+      }
+    }
+    requestAnimationFrame(tick);
+  }
+
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        metricsEl.querySelectorAll('[data-target]').forEach(animateCounter);
+        counterObs.unobserve(metricsEl);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counterObs.observe(metricsEl);
+})();
