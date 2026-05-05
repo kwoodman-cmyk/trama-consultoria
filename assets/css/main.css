@@ -32,6 +32,9 @@ body {
   line-height: 1.6;
 }
 
+img, video { max-width: 100%; height: auto; display: block; }
+* { overflow-wrap: break-word; word-break: break-word; }
+
 /* ─── LOGO SVG ─── */
 .logo-svg { display: block; }
 
@@ -576,34 +579,82 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .hero {
-    padding: 40px 20px;
-  }
-  .hero-h1 {
-    font-size: clamp(36px, 11vw, 52px);
-  }
-  .hero-layout {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-  .hero-right {
-    order: -1;
-    height: 280px;
-    width: 100%;
-  }
-  .hero-canvas {
-    border-radius: 8px;
-  }
-  .hero-left .hero-content { max-width: 100%; }
-  .hero-btns {
-    flex-direction: column;
-    gap: 10px;
-    align-items: stretch;
-  }
-  .btn-coral, .btn-ghost {
-    width: 100%;
-    justify-content: center;
-  }
-  .hero-stats { flex-wrap: wrap; gap: 24px; }
-  .hstat { border-right: none; margin-right: 0; padding-right: 0; flex: 0 0 45%; }
+  /* ── nav ── */
+  nav { padding: 0 20px; height: 60px; }
+  .nav-links { display: none; }
+  .nav-cta { padding: 8px 14px; font-size: 13px; }
+
+  /* ── hero ── */
+  .hero { padding: 100px 20px 60px; min-height: auto; }
+  .hero-layout { grid-template-columns: 1fr; gap: 20px; }
+  .hero-right { order: -1; height: 260px; width: 100%; }
+  .hero-canvas { border-radius: 8px; }
+  .hero-layout .hero-content { max-width: 100%; }
+  .hero-h1 { font-size: clamp(36px, 10vw, 50px); line-height: 1.1; }
+  .hero-sub { font-size: 16px; max-width: 100%; margin-bottom: 32px; }
+  .hero-btns { flex-direction: column; gap: 10px; align-items: stretch; }
+  .btn-coral, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
+  .hero-stats { flex-wrap: wrap; gap: 16px; margin-top: 36px; padding-top: 20px; }
+  .hstat { flex: 0 0 45%; border-right: none; margin-right: 0; padding-right: 0; }
+  .hstat-n { font-size: 28px; }
+
+  /* ── sections base ── */
+  section { padding: 60px 20px; }
+  .logos-strip { padding: 24px 20px; }
+  .logos-row { gap: 20px; }
+
+  /* ── metrics strip ── */
+  .metrics { flex-wrap: wrap; }
+  .metric { flex: 0 0 50%; border-bottom: 0.5px solid var(--border); padding: 24px 0; }
+  .metric:nth-child(even) { border-right: none; }
+  .metric-n { font-size: 32px; }
+
+  /* ── casos ── */
+  .casos-section { padding: 60px 20px; }
+  .casos-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .section-sub { max-width: 100%; }
+  .caso-featured { grid-template-columns: 1fr; }
+  .caso-visual { min-height: 220px; }
+  .caso-info { padding: 28px 20px; }
+  .caso-nombre { font-size: 24px; }
+  .caso-metrics { flex-wrap: wrap; gap: 16px; }
+  .casos-grid { grid-template-columns: 1fr; }
+  .mini-visual { height: 160px; }
+
+  /* ── servicios ── */
+  .sv-grid { grid-template-columns: 1fr; }
+  .sv-card { padding: 28px 20px; }
+  .sv-name { white-space: normal; font-size: 24px; }
+  .sv-item { font-size: 14px; }
+  .sv-sub { max-width: 100%; }
+
+  /* ── metodologia ── */
+  .metodo-grid { grid-template-columns: 1fr; }
+  .metodo-step { border-right: none; border-bottom: 0.5px solid var(--border); padding: 24px 20px; }
+  .metodo-step:last-child { border-bottom: none; }
+  .ms-n { font-size: 48px; margin-bottom: 12px; letter-spacing: -0.03em; }
+
+  /* ── blog ── */
+  .blog-section { padding: 60px 20px; }
+  .blog-grid { grid-template-columns: 1fr; }
+  .blog-img { height: 180px; }
+  .blog-title { font-size: 18px; }
+
+  /* ── cta ── */
+  .cta-section { padding: 80px 20px; }
+  .cta-h { font-size: clamp(28px, 8vw, 40px); }
+  .cta-btns { flex-direction: column; align-items: center; gap: 10px; }
+  .cta-btns .btn-coral,
+  .cta-btns .btn-ghost { width: 100%; max-width: 340px; justify-content: center; }
+
+  /* ── footer ── */
+  footer { flex-direction: column; gap: 24px; padding: 28px 20px; text-align: center; }
+  .foot-links { flex-direction: column; gap: 12px; }
+
+  /* ── modal ── */
+  .modal-overlay { padding: 12px; }
+  .modal-header { padding: 20px 16px 16px; }
+  .modal-body { padding: 16px; }
+  .modal-kpis { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .mkpi-n { font-size: 22px; }
 }
