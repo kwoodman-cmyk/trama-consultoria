@@ -153,7 +153,7 @@ nav {
 .hero-h1 {
   font-family: 'Sora', sans-serif;
   font-weight: 800;
-  font-size: clamp(52px, 7vw, 96px);
+  font-size: clamp(52px, 5.5vw, 80px);
   letter-spacing: -0.045em; line-height: .95;
   color: var(--ivory); margin-bottom: 32px;
   white-space: nowrap;
@@ -717,7 +717,7 @@ section { padding: 100px 60px; border-top: 0.5px solid var(--border); }
   }
   .hero-canvas { border-radius: 0; border: none; }
   .hero-layout .hero-content { max-width: 100%; }
-  .hero-h1 { font-size: clamp(36px, 10vw, 50px); line-height: 1.1; }
+  .hero-h1 { font-size: clamp(34px, 9vw, 48px); line-height: 1.1; white-space: normal; }
   .hero-sub { font-size: 16px; max-width: 100%; margin-bottom: 32px; }
   .hero-btns { flex-direction: column; gap: 10px; align-items: stretch; }
   .btn-coral, .btn-ghost { width: 100%; justify-content: center; text-align: center; }
@@ -793,7 +793,7 @@ section { padding: 100px 60px; border-top: 0.5px solid var(--border); }
 
 @media (max-width: 1100px) and (min-width: 769px) {
   .hero-h1 {
-    font-size: clamp(32px, 4vw, 60px);
+    font-size: clamp(36px, 4vw, 56px);
     white-space: nowrap;
   }
 }
