@@ -24,7 +24,7 @@ const projects = {
     highlights: ['Extracción automática de datos de registros públicos de SUNARP','Análisis de riesgo legal generado por IA con score 0–100','Reporte PDF profesional generado en segundos','Historial completo de titularidad y cargas hipotecarias','Integración con bases de datos judiciales para litigios pendientes']
   },
   dominga: {
-    name: 'La Dominga',
+    name: 'Pastelería',
     tag: 'Sistema interno · RRHH', tagClass: 'tag-sys',
     kpis: [{n:'RRHH',l:'Gestión completa'},{n:'Nómina',l:'Automatizada'},{n:'Turnos',l:'Control digital'}],
     desc: 'Sistema interno personalizado para cadena de pastelerías. Reemplazó procesos manuales en papel con un sistema digital centralizado que gestiona todo el ciclo de RRHH: contratación, onboarding, control de asistencia biométrico, gestión de turnos por local, cálculo automático de nómina según régimen laboral peruano, y reportes para gerencia.',
