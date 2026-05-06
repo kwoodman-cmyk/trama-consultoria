@@ -508,6 +508,20 @@ section { padding: 100px 60px; border-top: 0.5px solid var(--border); }
 .cta-sub { font-size: 16px; font-weight: 300; color: var(--iv3); margin-bottom: 48px; position: relative; z-index: 2; max-width:420px; margin-left:auto; margin-right:auto; line-height:1.65; }
 .cta-btns { display: flex; gap: 12px; justify-content: center; position: relative; z-index: 2; }
 
+.cta-h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ivory);
+  margin-bottom: 20px;
+  position: relative; z-index: 2;
+}
+.cta-trama {
+  color: var(--coral);
+  font-style: italic;
+}
+
 /* ─── FOOTER ─── */
 .site-footer {
   background: #0a0c10;
@@ -794,6 +808,7 @@ section { padding: 100px 60px; border-top: 0.5px solid var(--border); }
   /* ── cta ── */
   .cta-section { padding: 80px 20px; }
   .cta-h { font-size: clamp(28px, 8vw, 40px); }
+  .cta-h2 { font-size: clamp(24px, 7vw, 36px); text-align: center; }
   .cta-btns { flex-direction: column; align-items: center; gap: 10px; }
   .cta-btns .btn-coral,
   .cta-btns .btn-ghost { width: 100%; max-width: 340px; justify-content: center; }
