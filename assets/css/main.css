@@ -168,6 +168,30 @@ nav {
 
 .hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
 
+/* ─── HERO ANIMATED SUBTITLE ─── */
+.hero-sub-animated {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(18px, 2vw, 28px);
+  color: var(--coral);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-top: 8px;
+  margin-bottom: 24px;
+  min-height: 36px;
+}
+
+#animated-word {
+  display: inline-block;
+  border-right: 2px solid var(--coral);
+  padding-right: 4px;
+  animation: blink-cursor 0.8s step-end infinite;
+}
+
+@keyframes blink-cursor {
+  0%, 100% { border-color: var(--coral); }
+  50% { border-color: transparent; }
+}
+
 .btn-coral {
   display: inline-flex; align-items: center; gap: 9px;
   background: var(--coral); color: var(--ivory);

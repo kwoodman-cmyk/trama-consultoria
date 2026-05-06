@@ -24,7 +24,7 @@ const projects = {
     highlights: ['Extracción automática de datos de registros públicos de SUNARP','Análisis de riesgo legal generado por IA con score 0–100','Reporte PDF profesional generado en segundos','Historial completo de titularidad y cargas hipotecarias','Integración con bases de datos judiciales para litigios pendientes']
   },
   dominga: {
-    name: 'Pastelería',
+    name: 'Sistema de RRHH - Rubro Pastelería',
     tag: 'Sistema interno · RRHH', tagClass: 'tag-sys',
     kpis: [{n:'RRHH',l:'Gestión completa'},{n:'Nómina',l:'Automatizada'},{n:'Turnos',l:'Control digital'}],
     desc: 'Sistema interno personalizado para cadena de pastelerías. Reemplazó procesos manuales en papel con un sistema digital centralizado que gestiona todo el ciclo de RRHH: contratación, onboarding, control de asistencia biométrico, gestión de turnos por local, cálculo automático de nómina según régimen laboral peruano, y reportes para gerencia.',
@@ -43,7 +43,7 @@ const projects = {
     name: 'CISA USA',
     tag: 'Marketing digital · USA', tagClass: 'tag-mkt',
     kpis: [{n:'$8.4K',l:'Valor cliente 20 años'},{n:'7–8x',l:'ROI estimado'},{n:'0→1',l:'Presencia digital'}],
-    desc: 'Broker de seguros de vida y salud con 35 años de trayectoria en el mercado hispanohablante de Estados Unidos. Con cero presencia digital, construimos toda la estrategia desde cero: identidad de marca digital, web profesional, estrategia de contenido en video (2 formatos: autoridad y cercanía), pauta en Meta, TikTok y Google, y sistema de captación de leads con seguimiento automatizado.',
+    desc: 'Broker de seguros de vida y salud con 35 años de trayectoria en el mercado peruano. Con cero presencia digital, construimos toda la estrategia desde cero: identidad de marca digital, web profesional, estrategia de contenido en video (2 formatos: autoridad y cercanía), pauta en Meta, TikTok y Google, y sistema de captación de leads con seguimiento automatizado.',
     tech: ['WordPress','Meta Ads','Google Ads','TikTok Ads','Email automation','CRM HubSpot'],
     highlights: ['Posicionamiento como "broker boutique" vs. aseguradoras masivas','Estrategia de contenido en video: la broker como cara de la marca','Segmentación hispana en Florida con pauta geolocalizada','Sistema de lead magnet + nurturing automatizado por email','Reporte mensual con costo por lead, tasa de cierre y LTV proyectado']
   },
@@ -520,4 +520,34 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   }, { threshold: 0.5 });
 
   counterObs.observe(metricsEl);
+})();
+
+// ─── TYPEWRITER HERO ────────────────────────────────────────────
+(function () {
+  const words = ['Systems', 'Process', 'Growth'];
+  let wordIndex = 0, charIndex = 0, deleting = false;
+  const el = document.getElementById('animated-word');
+
+  function typeWriter() {
+    if (!el) return;
+    const word = words[wordIndex];
+    if (!deleting) {
+      el.textContent = word.slice(0, charIndex + 1);
+      charIndex++;
+      if (charIndex === word.length) {
+        deleting = true;
+        setTimeout(typeWriter, 1800);
+        return;
+      }
+    } else {
+      el.textContent = word.slice(0, charIndex - 1);
+      charIndex--;
+      if (charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+      }
+    }
+    setTimeout(typeWriter, deleting ? 60 : 100);
+  }
+  typeWriter();
 })();
