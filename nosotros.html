@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nosotros — TRAMA Consultor&#237;a</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css">
+<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+<link rel="shortcut icon" href="assets/icons/favicon.svg">
+<style>
+
+/* ── NAV ACTIVE STATE ── */
+.nav-active { color: var(--coral) !important; }
+
+/* ── NOSOTROS HERO ── */
+.nos-hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 160px 60px 100px;
+  position: relative;
+  overflow: hidden;
+  border-top: none;
+}
+.nos-hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(248,247,244,.06) 1px, transparent 1px);
+  background-size: 40px 40px;
+  mask-image: radial-gradient(ellipse 70% 80% at 50% 40%, black 20%, transparent 80%);
+}
+.nos-hero-content {
+  position: relative; z-index: 2;
+  max-width: 860px;
+}
+.nos-h1 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: clamp(36px, 5vw, 72px);
+  letter-spacing: -0.045em;
+  line-height: 1.05;
+  color: var(--ivory);
+  margin-bottom: 32px;
+}
+.nos-h1 .coral { color: var(--coral); }
+
+/* ── MANIFIESTO ── */
+.manifiesto-section {
+  background: #0a0c10;
+  padding: 100px 60px;
+  border-top: 0.5px solid var(--border);
+}
+.manifiesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.6fr;
+  gap: 80px;
+  align-items: start;
+}
+.manifiesto-title-col {
+  position: sticky;
+  top: 100px;
+}
+.manifiesto-body {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+.manifiesto-p {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--iv2);
+  line-height: 1.75;
+}
+.manifiesto-p.accent {
+  font-size: 17px;
+  color: var(--ivory);
+  font-weight: 400;
+  border-left: 2px solid var(--coral);
+  padding-left: 20px;
+}
+.manifiesto-p .dash {
+  color: var(--coral);
+  font-weight: 700;
+  margin-right: 8px;
+}
+
+/* ── PRODUCTOS ── */
+.productos-section {
+  padding: 100px 60px;
+  border-top: 0.5px solid var(--border);
+}
+.productos-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 52px;
+}
+.prod-card {
+  background: var(--dark-2);
+  border: 0.5px solid var(--border);
+  border-radius: var(--rl);
+  padding: 40px 36px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.prod-card::after {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--coral);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .35s ease;
+}
+.prod-card:hover::after { transform: scaleX(1); }
+.prod-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+.prod-badge {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-bottom: 28px;
+  font-weight: 400;
+}
+.prod-badge.active {
+  background: rgba(29,158,117,.1);
+  color: #1D9E75;
+  border: 0.5px solid rgba(29,158,117,.22);
+}
+.prod-badge.dev {
+  background: var(--cr2);
+  color: var(--coral);
+  border: 0.5px solid var(--cr3);
+}
+.prod-badge.soon {
+  background: var(--iv5);
+  color: var(--iv3);
+  border: 0.5px solid var(--border);
+}
+.prod-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 24px;
+  letter-spacing: -0.04em;
+  color: var(--ivory);
+  margin-bottom: 10px;
+  line-height: 1.1;
+}
+.prod-sub {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--iv2);
+  line-height: 1.65;
+  margin-bottom: 28px;
+}
+.prod-items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.prod-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--iv2);
+  font-weight: 300;
+}
+.prod-dot {
+  width: 5px; height: 5px;
+  border-radius: 50%;
+  background: var(--coral);
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+/* ── EQUIPO ── */
+.equipo-section {
+  background: var(--dark-2);
+  padding: 100px 60px;
+  border-top: 0.5px solid var(--border);
+}
+.equipo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 52px;
+  max-width: 860px;
+}
+.team-card {
+  background: var(--dark-3);
+  border: 0.5px solid var(--border);
+  border-radius: var(--rl);
+  padding: 36px 32px;
+  display: flex;
+  align-items: flex-start;
+  gap: 24px;
+  transition: border-color .25s, transform .25s, box-shadow .25s;
+}
+.team-card:hover {
+  border-color: var(--border2);
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+}
+.team-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--border2);
+}
+.team-info { flex: 1; min-width: 0; }
+.team-name {
+  font-family: 'Sora', sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--ivory);
+  margin-bottom: 4px;
+}
+.team-role {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--coral);
+  margin-bottom: 12px;
+}
+.team-bio {
+  font-size: 13px;
+  font-weight: 300;
+  color: var(--iv2);
+  line-height: 1.6;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nos-hero { padding: 120px 20px 60px; min-height: auto; }
+  .nos-h1 { font-size: clamp(32px, 9vw, 48px); }
+  .manifiesto-section { padding: 60px 20px; }
+  .manifiesto-grid { grid-template-columns: 1fr; gap: 40px; }
+  .manifiesto-title-col { position: static; }
+  .productos-section { padding: 60px 20px; }
+  .productos-grid { grid-template-columns: 1fr; }
+  .equipo-section { padding: 60px 20px; }
+  .equipo-grid { grid-template-columns: 1fr; max-width: 100%; }
+  .team-card { flex-direction: column; padding: 24px 20px; gap: 16px; }
+  .team-avatar { width: 64px; height: 64px; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="index.html" style="text-decoration:none;display:flex;flex-direction:column;gap:0;">
+    <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <text x="0" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">TR</text>
+      <polygon points="40,4 51,22 29,22" fill="#BB442A"/>
+      <text x="54" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">MA</text>
+    </svg>
+    <span style="font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,247,244,.3);font-family:'Inter',sans-serif;padding-left:2px;margin-top:-2px;">Consultor&#237;a</span>
+  </a>
+
+  <ul class="nav-links">
+    <li><a href="index.html#casos">Proyectos</a></li>
+    <li><a href="index.html#servicios">Servicios</a></li>
+    <li><a href="index.html#metodologia">C&#243;mo trabajamos</a></li>
+    <li><a href="index.html#blog">Blog</a></li>
+    <li><a href="nosotros.html" class="nav-active">Nosotros</a></li>
+  </ul>
+  <a href="https://wa.me/51933448692" class="nav-cta">Cotizaci&#243;n por WhatsApp &#8594;</a>
+  <button class="nav-hamburger" id="nav-hamburger" aria-label="Men&#250;">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<div class="nav-drawer" id="nav-drawer">
+  <a href="index.html#casos">Proyectos</a>
+  <a href="index.html#servicios">Servicios</a>
+  <a href="index.html#metodologia">C&#243;mo trabajamos</a>
+  <a href="index.html#blog">Blog</a>
+  <a href="nosotros.html" style="color:var(--coral);">Nosotros</a>
+  <a href="https://wa.me/51933448692" class="btn-coral">Cotizaci&#243;n por WhatsApp &#8594;</a>
+</div>
+<div class="nav-overlay" id="nav-overlay"></div>
+
+<!-- ── HERO ── -->
+<section class="nos-hero">
+  <div class="nos-hero-content">
+    <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>NOSOTROS</div>
+    <h1 class="nos-h1">
+      No somos una agencia.<br>
+      Somos el sistema<br>
+      <span class="coral">que tu negocio necesita.</span>
+    </h1>
+    <p class="hero-sub">Somos un equipo peque&#241;o, enfocado y obsesionado con los resultados. No ejecutamos campa&#241;as sueltas &mdash; construimos sistemas que funcionan.</p>
+  </div>
+</section>
+
+<!-- ── MANIFIESTO ── -->
+<section class="manifiesto-section" id="manifiesto">
+  <div class="manifiesto-grid">
+
+    <div class="manifiesto-title-col reveal">
+      <span class="eyebrow">Manifiesto</span>
+      <h2 class="sh2">Por qu&#233;<br>existimos.</h2>
+    </div>
+
+    <div class="manifiesto-body reveal">
+      <p class="manifiesto-p">La mayor&#237;a de las agencias de marketing venden promesas. Cobran por clics, impresiones y entregables. Rara vez se miden por los resultados reales del negocio.</p>
+      <p class="manifiesto-p">Nosotros nacimos hartos de eso.</p>
+      <p class="manifiesto-p accent"><span class="dash">&#8212;</span> Vamos en contra del modelo de agencia tradicional: equipos enormes, procesos lentos, reportes bonitos y resultados mediocres.</p>
+      <p class="manifiesto-p">Creemos que un negocio bien construido no necesita gastar m&#225;s &mdash; necesita operar mejor. Necesita un sistema: marketing que vende, operaciones que escalan, datos que informan decisiones.</p>
+      <p class="manifiesto-p">Eso es lo que construimos. Eso es TRAMA.</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── LO QUE ESTAMOS CONSTRUYENDO ── -->
+<section class="productos-section" id="productos">
+
+  <div class="reveal">
+    <span class="eyebrow">Ecosistema</span>
+    <h2 class="sh2">Lo que estamos<br>construyendo.</h2>
+    <p class="section-sub">TRAMA no es solo una consultora. Es una plataforma de herramientas y programas para negocios que quieren crecer con sistema.</p>
+  </div>
+
+  <div class="productos-grid">
+
+    <div class="prod-card reveal" style="transition-delay:0ms;">
+      <div class="prod-badge active">ACTIVO</div>
+      <div class="prod-name">TRAMA<br>Consultor&#237;a</div>
+      <p class="prod-sub">Dise&#241;amos e implementamos sistemas de marketing, operaciones y automatizaci&#243;n para negocios en crecimiento.</p>
+      <div class="prod-items">
+        <div class="prod-item"><div class="prod-dot"></div><span>Consultor&#237;a personalizada 1:1</span></div>
+        <div class="prod-item"><div class="prod-dot"></div><span>Implementaci&#243;n de sistemas completos</span></div>
+        <div class="prod-item"><div class="prod-dot"></div><span>Seguimiento estrat&#233;gico semanal</span></div>
+      </div>
+    </div>
+
+    <div class="prod-card reveal" style="transition-delay:100ms;">
+      <div class="prod-badge dev">EN DESARROLLO</div>
+      <div class="prod-name">TRAMA<br>Emprende</div>
+      <p class="prod-sub">Programa intensivo para emprendedores que quieren construir su primer sistema de ventas y operaciones desde cero.</p>
+      <div class="prod-items">
+        <div class="prod-item"><div class="prod-dot"></div><span>Programa grupal de 8 semanas</span></div>
+        <div class="prod-item"><div class="prod-dot"></div><span>Templates y herramientas listas para usar</span></div>
+        <div class="prod-item"><div class="prod-dot"></div><span>Comunidad de emprendedores TRAMA</span></div>
+      </div>
+    </div>
+
+    <div class="prod-card reveal" style="transition-delay:200ms;">
+      <div class="prod-badge soon">PR&#211;XIMAMENTE</div>
+      <div class="prod-name">TRAMA<br>Aprende</div>
+      <p class="prod-sub">Plataforma de cursos y recursos para equipos de marketing y operaciones que quieren trabajar con sistemas y datos.</p>
+      <div class="prod-items">
+        <div class="prod-item"><div class="prod-dot"></div><span>Cursos auto-dirigidos por &#225;rea</span></div>
+        <div class="prod-item"><div class="prod-dot"></div><span>Playbooks descargables por industria</span></div>
+        <div class="prod-item"><div class="prod-dot"></div><span>Acceso al vault de herramientas TRAMA</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── EQUIPO ── -->
+<section class="equipo-section" id="equipo">
+
+  <div class="reveal">
+    <span class="eyebrow">El equipo</span>
+    <h2 class="sh2">Las personas<br>detr&#225;s de TRAMA.</h2>
+    <p class="section-sub">Un equipo peque&#241;o, multidisciplinario y obsesionado con construir sistemas que funcionen de verdad.</p>
+  </div>
+
+  <div class="equipo-grid">
+
+    <div class="team-card reveal" style="transition-delay:0ms;">
+      <img src="assets/images/equipo/kevin.png" alt="Kevin Woodman" class="team-avatar">
+      <div class="team-info">
+        <div class="team-name">Kevin Woodman</div>
+        <div class="team-role">Fundador &amp; Estratega</div>
+        <p class="team-bio">Arquitecto de sistemas de negocio. Combina estrategia comercial, marketing y tecnolog&#237;a para construir m&#225;quinas de crecimiento.</p>
+      </div>
+    </div>
+
+    <div class="team-card reveal" style="transition-delay:100ms;">
+      <img src="assets/images/equipo/ana-paula.png" alt="Ana Paula" class="team-avatar">
+      <div class="team-info">
+        <div class="team-name">Ana Paula</div>
+        <div class="team-role">Marketing &amp; Contenido</div>
+        <p class="team-bio">Especialista en estrategia de contenido y growth. Convierte audiencias en comunidades y comunidades en clientes.</p>
+      </div>
+    </div>
+
+    <div class="team-card reveal" style="transition-delay:200ms;">
+      <img src="assets/images/equipo/nelson.png" alt="Nelson" class="team-avatar">
+      <div class="team-info">
+        <div class="team-name">Nelson</div>
+        <div class="team-role">Dise&#241;o &amp; UX</div>
+        <p class="team-bio">Dise&#241;ador de experiencias digitales. Crea interfaces que convierten y sistemas visuales que comunican con claridad.</p>
+      </div>
+    </div>
+
+    <div class="team-card reveal" style="transition-delay:300ms;">
+      <img src="assets/images/equipo/zacarias.png" alt="Zacar&#237;as" class="team-avatar">
+      <div class="team-info">
+        <div class="team-name">Zacar&#237;as</div>
+        <div class="team-role">Desarrollo &amp; Automatizaci&#243;n</div>
+        <p class="team-bio">Desarrollador full-stack y arquitecto de automatizaciones. Conecta sistemas, flujos y datos para que todo funcione sin fricci&#243;n.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section class="cta-section">
+  <div class="cta-glow"></div>
+  <h2 class="cta-h2">Cu&#233;ntame qu&#233; est&#225;s <span class="cta-trama">TRAMANDO</span> y conversamos.</h2>
+  <p class="cta-sub">Esch&#237;benos por WhatsApp y te cotizamos sin compromiso. Respondemos en menos de 24 horas.</p>
+  <div class="cta-btns">
+    <a href="https://wa.me/51933448692" class="btn-coral">Cotizaci&#243;n por WhatsApp &#8594;</a>
+    <a href="https://calendly.com/kwoodman-tramaconsultora/30min" class="btn-ghost">Agendar llamada</a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer class="site-footer">
+  <div class="footer-main">
+
+    <div class="footer-brand">
+      <a href="index.html" style="text-decoration:none;display:inline-flex;flex-direction:column;gap:0;">
+        <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">TR</text>
+          <polygon points="40,4 51,22 29,22" fill="#BB442A"/>
+          <text x="54" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">MA</text>
+        </svg>
+        <span class="footer-tagline">Arquitectura. Automatizaci&#243;n. Resultados.</span>
+      </a>
+    </div>
+
+    <div class="footer-right">
+
+      <nav class="footer-nav">
+        <a href="index.html#casos">Proyectos</a>
+        <a href="index.html#servicios">Servicios</a>
+        <a href="index.html#metodologia">TRAMA Method</a>
+        <a href="index.html#blog">Blog</a>
+        <a href="nosotros.html" style="color:var(--coral);">Nosotros</a>
+      </nav>
+
+      <div class="footer-contact">
+        <a href="mailto:kwoodman@tramaconsultora.com" class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="3" width="13" height="9" rx="1.5" stroke="#BB442A" stroke-width="1.2"/>
+            <path d="M1.5 3.5L7.5 8.5L13.5 3.5" stroke="#BB442A" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+          kwoodman@tramaconsultora.com
+        </a>
+        <a href="tel:+51933448692" class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4.5 1.5C4.5 1.5 3 1.5 2.5 3C2 4.5 2.5 6.5 4 8.5C5.5 10.5 7 12 8.5 12.5C10 13 11.5 12.5 12 12L13 11C13.5 10.5 13 9.5 12.5 9L11 7.5C10.5 7 9.5 7 9 7.5L8.5 8C8.5 8 7.5 7.5 6.5 6.5C5.5 5.5 5 4.5 5 4.5L5.5 4C6 3.5 6 2.5 5.5 2L4.5 1.5Z" stroke="#BB442A" stroke-width="1.2" stroke-linejoin="round"/>
+          </svg>
+          +51 933 448 692
+        </a>
+        <a href="https://www.linkedin.com/company/tramalatam/" target="_blank" rel="noopener" class="footer-contact-item">
+          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="1" y="1" width="13" height="13" rx="2" stroke="#BB442A" stroke-width="1.2"/>
+            <rect x="3.5" y="6" width="1.5" height="5.5" fill="#BB442A"/>
+            <circle cx="4.25" cy="4.25" r="0.85" fill="#BB442A"/>
+            <path d="M7 6V11.5M7 7.5C7 6.5 8 6 9 6C10 6 11 6.5 11 8V11.5" stroke="#BB442A" stroke-width="1.2" stroke-linecap="round"/>
+          </svg>
+          tramalatam
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>&#169; 2026 TRAMA Consultor&#237;a &middot; Lima, Per&#250; &middot; Todos los derechos reservados</span>
+  </div>
+</footer>
+
+<!-- ── WHATSAPP FLOAT ── -->
+<a href="https://wa.me/51933448692?text=Hola%20TRAMA%2C%20quiero%20una%20cotizaci%C3%B3n" target="_blank" id="wa-float" style="
+  position: fixed; bottom: 32px; right: 32px; z-index: 400;
+  width: 56px; height: 56px; border-radius: 50%;
+  background: #25D366; display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.4);
+  transition: transform .2s, box-shadow .2s;
+  text-decoration: none;
+" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,.55)'"
+   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,.4)'">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
