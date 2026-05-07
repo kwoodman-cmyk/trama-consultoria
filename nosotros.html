@@ -88,164 +88,223 @@
   margin-right: 8px;
 }
 
-/* ── PRODUCTOS ── */
-.productos-section {
-  padding: 100px 60px;
-  border-top: 0.5px solid var(--border);
-}
-.productos-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 52px;
-}
-.prod-card {
-  background: var(--dark-2);
-  border: 0.5px solid var(--border);
-  border-radius: var(--rl);
-  padding: 40px 36px;
-  position: relative;
-  overflow: hidden;
-  transition: border-color .25s, transform .25s, box-shadow .25s;
-}
-.prod-card::after {
-  content: '';
-  position: absolute;
-  top: 0; left: 0; right: 0;
-  height: 2px;
-  background: var(--coral);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .35s ease;
-}
-.prod-card:hover::after { transform: scaleX(1); }
-.prod-card:hover {
-  border-color: var(--border2);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,.25);
-}
-.prod-badge {
-  display: inline-flex;
-  align-items: center;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 9px;
-  letter-spacing: .14em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 4px;
-  margin-bottom: 28px;
-  font-weight: 400;
-}
-.prod-badge.active {
-  background: rgba(29,158,117,.1);
-  color: #1D9E75;
-  border: 0.5px solid rgba(29,158,117,.22);
-}
-.prod-badge.dev {
-  background: var(--cr2);
-  color: var(--coral);
-  border: 0.5px solid var(--cr3);
-}
-.prod-badge.soon {
-  background: var(--iv5);
-  color: var(--iv3);
-  border: 0.5px solid var(--border);
-}
-.prod-name {
-  font-family: 'Sora', sans-serif;
-  font-weight: 800;
-  font-size: 24px;
-  letter-spacing: -0.04em;
-  color: var(--ivory);
-  margin-bottom: 10px;
-  line-height: 1.1;
-}
-.prod-sub {
-  font-size: 13px;
-  font-weight: 300;
-  color: var(--iv2);
-  line-height: 1.65;
-  margin-bottom: 28px;
-}
-.prod-items {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.prod-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  font-size: 13px;
-  color: var(--iv2);
-  font-weight: 300;
-}
-.prod-dot {
-  width: 5px; height: 5px;
-  border-radius: 50%;
-  background: var(--coral);
-  flex-shrink: 0;
-  margin-top: 6px;
-}
-
 /* ── EQUIPO ── */
 .equipo-section {
-  background: var(--dark-2);
+  position: relative;
+  background: #0a0c10;
   padding: 100px 60px;
+  overflow: hidden;
   border-top: 0.5px solid var(--border);
 }
+
+.equipo-bg-canvas {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.4;
+}
+
+#equipo-canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.equipo-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.equipo-header {
+  text-align: center;
+  margin-bottom: 72px;
+}
+
+.section-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--coral);
+  display: block;
+  margin-bottom: 16px;
+}
+
+.equipo-header h2 {
+  font-family: 'Sora', sans-serif;
+  font-size: clamp(28px, 3.5vw, 48px);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  margin: 12px 0 16px;
+  color: var(--ivory);
+}
+
+.equipo-header p {
+  color: rgba(248,247,244,0.5);
+  font-size: 17px;
+  font-weight: 300;
+}
+
 .equipo-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 16px;
-  margin-top: 52px;
-  max-width: 860px;
+  gap: 32px;
 }
-.team-card {
-  background: var(--dark-3);
-  border: 0.5px solid var(--border);
-  border-radius: var(--rl);
-  padding: 36px 32px;
+
+.eq-card {
+  position: relative;
+  background: rgba(15,17,23,0.8);
+  border: 0.5px solid rgba(248,247,244,0.08);
+  border-radius: 16px;
+  padding: 36px;
+  overflow: hidden;
+  transition: transform 0.4s ease, border-color 0.4s ease;
+  backdrop-filter: blur(8px);
+}
+
+.eq-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(187,68,42,0.35);
+}
+
+.eq-card-inner {
   display: flex;
-  align-items: flex-start;
   gap: 24px;
-  transition: border-color .25s, transform .25s, box-shadow .25s;
+  align-items: flex-start;
 }
-.team-card:hover {
-  border-color: var(--border2);
-  transform: translateY(-4px);
-  box-shadow: 0 20px 60px rgba(0,0,0,.25);
+
+/* Foto con efecto glitch/materializaci&#243;n */
+.eq-photo-wrap {
+  position: relative;
+  flex-shrink: 0;
 }
-.team-avatar {
-  width: 80px;
-  height: 80px;
+
+.eq-photo-glitch {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.eq-photo {
+  width: 90px;
+  height: 90px;
   border-radius: 50%;
   object-fit: cover;
-  flex-shrink: 0;
-  border: 2px solid var(--border2);
+  object-position: center top;
+  border: 1px solid rgba(187,68,42,0.3);
+  display: block;
+  opacity: 0;
+  transition: opacity 0.6s ease;
 }
-.team-info { flex: 1; min-width: 0; }
-.team-name {
-  font-family: 'Sora', sans-serif;
-  font-weight: 700;
-  font-size: 18px;
-  letter-spacing: -0.02em;
-  color: var(--ivory);
-  margin-bottom: 4px;
+
+.eq-photo.loaded {
+  opacity: 1;
 }
-.team-role {
+
+.glitch-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.eq-photo-overlay {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(187,68,42,0.15) 0%, transparent 60%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+/* Punto de nodo pulsante */
+.eq-node-dot {
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #BB442A;
+  border: 2px solid #0a0c10;
+  animation: node-pulse 2s ease-in-out infinite;
+}
+
+@keyframes node-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(187,68,42,0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(187,68,42,0); }
+}
+
+/* Info */
+.eq-role {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  letter-spacing: .12em;
+  color: #BB442A;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: var(--coral);
+  margin-bottom: 6px;
+}
+
+.eq-name {
+  font-family: 'Sora', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #F8F7F4;
+  margin-bottom: 12px;
+  letter-spacing: -0.02em;
+}
+
+.eq-divider {
+  width: 32px;
+  height: 0.5px;
+  background: rgba(187,68,42,0.4);
   margin-bottom: 12px;
 }
-.team-bio {
+
+.eq-desc {
   font-size: 13px;
-  font-weight: 300;
-  color: var(--iv2);
-  line-height: 1.6;
+  color: rgba(248,247,244,0.55);
+  line-height: 1.75;
+}
+
+/* L&#237;neas decorativas HUD en esquinas */
+.eq-card-lines {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.eq-line-h, .eq-line-v {
+  position: absolute;
+  background: rgba(187,68,42,0.12);
+  transition: opacity 0.3s;
+  opacity: 0;
+}
+
+.eq-line-h {
+  height: 0.5px;
+  left: 0;
+  right: 0;
+  top: 50%;
+}
+
+.eq-line-v {
+  width: 0.5px;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+}
+
+.eq-card:hover .eq-line-h,
+.eq-card:hover .eq-line-v {
+  opacity: 1;
 }
 
 /* ── RESPONSIVE ── */
@@ -255,12 +314,12 @@
   .manifiesto-section { padding: 60px 20px; }
   .manifiesto-grid { grid-template-columns: 1fr; gap: 40px; }
   .manifiesto-title-col { position: static; }
-  .productos-section { padding: 60px 20px; }
-  .productos-grid { grid-template-columns: 1fr; }
-  .equipo-section { padding: 60px 20px; }
-  .equipo-grid { grid-template-columns: 1fr; max-width: 100%; }
-  .team-card { flex-direction: column; padding: 24px 20px; gap: 16px; }
-  .team-avatar { width: 64px; height: 64px; }
+  .equipo-section { padding: 60px 24px; }
+  .equipo-grid { grid-template-columns: 1fr; }
+  .equipo-header { margin-bottom: 48px; }
+  .eq-card-inner { flex-direction: column; align-items: center; text-align: center; }
+  .eq-divider { margin: 12px auto; }
+  .eq-card { padding: 28px 20px; }
 }
 
 </style>
@@ -333,100 +392,118 @@
   </div>
 </section>
 
-<!-- ── LO QUE ESTAMOS CONSTRUYENDO ── -->
-<section class="productos-section" id="productos">
-
-  <div class="reveal">
-    <span class="eyebrow">Ecosistema</span>
-    <h2 class="sh2">Lo que estamos<br>construyendo.</h2>
-    <p class="section-sub">TRAMA no es solo una consultora. Es una plataforma de herramientas y programas para negocios que quieren crecer con sistema.</p>
-  </div>
-
-  <div class="productos-grid">
-
-    <div class="prod-card reveal" style="transition-delay:0ms;">
-      <div class="prod-badge active">ACTIVO</div>
-      <div class="prod-name">TRAMA<br>Consultor&#237;a</div>
-      <p class="prod-sub">Dise&#241;amos e implementamos sistemas de marketing, operaciones y automatizaci&#243;n para negocios en crecimiento.</p>
-      <div class="prod-items">
-        <div class="prod-item"><div class="prod-dot"></div><span>Consultor&#237;a personalizada 1:1</span></div>
-        <div class="prod-item"><div class="prod-dot"></div><span>Implementaci&#243;n de sistemas completos</span></div>
-        <div class="prod-item"><div class="prod-dot"></div><span>Seguimiento estrat&#233;gico semanal</span></div>
-      </div>
-    </div>
-
-    <div class="prod-card reveal" style="transition-delay:100ms;">
-      <div class="prod-badge dev">EN DESARROLLO</div>
-      <div class="prod-name">TRAMA<br>Emprende</div>
-      <p class="prod-sub">Programa intensivo para emprendedores que quieren construir su primer sistema de ventas y operaciones desde cero.</p>
-      <div class="prod-items">
-        <div class="prod-item"><div class="prod-dot"></div><span>Programa grupal de 8 semanas</span></div>
-        <div class="prod-item"><div class="prod-dot"></div><span>Templates y herramientas listas para usar</span></div>
-        <div class="prod-item"><div class="prod-dot"></div><span>Comunidad de emprendedores TRAMA</span></div>
-      </div>
-    </div>
-
-    <div class="prod-card reveal" style="transition-delay:200ms;">
-      <div class="prod-badge soon">PR&#211;XIMAMENTE</div>
-      <div class="prod-name">TRAMA<br>Aprende</div>
-      <p class="prod-sub">Plataforma de cursos y recursos para equipos de marketing y operaciones que quieren trabajar con sistemas y datos.</p>
-      <div class="prod-items">
-        <div class="prod-item"><div class="prod-dot"></div><span>Cursos auto-dirigidos por &#225;rea</span></div>
-        <div class="prod-item"><div class="prod-dot"></div><span>Playbooks descargables por industria</span></div>
-        <div class="prod-item"><div class="prod-dot"></div><span>Acceso al vault de herramientas TRAMA</span></div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
 <!-- ── EQUIPO ── -->
 <section class="equipo-section" id="equipo">
-
-  <div class="reveal">
-    <span class="eyebrow">El equipo</span>
-    <h2 class="sh2">Las personas<br>detr&#225;s de TRAMA.</h2>
-    <p class="section-sub">Un equipo peque&#241;o, multidisciplinario y obsesionado con construir sistemas que funcionen de verdad.</p>
+  <div class="equipo-bg-canvas">
+    <canvas id="equipo-canvas"></canvas>
   </div>
+  <div class="equipo-inner">
 
-  <div class="equipo-grid">
-
-    <div class="team-card reveal" style="transition-delay:0ms;">
-      <img src="assets/images/equipo/kevin.png" alt="Kevin Woodman" class="team-avatar">
-      <div class="team-info">
-        <div class="team-name">Kevin Woodman</div>
-        <div class="team-role">Fundador &amp; Estratega</div>
-        <p class="team-bio">Arquitecto de sistemas de negocio. Combina estrategia comercial, marketing y tecnolog&#237;a para construir m&#225;quinas de crecimiento.</p>
-      </div>
+    <div class="equipo-header reveal">
+      <span class="section-label">EQUIPO</span>
+      <h2>Las personas detr&#225;s del sistema.</h2>
+      <p>Cuatro especialistas. Un solo objetivo: que tu negocio funcione mejor.</p>
     </div>
 
-    <div class="team-card reveal" style="transition-delay:100ms;">
-      <img src="assets/images/equipo/ana-paula.png" alt="Ana Paula" class="team-avatar">
-      <div class="team-info">
-        <div class="team-name">Ana Paula</div>
-        <div class="team-role">Marketing &amp; Contenido</div>
-        <p class="team-bio">Especialista en estrategia de contenido y growth. Convierte audiencias en comunidades y comunidades en clientes.</p>
-      </div>
-    </div>
+    <div class="equipo-grid">
 
-    <div class="team-card reveal" style="transition-delay:200ms;">
-      <img src="assets/images/equipo/nelson.png" alt="Nelson" class="team-avatar">
-      <div class="team-info">
-        <div class="team-name">Nelson</div>
-        <div class="team-role">Dise&#241;o &amp; UX</div>
-        <p class="team-bio">Dise&#241;ador de experiencias digitales. Crea interfaces que convierten y sistemas visuales que comunican con claridad.</p>
+      <!-- Kevin -->
+      <div class="eq-card reveal" data-delay="0">
+        <div class="eq-card-inner">
+          <div class="eq-photo-wrap">
+            <div class="eq-photo-glitch" data-src="assets/images/equipo/kevin.png">
+              <canvas class="glitch-canvas"></canvas>
+              <img src="assets/images/equipo/kevin.png" alt="Kevin Woodman" class="eq-photo">
+              <div class="eq-photo-overlay"></div>
+            </div>
+            <div class="eq-node-dot"></div>
+          </div>
+          <div class="eq-info">
+            <div class="eq-role">FOUNDER &amp; PROJECT LEAD</div>
+            <h3 class="eq-name">Kevin Woodman</h3>
+            <div class="eq-divider"></div>
+            <p class="eq-desc">Convierte visi&#243;n en sistemas. Une estrategia de negocio, tecnolog&#237;a y mercado en una sola arquitectura que funciona.</p>
+          </div>
+        </div>
+        <div class="eq-card-lines">
+          <div class="eq-line-h"></div>
+          <div class="eq-line-v"></div>
+        </div>
       </div>
-    </div>
 
-    <div class="team-card reveal" style="transition-delay:300ms;">
-      <img src="assets/images/equipo/zacarias.png" alt="Zacar&#237;as" class="team-avatar">
-      <div class="team-info">
-        <div class="team-name">Zacar&#237;as</div>
-        <div class="team-role">Desarrollo &amp; Automatizaci&#243;n</div>
-        <p class="team-bio">Desarrollador full-stack y arquitecto de automatizaciones. Conecta sistemas, flujos y datos para que todo funcione sin fricci&#243;n.</p>
+      <!-- Ana Paula -->
+      <div class="eq-card reveal" data-delay="100">
+        <div class="eq-card-inner">
+          <div class="eq-photo-wrap">
+            <div class="eq-photo-glitch" data-src="assets/images/equipo/ana-paula.png">
+              <canvas class="glitch-canvas"></canvas>
+              <img src="assets/images/equipo/ana-paula.png" alt="Ana Paula Orozco" class="eq-photo">
+              <div class="eq-photo-overlay"></div>
+            </div>
+            <div class="eq-node-dot"></div>
+          </div>
+          <div class="eq-info">
+            <div class="eq-role">CONSULTOR EN PROCESOS</div>
+            <h3 class="eq-name">Ana Paula Orozco</h3>
+            <div class="eq-divider"></div>
+            <p class="eq-desc">Customer Experience &amp; Marketing Strategy. Optimizaci&#243;n de procesos centrada en el cliente. Mejora continua con impacto directo en el negocio.</p>
+          </div>
+        </div>
+        <div class="eq-card-lines">
+          <div class="eq-line-h"></div>
+          <div class="eq-line-v"></div>
+        </div>
       </div>
-    </div>
 
+      <!-- Nelson -->
+      <div class="eq-card reveal" data-delay="200">
+        <div class="eq-card-inner">
+          <div class="eq-photo-wrap">
+            <div class="eq-photo-glitch" data-src="assets/images/equipo/nelson.png">
+              <canvas class="glitch-canvas"></canvas>
+              <img src="assets/images/equipo/nelson.png" alt="Nelson" class="eq-photo">
+              <div class="eq-photo-overlay"></div>
+            </div>
+            <div class="eq-node-dot"></div>
+          </div>
+          <div class="eq-info">
+            <div class="eq-role">TECHNICAL LEAD &middot; FULLSTACK SPECIALIST &amp; SYSTEMS ANALYST</div>
+            <h3 class="eq-name">Nelson</h3>
+            <div class="eq-divider"></div>
+            <p class="eq-desc">Especialista en arquitectura de sistemas escalables con m&#225;s de 3 a&#241;os de experiencia liderando proyectos bajo metodolog&#237;as &#225;giles. Experto en Node.js, NestJS, React y TypeScript. Integra IA y automatizaciones en cada ciclo de desarrollo.</p>
+          </div>
+        </div>
+        <div class="eq-card-lines">
+          <div class="eq-line-h"></div>
+          <div class="eq-line-v"></div>
+        </div>
+      </div>
+
+      <!-- Zacar&#237;as -->
+      <div class="eq-card reveal" data-delay="300">
+        <div class="eq-card-inner">
+          <div class="eq-photo-wrap">
+            <div class="eq-photo-glitch" data-src="assets/images/equipo/zacarias.png">
+              <canvas class="glitch-canvas"></canvas>
+              <img src="assets/images/equipo/zacarias.png" alt="Zacar&#237;as" class="eq-photo">
+              <div class="eq-photo-overlay"></div>
+            </div>
+            <div class="eq-node-dot"></div>
+          </div>
+          <div class="eq-info">
+            <div class="eq-role">ESPECIALISTA EN PAUTA &amp; TRAFICKER</div>
+            <h3 class="eq-name">Zacar&#237;as</h3>
+            <div class="eq-divider"></div>
+            <p class="eq-desc">Gesti&#243;n de Meta Ads y Google Ads. Configuraci&#243;n de Tag Manager, Pixel Facebook, Hotjar y otros scripts de seguimiento.</p>
+          </div>
+        </div>
+        <div class="eq-card-lines">
+          <div class="eq-line-h"></div>
+          <div class="eq-line-v"></div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </section>
 
@@ -515,5 +592,130 @@
 </a>
 
 <script src="assets/js/main.js"></script>
+
+<script>
+(function () {
+
+  // ── 1. Canvas de part&#237;culas de fondo ──────────────────────────────────
+  const eqCanvas = document.getElementById('equipo-canvas');
+  if (eqCanvas) {
+    const ctx = eqCanvas.getContext('2d');
+
+    function resizeEqCanvas() {
+      eqCanvas.width  = eqCanvas.offsetWidth;
+      eqCanvas.height = eqCanvas.offsetHeight;
+    }
+    resizeEqCanvas();
+    window.addEventListener('resize', resizeEqCanvas);
+
+    const particles = Array.from({ length: 40 }, () => ({
+      x:  Math.random() * eqCanvas.width,
+      y:  Math.random() * eqCanvas.height,
+      vx: (Math.random() - 0.5) * 0.4,
+      vy: (Math.random() - 0.5) * 0.4,
+      r:  1.5 + Math.random() * 2
+    }));
+
+    function drawEqCanvas() {
+      ctx.clearRect(0, 0, eqCanvas.width, eqCanvas.height);
+
+      particles.forEach(p => {
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > eqCanvas.width)  p.vx *= -1;
+        if (p.y < 0 || p.y > eqCanvas.height) p.vy *= -1;
+      });
+
+      // Conexiones
+      particles.forEach((a, i) => {
+        particles.slice(i + 1).forEach(b => {
+          const d = Math.hypot(a.x - b.x, a.y - b.y);
+          if (d < 100) {
+            ctx.beginPath();
+            ctx.moveTo(a.x, a.y);
+            ctx.lineTo(b.x, b.y);
+            ctx.strokeStyle = 'rgba(187,68,42,' + (0.08 * (1 - d / 100)) + ')';
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        });
+      });
+
+      // Nodos
+      particles.forEach(p => {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(248,247,244,0.15)';
+        ctx.fill();
+      });
+
+      requestAnimationFrame(drawEqCanvas);
+    }
+    drawEqCanvas();
+  }
+
+  // ── 2. Efecto de materializaci&#243;n en fotos al entrar al viewport ────────
+  const photos = document.querySelectorAll('.eq-photo');
+
+  const photoObserver = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+
+      const img    = entry.target;
+      const glitch = img.closest('.eq-photo-glitch');
+      const canvas = glitch ? glitch.querySelector('.glitch-canvas') : null;
+
+      if (canvas) {
+        const gctx = canvas.getContext('2d');
+        canvas.width = 90; canvas.height = 90;
+        var frame = 0;
+
+        var glitchInterval = setInterval(function () {
+          gctx.clearRect(0, 0, 90, 90);
+
+          // L&#237;neas horizontales scan
+          for (var i = 0; i < 8; i++) {
+            var y = Math.random() * 90;
+            var h = 1 + Math.random() * 3;
+            gctx.fillStyle = 'rgba(187,68,42,' + (0.3 + Math.random() * 0.4) + ')';
+            gctx.fillRect(0, y, 90, h);
+          }
+
+          // Grid de puntos
+          for (var x = 0; x < 90; x += 6) {
+            for (var yy = 0; yy < 90; yy += 6) {
+              if (Math.random() > 0.7) {
+                gctx.fillStyle = 'rgba(248,247,244,' + (Math.random() * 0.3) + ')';
+                gctx.fillRect(x, yy, 1, 1);
+              }
+            }
+          }
+
+          frame++;
+          if (frame > 12) {
+            clearInterval(glitchInterval);
+            gctx.clearRect(0, 0, 90, 90);
+            img.classList.add('loaded');
+          }
+        }, 60);
+      } else {
+        img.classList.add('loaded');
+      }
+
+      photoObserver.unobserve(img);
+    });
+  }, { threshold: 0.3 });
+
+  photos.forEach(function (img) {
+    photoObserver.observe(img);
+  });
+
+  // ── 3. Cards con delay escalonado ────────────────────────────────────────
+  document.querySelectorAll('.eq-card').forEach(function (card, i) {
+    card.style.transitionDelay = (i * 100) + 'ms';
+  });
+
+})();
+</script>
+
 </body>
 </html>
