@@ -726,7 +726,7 @@ section { padding: 100px 60px; border-top: 0.5px solid var(--border); }
 
 @media (max-width: 768px) {
   /* ── nav ── */
-  nav { padding: 0 20px; height: 60px; }
+  nav { padding: 0 16px; height: 60px; }
   .nav-links { display: none; }
   .nav-cta { display: none; }
   .nav-hamburger { display: flex; }
