@@ -551,3 +551,16 @@ document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   }
   typeWriter();
 })();
+
+// ─── MODAL MARKETING CON IA ──────────────────────────────────────────────────
+function openMktModal() {
+  document.getElementById('mkt-modal').style.display = 'block';
+  document.getElementById('mkt-overlay').style.display = 'block';
+  document.body.style.overflow = 'hidden';
+}
+function closeMktModal() {
+  document.getElementById('mkt-modal').style.display = 'none';
+  document.getElementById('mkt-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', function(e) { if (e.key === 'Escape') closeMktModal(); });

@@ -285,8 +285,8 @@
     <!-- MARKETING -->
     <div class="sv-card">
       <div class="sv-num">02</div>
-      <div class="sv-name">Marketing<br>estratégico</div>
-      <p class="sv-sub">Estrategia, contenido, pauta y seguimiento semanal con datos reales del negocio.</p>
+      <div class="sv-name">Marketing<br>estratégico <span style="font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;background:rgba(29,158,117,0.15);color:#1D9E75;border-radius:6px;padding:2px 8px;margin-left:8px;vertical-align:middle;">CON IA</span></div>
+      <p class="sv-sub">Estrategia, contenido, pauta y seguimiento semanal con datos reales del negocio — potenciados por inteligencia artificial. Tres capas de trabajo integradas en un servicio mensual.</p>
       <div class="sv-items">
         <div class="sv-item"><div class="sv-dot"></div>Investigación de mercado y cliente ideal</div>
         <div class="sv-item"><div class="sv-dot"></div>Estrategia de contenido y posicionamiento de marca</div>
@@ -302,6 +302,7 @@
           <div style="font-size:12px;color:var(--iv2);font-weight:300;"><span style="color:var(--coral);font-weight:500;">CISA USA</span> — presencia digital desde cero en mercado peruano.</div>
         </div>
       </div>
+      <button class="btn-ver-incluye" onclick="openMktModal()">Ver qué incluye →</button>
     </div>
 
   </div>
@@ -487,6 +488,98 @@
       <div class="modal-highlights" id="modal-highlights"></div>
     </div>
   </div>
+</div>
+
+<!-- ── MODAL MARKETING CON IA ── -->
+<div id="mkt-overlay" onclick="closeMktModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;backdrop-filter:blur(4px);"></div>
+<div id="mkt-modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1001;width:min(680px,95vw);max-height:88vh;overflow-y:auto;background:#161820;border:0.5px solid rgba(248,247,244,0.1);border-radius:16px;padding:40px;">
+
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px;">
+    <div>
+      <span style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:rgba(29,158,117,0.15);color:#1D9E75;padding:3px 10px;border-radius:6px;">Marketing con IA</span>
+      <h2 style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;color:#F8F7F4;margin:12px 0 6px;">¿Qué incluye el servicio?</h2>
+      <p style="font-size:13px;color:rgba(248,247,244,0.45);">Tres capas de trabajo integradas. Un solo equipo.</p>
+    </div>
+    <button onclick="closeMktModal()" style="background:none;border:none;font-size:24px;cursor:pointer;color:rgba(248,247,244,0.4);line-height:1;padding:4px;">×</button>
+  </div>
+
+  <!-- Capa 1 -->
+  <div style="border:0.5px solid rgba(59,130,246,0.3);border-radius:12px;padding:24px;margin-bottom:14px;background:rgba(59,130,246,0.05);">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <div style="width:28px;height:28px;border-radius:6px;background:#3b82f6;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0;">01</div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3b82f6;">Capa 1</div>
+        <div style="font-size:14px;font-weight:700;color:#F8F7F4;font-family:'Sora',sans-serif;">Diagnóstico e investigación con IA</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+      <span style="font-size:11px;background:rgba(59,130,246,0.15);color:#93c5fd;padding:3px 10px;border-radius:20px;">Perplexity Deep Research</span>
+      <span style="font-size:11px;background:rgba(59,130,246,0.15);color:#93c5fd;padding:3px 10px;border-radius:20px;">Claude</span>
+      <span style="font-size:11px;background:rgba(59,130,246,0.15);color:#93c5fd;padding:3px 10px;border-radius:20px;">ChatGPT</span>
+      <span style="font-size:11px;background:rgba(59,130,246,0.15);color:#93c5fd;padding:3px 10px;border-radius:20px;">Google AI Overview</span>
+    </div>
+    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#3b82f6;">✓</span>Investigación profunda de mercado</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#3b82f6;">✓</span>Buyer persona con datos reales</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#3b82f6;">✓</span>Análisis de competencia</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#3b82f6;">✓</span>Auditoría de marca en buscadores e IA</li>
+    </ul>
+  </div>
+
+  <!-- Capa 2 -->
+  <div style="border:0.5px solid rgba(29,158,117,0.3);border-radius:12px;padding:24px;margin-bottom:14px;background:rgba(29,158,117,0.05);">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <div style="width:28px;height:28px;border-radius:6px;background:#1D9E75;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0;">02</div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#1D9E75;">Capa 2</div>
+        <div style="font-size:14px;font-weight:700;color:#F8F7F4;font-family:'Sora',sans-serif;">Estrategia de contenido y ejecución</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+      <span style="font-size:11px;background:rgba(29,158,117,0.15);color:#6ee7b7;padding:3px 10px;border-radius:20px;">Lovable / Bolt</span>
+      <span style="font-size:11px;background:rgba(29,158,117,0.15);color:#6ee7b7;padding:3px 10px;border-radius:20px;">Claude + ChatGPT</span>
+      <span style="font-size:11px;background:rgba(29,158,117,0.15);color:#6ee7b7;padding:3px 10px;border-radius:20px;">Meta Ads / TikTok / Google</span>
+    </div>
+    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Plan de contenido mensual</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>4 gráficas + 4 reels (incluidos 3 meses)</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Copywriting con voz propia entrenada en IA</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Web/landing page desde cero (mes 1)</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Gestión de pauta Meta/TikTok/Google</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Activación canales (Rappi, etc.)</li>
+    </ul>
+  </div>
+
+  <!-- Capa 3 -->
+  <div style="border:0.5px solid rgba(187,68,42,0.3);border-radius:12px;padding:24px;margin-bottom:24px;background:rgba(187,68,42,0.05);">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
+      <div style="width:28px;height:28px;border-radius:6px;background:#BB442A;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0;">03</div>
+      <div>
+        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#BB442A;">Capa 3</div>
+        <div style="font-size:14px;font-weight:700;color:#F8F7F4;font-family:'Sora',sans-serif;">Automatización y reportería con IA</div>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
+      <span style="font-size:11px;background:rgba(187,68,42,0.15);color:#fca5a5;padding:3px 10px;border-radius:20px;">n8n / Make</span>
+      <span style="font-size:11px;background:rgba(187,68,42,0.15);color:#fca5a5;padding:3px 10px;border-radius:20px;">Claude Artifacts</span>
+      <span style="font-size:11px;background:rgba(187,68,42,0.15);color:#fca5a5;padding:3px 10px;border-radius:20px;">WhatsApp + Email</span>
+      <span style="font-size:11px;background:rgba(187,68,42,0.15);color:#fca5a5;padding:3px 10px;border-radius:20px;">Restaurant.pe</span>
+    </div>
+    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#BB442A;">✓</span>Reporte de resultados semanal</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#BB442A;">✓</span>Dashboard de KPIs con IA</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#BB442A;">✓</span>Flujos de seguimiento automatizados</li>
+      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#BB442A;">✓</span>Ajustes en tiempo real según datos</li>
+    </ul>
+  </div>
+
+  <!-- Footer modal -->
+  <div style="background:rgba(248,247,244,0.03);border-radius:10px;padding:16px 20px;border:0.5px solid rgba(248,247,244,0.07);margin-bottom:20px;">
+    <div style="font-size:12px;font-weight:600;color:rgba(248,247,244,0.7);margin-bottom:4px;">Servicio mensual · Contrato mínimo 3 meses</div>
+    <div style="font-size:12px;color:rgba(248,247,244,0.4);">Incluido en mes 1: Investigación de mercado + buyer persona + página web desde cero + activación de canales.</div>
+  </div>
+
+  <a href="https://wa.me/51933448692?text=Hola%20TRAMA%2C%20quiero%20cotizar%20el%20servicio%20de%20Marketing%20con%20IA" target="_blank" style="display:block;width:100%;padding:14px;border-radius:8px;background:#BB442A;color:#fff;border:none;font-size:14px;font-weight:700;font-family:'Sora',sans-serif;cursor:pointer;text-align:center;text-decoration:none;">Cotizar mi programa →</a>
 </div>
 
 <script src="assets/js/main.js"></script>

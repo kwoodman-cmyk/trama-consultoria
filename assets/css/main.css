@@ -836,3 +836,25 @@ section { padding: 100px 60px; border-top: 0.5px solid var(--border); }
     white-space: nowrap;
   }
 }
+
+/* ── BOTÓN MODAL MARKETING ── */
+.btn-ver-incluye {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 10px 18px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid rgba(248,247,244,0.12);
+  background: transparent;
+  color: rgba(248,247,244,0.6);
+  transition: all 0.2s;
+  font-family: 'Inter', sans-serif;
+  width: 100%;
+}
+.btn-ver-incluye:hover {
+  border-color: #BB442A;
+  color: #BB442A;
+  background: rgba(187,68,42,0.08);
+}
