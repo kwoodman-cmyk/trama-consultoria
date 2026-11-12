@@ -1,587 +1,305 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TRAMA Consultoría — Arquitectura. Automatización. Resultados.</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TRAMA Atiende · No solo responde. Te dice qué hacer.</title>
+<meta name="description" content="TRAMA Atiende responde a tus clientes por WhatsApp al instante y ordena cada caso. NEURA te dice qué cobrar, a quién llamar y por qué perdiste ventas.">
+<meta property="og:title" content="TRAMA Atiende · No solo responde. Te dice qué hacer.">
+<meta property="og:description" content="Atención por WhatsApp para negocios de servicios que cotizan, con NEURA incluido.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://tramaconsultora.com/">
+<meta property="og:image" content="https://tramaconsultora.com/assets/panel-ica-gruas.jpg">
+<meta name="theme-color" content="#08090D">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/css/main.css">
-<link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
-<link rel="shortcut icon" href="assets/icons/favicon.svg">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap">
+<style>
+html{scroll-behavior:smooth}
+body{margin:0;background:#08090D}
+a{color:#4D7CFF}a:hover{color:#9DBBFF}
+@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes slide{to{transform:translateX(-50%)}}
+@keyframes float{from{transform:translateY(0)}to{transform:translateY(-8px)}}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+@supports (animation-timeline: view()){.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
+@media (prefers-reduced-motion: reduce){*{animation:none!important}}
+img,video{max-width:100%}
+@media (max-width:600px){.wa-t{display:none}}
+</style>
 </head>
 <body>
+<div style="background: #08090D; color: #F4F4F2; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.5">
 
-<!-- ── NAV ── -->
-<nav>
-  <!-- Logo SVG with triangle replacing A -->
-  <a href="#" style="text-decoration:none;display:flex;flex-direction:column;gap:0;">
-    <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <!-- TR -->
-      <text x="0" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">TR</text>
-      <!-- Triangle replacing A -->
-      <polygon points="40,4 51,22 29,22" fill="#BB442A"/>
-      <!-- MA -->
-      <text x="54" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">MA</text>
-    </svg>
-    <span style="font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,247,244,.3);font-family:'Inter',sans-serif;padding-left:2px;margin-top:-2px;">Consultoría</span>
-  </a>
-
-  <ul class="nav-links">
-    <li><a href="#casos">Proyectos</a></li>
-    <li><a href="#servicios">Servicios</a></li>
-    <li><a href="#metodologia">Cómo trabajamos</a></li>
-    <li><a href="#blog">Blog</a></li>
-    <li><a href="nosotros.html">Nosotros</a></li>
-  </ul>
-  <a href="https://wa.me/51933448692" class="nav-cta">Cotización por WhatsApp →</a>
-  <button class="nav-hamburger" id="nav-hamburger" aria-label="Menú">
-    <span></span><span></span><span></span>
-  </button>
+<header>
+<div style="max-width: 1240px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
+<span style="font-weight: 500; font-size: 21px; letter-spacing: -0.035em">TRAMA <span style="color: #4D7CFF">Atiende</span></span>
+<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px; font-size: 15px">
+<a href="#producto" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">Producto</a>
+<a href="#neura" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">NEURA</a>
+<a href="#precio" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">Precio</a>
+<a href="#demo" style="background: #F4F4F2; color: #08090D; text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 999px">Agenda tu demo</a>
 </nav>
-<div class="nav-drawer" id="nav-drawer">
-  <a href="#" style="text-decoration:none;display:flex;flex-direction:column;gap:0;margin-bottom:8px;">
-    <svg width="120" height="24" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <text x="0" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">TR</text>
-      <polygon points="40,4 51,22 29,22" fill="#BB442A"/>
-      <text x="54" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">MA</text>
-    </svg>
-    <span style="font-size:8.5px;letter-spacing:.22em;text-transform:uppercase;color:rgba(248,247,244,.3);font-family:'Inter',sans-serif;padding-left:2px;margin-top:-2px;">Consultoría</span>
-  </a>
-  <a href="#casos">Proyectos</a>
-  <a href="#servicios">Servicios</a>
-  <a href="#metodologia">Cómo trabajamos</a>
-  <a href="#blog">Blog</a>
-  <a href="nosotros.html" style="color:var(--coral);">Nosotros</a>
-  <a href="https://wa.me/51933448692" class="btn-coral">Cotización por WhatsApp →</a>
 </div>
-<div class="nav-overlay" id="nav-overlay"></div>
+</header>
 
-<!-- ── HERO ── -->
-<section class="hero" id="top">
-  <div class="hero-layout">
-    <div class="hero-left">
-      <div class="hero-content">
-        <div class="hero-eyebrow"><div class="hero-eyebrow-dot"></div>PERÚ</div>
-        <h1 class="hero-h1">TRAMA</h1>
-        <div class="hero-sub-animated">
-          <span id="animated-word">Systems</span>
-        </div>
-        <p class="hero-sub">Diseñamos e implementamos sistemas que hacen que tu empresa venda más, opere mejor y escale sin fricción.</p>
-        <div class="hero-btns">
-          <a href="https://wa.me/51933448692" class="btn-coral">Cotización por WhatsApp →</a>
-          <a href="#casos" class="btn-ghost">Ver proyectos</a>
-        </div>
-      </div>
-    </div>
-    <div class="hero-right">
-      <canvas id="hero-canvas" class="hero-canvas"></canvas>
-    </div>
-  </div>
-</section>
-
-<!-- ── METRICS ── -->
-<div class="metrics">
-  <div class="metric"><div class="metric-n" data-target="87" data-suffix="K" data-prefix="S/">S/<em>87</em>K</div><div class="metric-l">Pico de ventas mensual en Cafetería Zano</div></div>
-  <div class="metric"><div class="metric-n" data-target="30" data-suffix="%" data-prefix="+"><em>+30</em>%</div><div class="metric-l">Crecimiento promedio 90 días</div></div>
-  <div class="metric"><div class="metric-n" data-target="6">6</div><div class="metric-l">Plataformas construidas</div></div>
-  <div class="metric"><div class="metric-n" data-target="10" data-prefix="+"><em>+10</em></div><div class="metric-l">Proyectos ejecutados en Perú</div></div>
-  <div class="metric"><div class="metric-n" data-target="7">7</div><div class="metric-l">Años de experiencia</div></div>
+<section style="max-width: 1240px; margin: 0 auto; padding: 56px 32px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
+<div style="font-size: 14px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #B4B8C4">Para negocios que cotizan por WhatsApp</div>
+<h1 style="margin: 0; font-weight: 500; font-size: clamp(42px, 5.4vw, 80px); line-height: 1.06; letter-spacing: -0.035em"><span style="display: block; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) both">No solo responde.</span><span style="display: block; color: #4D7CFF; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.18s both">Te dice qué hacer.</span></h1>
+<p style="margin: 0; font-size: 20px; line-height: 1.5; color: #B4B8C4; max-width: 500px; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.36s both">Responde a tus clientes al instante y ordena cada caso. NEURA te dice cada mañana qué cobrar, a quién llamar y por qué perdiste ventas.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.5s both">
+<a href="#demo" style="background: #4D7CFF; color: #08090D; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px">Agenda tu demo</a>
+<a href="#producto" style="border: 1px solid #3A3F4D; color: #F4F4F2; text-decoration: none; font-weight: 500; padding: 16px 28px; border-radius: 999px">Ver el producto</a>
+</div>
 </div>
 
-<!-- ── LOGOS ── -->
-<div class="logos-strip">
-  <div class="logos-label">Empresas que trabajan con TRAMA</div>
-  <div class="logos-row">
-    <div class="logo-item">Zano Cafetería</div>
-    <div class="logo-item">CISA USA</div>
-    <div class="logo-item">Claudine Dulces</div>
-    <div class="logo-item">Pastelería</div>
-    <div class="logo-item">Circuclaje</div>
-    <div class="logo-item">Property Check</div>
-    <div class="logo-item">FlexWork</div>
-  </div>
+<div style="flex: 1 1 440px; min-width: 0; position: relative; animation: rise 1s cubic-bezier(0.2,0.7,0.2,1) 0.3s both">
+<video src="assets/trama-atiende.mp4" autoplay loop muted playsinline preload="metadata" poster="assets/trama-atiende-poster.jpg" aria-label="Video de TRAMA Atiende: del mensaje de WhatsApp a la ficha, el seguimiento con NEURA y la inversión" style="display: block; width: 100%; max-width: 400px; margin: 0 auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 24px; border: 1px solid #262A36; box-shadow: 0 30px 80px rgba(0,0,0,0.55)"></video>
+</div>
+</section>
+
+
+<section style="padding: 8px 0 104px; display: flex; flex-direction: column; gap: 36px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
+<div style="font-size: 13px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #4D7CFF">Confían en TRAMA</div>
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em">Organizaciones con las que trabajamos</h2>
+</div>
+<div style="overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)">
+<div style="display: flex; gap: 20px; width: max-content; padding-right: 20px; animation: slide 38s linear infinite">
+<div style="display: flex; gap: 20px">
+<span style="flex: 0 0 auto; height: 76px; padding: 0 30px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-villa-maria.png" alt="Colegio Villa María" style="height: 64px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 30px; border: 1px solid #232733; border-radius: 14px; background: #0E1016; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-ica-gruas.png" alt="Ica Grúas" style="height: 44px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #000000; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-tizon-rojo.png" alt="Tizón Rojo" style="height: 60px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 22px; border-radius: 14px; background: #533628; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-zano.png" alt="Cafetería Zano" style="height: 52px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-sni.png" alt="SNI" style="height: 50px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 22px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-ahk.png" alt="AHK Perú" style="height: 40px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-mercaritec.png" alt="Mercaritec" style="height: 40px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 28px; border-radius: 14px; background: #0F2238; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-expotextil.png" alt="Expotextil Perú 2026" style="height: 46px; width: auto; display: block"></span>
+</div>
+<div aria-hidden="true" style="display: flex; gap: 20px">
+<span style="flex: 0 0 auto; height: 76px; padding: 0 30px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-villa-maria.png" alt="" style="height: 64px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 30px; border: 1px solid #232733; border-radius: 14px; background: #0E1016; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-ica-gruas.png" alt="" style="height: 44px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #000000; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-tizon-rojo.png" alt="" style="height: 60px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 22px; border-radius: 14px; background: #533628; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-zano.png" alt="" style="height: 52px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-sni.png" alt="" style="height: 50px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 22px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-ahk.png" alt="" style="height: 40px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-mercaritec.png" alt="" style="height: 40px; width: auto; display: block"></span>
+<span style="flex: 0 0 auto; height: 76px; padding: 0 28px; border-radius: 14px; background: #0F2238; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-expotextil.png" alt="" style="height: 46px; width: auto; display: block"></span>
+</div>
+</div>
+</div>
+</section>
+<section style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 112px; display: flex; flex-direction: column; gap: 56px">
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; max-width: 980px; letter-spacing: -0.035em">El cliente escribe. Nadie responde. <br><span style="color: #8E94A3">Se va con otro.</span></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 28px">
+
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative">
+<img loading="lazy" decoding="async" src="assets/mecanico.jpg" alt="Mecánico trabajando en un motor mientras su celular suena sobre la mesa de trabajo" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px">
+<span style="position: absolute; left: 14px; bottom: 14px; background: #FFFFFF; color: #14161B; font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 999px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #C8372D"></span>14 mensajes sin leer</span>
+</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.06; letter-spacing: -0.035em">Las manos ocupadas</h3>
+<p style="margin: 0; color: #B4B8C4">El WhatsApp suena mientras se trabaja. Cuando por fin se contesta, el cliente ya contrató a otro.</p>
 </div>
 
-<!-- ── CASOS ── -->
-<section class="casos-section" id="casos">
-  <div class="casos-header reveal">
-    <div>
-      <span class="eyebrow">Proyectos</span>
-      <h2 class="sh2">Experiencia que<br>habla por sí sola.</h2>
-    </div>
-    <p class="section-sub" style="max-width:300px;">Haz click en cada proyecto para ver el detalle técnico.</p>
-  </div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative">
+<img loading="lazy" decoding="async" src="assets/recepcion.jpg" alt="Recepcionista atendiendo una llamada con el celular en el hombro mientras anota en un cuaderno" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px">
+<span style="position: absolute; left: 14px; bottom: 14px; background: #FFFFFF; color: #14161B; font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 999px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #B5760A"></span>Cotizó hace 3 días · sin seguimiento</span>
+</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.06; letter-spacing: -0.035em">Todo en un cuaderno</h3>
+<p style="margin: 0; color: #B4B8C4">Se cotiza por chat y se anota a mano. Nadie vuelve a preguntar, y la venta se pierde sin dejar rastro.</p>
+</div>
 
-  <!-- FEATURED: TRAMA APP -->
-  <div class="caso-featured reveal" onclick="openModal('trama')">
-    <div class="caso-visual" style="background:#0d0f1a;overflow:hidden;position:relative;min-height:400px;display:flex;align-items:center;justify-content:center;padding:32px 24px;">
-      <!-- glow accent -->
-      <div style="position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(187,68,42,.15) 0%,transparent 70%);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;"></div>
-      <!-- screenshot with perspective tilt -->
-      <div style="position:relative;width:88%;transform:perspective(1000px) rotateY(-5deg) rotateX(3deg);animation:float 4s ease-in-out infinite;border-radius:10px;overflow:hidden;box-shadow:28px 28px 64px rgba(0,0,0,.55),0 0 0 0.5px rgba(255,255,255,.08);">
-        <img src="data:image/jpeg;base64,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+mf609RWRhP4e1WSwaKS/wDOlfKsGnkVSNm0cj0OTjHOea1bvTnn0sWYk2sYfKLDt8uMirHny+kf60efL6R/rUyi5KzFKKkrM56PwxqcRhCazdBI3RigAwwGdw69zj6V00CGOMKai8+X/pn+tHny+kf61Kp22M6VCNPWJZrO1nSBq32ZGcLHG7M/AJIKMvGQR3qx58vpH+tHny+kf61VmbGKvh7UA8iHUpfJLfIomcHaAwUcdMZXoedtNbw9qkl0s73qeYoP77ezEksDwp+VcYxx171uefL6R/rR58vpH+tPUVkY1t4f1FUj8/UZGK44E7kfeG70zlcjnpmo4fDuqwxeWNQZUFusSqszgAgAdwe4Jz15x0rd8+X0j/Wjz5fSP9aNQshi2s5sIoZZA0yoAzKTycYJGefzqromkyaXD5by7/mLZAwOgHTJ9Mn3Jq758vpH+tHny+kf61zywsZVFUe5oqjUeVFmiq3ny+kf60efL6R/rW9mSWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYFmiq3ny+kf60efL6R/rRZgWaKrefL6R/rR58vpH+tFmBZoqt58vpH+tHny+kf60WYH5r05Y2YZCmm1djRnZI0UszEKoHUn0r1zjKvkv/AHTR5L/3TVxoZU27o3G4ZHHUf5BpDHIp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iigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPzaooor1DkCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA+1/2a/wDkjmi/9dbr/wBHvXp1eY/s1/8AJHNF/wCut1/6PevTq86p8TOmOyCiiioKCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPzaooor1DkCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA+1/2a/+SOaL/wBdbr/0e9enV5j+zX/yRzRf+ut1/wCj3r06vOqfEzpjsgoooqCgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD82qKKK9Q5AooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPtf9mv8A5I5ov/XW6/8AR716dXmP7Nf/ACRzRf8Arrdf+j3r06vOqfEzpjsgoooqCgooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD82qKKK9Q5AooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPtf9mv/kjmi/8AXW6/9HvXp1eY/s1/8kc0X/rrdf8Ao969OrzqnxM6Y7IKKKKgoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/NqiiivUOQKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD7X/Zr/AOSOaL/11uv/AEe9enV5j+zX/wAkc0X/AK63X/o969OrzqnxM6Y7IKKKKgoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA/NqiiivUOQKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigD7X/Zr/5I5ov/AF1uv/R716dXmP7Nf/JHNF/663X/AKPevTq86p8TOmOyCiiioKCiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKAPzbwfb86MH2/Okor1DkFwfb86MH2/OkooAXB9vzowfb86SigBcH2/OjB9vzpKKAFwfb86MH2/OkooAXB9vzowfb86SigBcH2/OjB9vzpKKAFwfb86MH2/OkooAXB9vzowfb86SigD7X/Zs4+Dmi/8AXW6/9HvXp1eY/s1/8kc0X/rrdf8Ao969OrzqnxM6Y7IKKKKgoKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAoooo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" style="width:100%;height:auto;display:block;"/>
-      </div>
-    </div>
-    <div class="caso-info">
-      <div>
-        <span class="caso-tag tag-dev">Plataforma SaaS</span>
-        <div class="caso-nombre">TRAMA App</div>
-        <p class="caso-desc">Plataforma SaaS para MYPEs con diagnóstico comercial por IA, generador de landing pages, CRM de leads, agentes de marketing y análisis de rentabilidad.</p>
-        <div class="caso-tech">
-          <span class="tech-pill">Node.js</span><span class="tech-pill">Supabase</span>
-          <span class="tech-pill">Claude API</span><span class="tech-pill">Railway</span>
-          <span class="tech-pill">Meta Ads API</span><span class="tech-pill">Twilio</span>
-        </div>
-      </div>
-      <div>
-        <div class="caso-metrics">
-          <div><div class="cm-n">6</div><div class="cm-l">Módulos IA activos</div></div>
-          <div><div class="cm-n">LATAM</div><div class="cm-l">Mercado objetivo</div></div>
-          <div><div class="cm-n">Full</div><div class="cm-l">Stack propio</div></div>
-        </div>
-        <div class="click-hint">Ver detalle completo <span class="click-hint-arrow">→</span></div>
-      </div>
-    </div>
-  </div>
+<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
+<div style="position: relative">
+<img loading="lazy" decoding="async" src="assets/dueno.jpg" alt="Dueño de negocio de noche revisando un cuaderno de cuentas con una calculadora" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px">
+<span style="position: absolute; left: 14px; bottom: 14px; background: #FFFFFF; color: #14161B; font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 999px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #5B6170"></span>Por cobrar: no se sabe</span>
+</div>
+<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.06; letter-spacing: -0.035em">El cierre a ciegas</h3>
+<p style="margin: 0; color: #B4B8C4">Al final del día, el dueño no sabe cuánto cobró, cuánto le deben ni por qué se cayeron las ventas.</p>
+</div>
 
-  <!-- MINI GRID -->
-  <div class="casos-grid">
-
-    <!-- FlexWork -->
-    <div class="caso-mini reveal" onclick="openModal('flexwork')">
-      <div class="mini-visual"><img src="assets/images/flexwork.webp" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
-      <div class="mini-info">
-        <div class="mini-tipo">Plataforma · Freelancers</div>
-        <div class="mini-name">FlexWork</div>
-        <div class="mini-desc">Marketplace de freelancers con sistema de propuestas, perfiles verificados y pagos integrados.</div>
-        <div class="mini-tags"><span class="mt">Marketplace</span><span class="mt">Pagos</span><span class="mt">IA</span></div>
-      </div>
-    </div>
-
-    <!-- Property Check -->
-    <div class="caso-mini reveal" onclick="openModal('property')">
-      <div class="mini-visual"><img src="assets/images/property-check.PNG" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
-      <div class="mini-info">
-        <div class="mini-tipo">PropTech · IA</div>
-        <div class="mini-name">Property Check</div>
-        <div class="mini-desc">Validación inmobiliaria con IA. Diagnóstico automático, registros públicos y análisis de riesgo legal.</div>
-        <div class="mini-tags"><span class="mt">IA</span><span class="mt">Registros</span><span class="mt">B2B</span></div>
-      </div>
-    </div>
-
-    <!-- Pastelería -->
-    <div class="caso-mini reveal" onclick="openModal('dominga')">
-      <div class="mini-visual"><img src="assets/images/la-dominga.png" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
-      <div class="mini-info">
-        <div class="mini-tipo">Sistema interno · RRHH</div>
-        <div class="mini-name">Sistema de RRHH - Rubro Pastelería</div>
-        <div class="mini-desc">Sistema personalizado de RRHH, nómina, asistencia y turnos para operaciones de pastelería.</div>
-        <div class="mini-tags"><span class="mt">RRHH</span><span class="mt">Nómina</span><span class="mt">Ops</span></div>
-      </div>
-    </div>
-
-    <!-- Seguros CRM -->
-    <div class="caso-mini reveal" onclick="openModal('seguros')">
-      <div class="mini-visual"><img src="assets/images/crm-seguros.webp" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
-      <div class="mini-info">
-        <div class="mini-tipo">Sistema interno · Brokers de seguros</div>
-        <div class="mini-name">CRM Seguros</div>
-        <div class="mini-desc">Gestión de pólizas, vencimientos, comisiones y pipeline de prospectos para empresas vendedoras de seguros.</div>
-        <div class="mini-tags"><span class="mt">CRM</span><span class="mt">Pólizas</span><span class="mt">Alertas WA</span><span class="mt">Comisiones</span></div>
-      </div>
-    </div>
-
-    <!-- Circuclaje -->
-    <div class="caso-mini reveal" onclick="openModal('circuclaje')">
-      <div class="mini-visual"><img src="assets/images/circulaje.PNG" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
-      <div class="mini-info">
-        <div class="mini-tipo">Marketplace · Economía circular</div>
-        <div class="mini-name">Circuclaje</div>
-        <div class="mini-desc">Marketplace de productos de segunda mano con impacto ambiental medible. Modelo validado.</div>
-        <div class="mini-tags"><span class="mt">Marketplace</span><span class="mt">B2C</span><span class="mt">Impacto</span></div>
-      </div>
-    </div>
-
-    <!-- CISA USA + Zano (wide) -->
-    <div class="caso-mini reveal" onclick="openModal('cisa')" style="grid-column:span 1;">
-      <div class="mini-visual"><img src="assets/images/cisa-usa.PNG" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
-      <div class="mini-info">
-        <div class="mini-tipo">Marketing · USA</div>
-        <div class="mini-name">CISA USA</div>
-        <div class="mini-desc">35 años de experiencia, cero presencia digital. Web, contenido y pauta desde cero en el mercado americano.</div>
-        <div class="mini-tags"><span class="mt">Web</span><span class="mt">Meta Ads</span><span class="mt">Google</span></div>
-      </div>
-    </div>
-
-    <div class="caso-mini reveal" onclick="openModal('zano')" style="grid-column:span 1;">
-            <div class="mini-visual"><img src="assets/images/zano.jfif" style="width:100%;height:100%;object-fit:cover;object-position:center;"></div>
-      <div class="mini-info">
-        <div class="mini-tipo">Marketing estratégico · Lima</div>
-        <div class="mini-name">Zano Cafetería</div>
-        <div class="mini-desc">Ventas en caída revertidas con análisis semanal de datos y plan de acción concreto.</div>
-        <div class="mini-tags"><span class="mt">Estrategia</span><span class="mt">Datos</span><span class="mt">S/87K</span></div>
-      </div>
-    </div>
-
-  </div>
+</div>
 </section>
 
-<!-- ── SERVICIOS ── -->
-<section class="servicios-section" id="servicios">
-  <div class="reveal">
-    <span class="eyebrow">Servicios</span>
-    <h2 class="sh2">Dos formas de<br>trabajar juntos.</h2>
-  </div>
+<section id="producto" style="background: #0E1016">
+<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; max-width: 720px; letter-spacing: -0.035em">Pantallas reales. <br><span style="color: rgb(77, 124, 255)">No maquetas.</span></h2>
+<p style="margin: 0; max-width: 380px; color: #B4B8C4">El asistente responde y reúne los datos. Tu equipo cotiza, atiende y cobra desde un panel. La IA no pone precios ni cierra por su cuenta.</p>
+</div>
 
-  <div class="sv-grid reveal">
-
-    <!-- SISTEMAS & AUTOMATIZACIÓN -->
-    <div class="sv-card">
-      <div class="sv-num">01</div>
-      <div class="sv-name">Sistemas &<br>Automatización</div>
-      <p class="sv-sub">Diseñamos e implementamos sistemas con IA que hacen que tu negocio opere mejor y escale sin contratar más personas.</p>
-
-      <div class="sv-items">
-        <div class="sv-item"><div class="sv-dot"></div>Descubrimiento de procesos automatizables</div>
-        <div class="sv-item"><div class="sv-dot"></div>Diseño y entrenamiento de agentes IA para el negocio</div>
-        <div class="sv-item"><div class="sv-dot"></div>Automatización por áreas con n8n (RRHH, ventas, ops, marketing)</div>
-        <div class="sv-item"><div class="sv-dot"></div>Plataformas, CRMs y dashboards a medida</div>
-        <div class="sv-item"><div class="sv-dot"></div>Integración con Make, Zapier, ClickUp y Apps Script</div>
-      </div>
-
-      <!-- UPC badge -->
-      <div style="
-        margin: 24px 0;
-        padding: 16px 18px;
-        background: var(--iv5);
-        border: 0.5px solid var(--border2);
-        border-radius: var(--r);
-        display: flex; align-items: flex-start; gap: 14px;
-      ">
-        <div style="
-          width: 36px; height: 36px; border-radius: 5px;
-          background: var(--coral); flex-shrink: 0;
-          display: flex; align-items: center; justify-content: center;
-          font-family: 'Sora', sans-serif; font-weight: 800; font-size: 10px; color: #fff; letter-spacing: -0.02em;
-        ">EPG<br style="line-height:.5">UPC</div>
-        <div>
-          <div style="font-family:'JetBrains Mono',monospace;font-size:8px;letter-spacing:.12em;text-transform:uppercase;color:var(--coral);margin-bottom:3px;">Certificación</div>
-          <div style="font-size:12px;font-weight:500;color:var(--ivory);line-height:1.3;">Automatización Empresarial con Agentes de IA</div>
-          <div style="font-size:11px;color:var(--iv3);font-weight:300;margin-top:2px;">Escuela de Postgrado · UPC</div>
-        </div>
-      </div>
-
-      <div class="sv-examples">
-        <span class="sv-ex-tag">TRAMA App</span>
-        <span class="sv-ex-tag">FlexWork</span>
-        <span class="sv-ex-tag">Property Check</span>
-        <span class="sv-ex-tag">Pastelería</span>
-        <span class="sv-ex-tag">Circuclaje</span>
-      </div>
-    </div>
-
-    <!-- MARKETING -->
-    <div class="sv-card">
-      <div class="sv-num">02</div>
-      <div class="sv-name">Marketing<br>estratégico <span style="font-size:11px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;background:rgba(29,158,117,0.15);color:#1D9E75;border-radius:6px;padding:2px 8px;margin-left:8px;vertical-align:middle;">CON IA</span></div>
-      <p class="sv-sub">Estrategia, contenido, pauta y seguimiento semanal con datos reales del negocio — potenciados por inteligencia artificial. Tres capas de trabajo integradas en un servicio mensual.</p>
-      <div class="sv-items">
-        <div class="sv-item"><div class="sv-dot"></div>Investigación de mercado y cliente ideal</div>
-        <div class="sv-item"><div class="sv-dot"></div>Estrategia de contenido y posicionamiento de marca</div>
-        <div class="sv-item"><div class="sv-dot"></div>Gestión de pauta Meta, TikTok y Google</div>
-        <div class="sv-item"><div class="sv-dot"></div>Web desde cero — diseño, textos y estructura</div>
-        <div class="sv-item"><div class="sv-dot"></div>Seguimiento semanal con métricas reales del negocio</div>
-      </div>
-      <div style="margin-top: 24px; padding-top: 24px; border-top: 0.5px solid var(--border);">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;letter-spacing:.15em;text-transform:uppercase;color:var(--iv3);margin-bottom:12px;">Casos reales</div>
-        <div style="display:flex;flex-direction:column;gap:8px;">
-          <div style="font-size:12px;color:var(--iv2);font-weight:300;"><span style="color:var(--coral);font-weight:500;">Zano Cafetería</span> — ventas en caída revertidas. Pico S/87K/mes.</div>
-          <div style="font-size:12px;color:var(--iv2);font-weight:300;"><span style="color:var(--coral);font-weight:500;">Claudine Dulces</span> — Posicionamiento de marca en los primeros 3 meses.</div>
-          <div style="font-size:12px;color:var(--iv2);font-weight:300;"><span style="color:var(--coral);font-weight:500;">CISA USA</span> — presencia digital desde cero en mercado peruano.</div>
-        </div>
-      </div>
-      <button class="btn-ver-incluye" onclick="openMktModal()">Ver qué incluye →</button>
-    </div>
-
-  </div>
+<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<div style="border: 1px solid #262A36; border-radius: 16px; overflow: hidden; background: #12151C; box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
+<div style="display: flex; align-items: center; gap: 7px; padding: 11px 16px; border-bottom: 1px solid #262A36">
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+</div>
+<img loading="lazy" decoding="async" src="assets/panel-ica-gruas.jpg" alt="Panel de atención de Ica Grúas con la bandeja de solicitudes por estado" style="display: block; width: 100%; height: auto">
+</div>
+<figcaption style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 15px"><span style="font-weight: 600">Ica Grúas</span><span style="color: #8E94A3">Bandeja de solicitudes, con NEURA en el menú</span></figcaption>
+</figure>
+<div style="display: flex; flex-wrap: wrap; gap: 28px">
+<div style="flex: 1 1 420px; min-width: 0"><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<div style="border: 1px solid #262A36; border-radius: 16px; overflow: hidden; background: #12151C; box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
+<div style="display: flex; align-items: center; gap: 7px; padding: 11px 16px; border-bottom: 1px solid #262A36">
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+</div>
+<img loading="lazy" decoding="async" src="assets/panel-villa-maria.jpg" alt="Panel de admisiones del Colegio Villa María con indicadores y embudo" style="display: block; width: 100%; height: auto">
+</div>
+<figcaption style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 15px"><span style="font-weight: 600">Colegio Villa María</span><span style="color: #8E94A3">Admisiones: interesados, visitas y matrículas</span></figcaption>
+</figure></div>
+<div style="flex: 1 1 420px; min-width: 0"><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0">
+<div style="border: 1px solid #262A36; border-radius: 16px; overflow: hidden; background: #12151C; box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
+<div style="display: flex; align-items: center; gap: 7px; padding: 11px 16px; border-bottom: 1px solid #262A36">
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
+</div>
+<img loading="lazy" decoding="async" src="assets/panel-expotextil.jpg" alt="Panel de la rueda de negocios de Expotextil Perú 2026" style="display: block; width: 100%; height: auto">
+</div>
+<figcaption style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 15px"><span style="font-weight: 600">Expotextil Perú 2026</span><span style="color: #8E94A3">Rueda de negocios: cruce de compradores y expositores</span></figcaption>
+</figure></div>
+</div>
+<div style="font-size: 13px; color: #8E94A3">Capturas reales de plataformas construidas por TRAMA, sin datos reales.</div>
+</div>
 </section>
 
-<!-- ── METODOLOGÍA ── -->
-<section class="metodo-section" id="metodologia">
-  <div class="reveal">
-    <span class="eyebrow">Cómo trabajamos.</span>
-    <h2 class="sh2">TRAMA Method</h2>
-  </div>
-  <div class="metodo-grid reveal">
-    <div class="metodo-step"><div class="ms-n">01</div><div class="ms-name">Business &amp; Process Audit</div><div class="ms-desc">Analizamos cómo funciona realmente tu negocio: procesos, experiencia del cliente, fugas operativas y oportunidades de automatización y crecimiento.</div></div>
-    <div class="metodo-step"><div class="ms-n">02</div><div class="ms-name">System Design</div><div class="ms-desc">Diseñamos un sistema conectado: operaciones, automatización, IA, marketing y datos alineados a tus objetivos de negocio.</div></div>
-    <div class="metodo-step"><div class="ms-n">03</div><div class="ms-name">Execution &amp; Automation</div><div class="ms-desc">Implementamos flujos, integraciones y automatizaciones de forma ágil. Seguimiento estratégico semanal, sin intermediarios.</div></div>
-    <div class="metodo-step"><div class="ms-n">04</div><div class="ms-name">Optimization &amp; Scale</div><div class="ms-desc">Medimos resultados, optimizamos conversiones y ajustamos el sistema para que el negocio pueda crecer con estructura.</div></div>
-  </div>
+<section id="neura" style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-direction: column; gap: 20px; max-width: 860px">
+<div style="font-size: 14px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #4D7CFF">NEURA, siempre incluido</div>
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">Otros te dan un vendedor. <span style="color: #4D7CFF">Aquí también tienes un gerente.</span></h2>
+<p style="margin: 0; font-size: 19px; color: #B4B8C4; max-width: 620px">NEURA trabaja distinto según tu rubro y te lo dice en una frase.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 0 40px">
+<div style="flex: 1 1 300px; border-top: 1px solid #2A2E3A; padding: 28px 0 36px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8E94A3">Grúas</span>
+<p style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 500">Ayer perdiste 4 servicios por demora en cotizar.</p>
+</div>
+<div style="flex: 1 1 300px; border-top: 1px solid #2A2E3A; padding: 28px 0 36px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8E94A3">Talleres</span>
+<p style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 500">6 clientes no respondieron su cotización. Estos 3 valen la llamada.</p>
+</div>
+<div style="flex: 1 1 300px; border-top: 1px solid #2A2E3A; padding: 28px 0 36px; display: flex; flex-direction: column; gap: 16px">
+<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8E94A3">Consultorios</span>
+<p style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 500">Mañana hay 5 citas sin confirmar. Conviene recordarlas hoy.</p>
+</div>
+</div>
+<div style="font-size: 13px; color: #8E94A3; margin-top: -32px">Frases de ejemplo. El contenido real sale de los datos de tu negocio.</div>
 </section>
 
-<!-- ── BLOG ── -->
-<section class="blog-section" id="blog">
-  <div class="reveal" style="display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:52px;">
-    <div>
-      <span class="eyebrow">Blog</span>
-      <h2 class="sh2">Ideas que hacen<br>crecer negocios.</h2>
-    </div>
-    <a href="#blog" style="font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--coral);text-decoration:none;border-bottom:0.5px solid var(--coral);padding-bottom:2px;transition:opacity .2s;" onmouseover="this.style.opacity='.6'" onmouseout="this.style.opacity='1'">Ver todos →</a>
-  </div>
-
-  <div class="blog-grid reveal">
-
-    <!-- ARTICLE 2 -->
-    <article class="blog-card" onclick="window.location='#blog'">
-      <div class="blog-img blog-img-2">
-        <svg viewBox="0 0 400 220" fill="none" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%">
-          <circle cx="50" cy="200" r="80" stroke="rgba(255,255,255,.04)" stroke-width="1"/>
-          <text x="330" y="40" fill="rgba(255,255,255,.08)" font-size="14" font-family="Inter">×</text>
-          <text x="30" y="60" fill="rgba(255,255,255,.08)" font-size="12" font-family="Inter">+</text>
-          <!-- phone mockup -->
-          <rect x="140" y="30" width="120" height="180" rx="14" fill="#BB442A"/>
-          <rect x="148" y="42" width="104" height="156" rx="8" fill="#0F1117"/>
-          <!-- screen content -->
-          <rect x="156" y="52" width="88" height="10" rx="3" fill="rgba(255,255,255,.12)"/>
-          <!-- bar chart on screen -->
-          <rect x="158" y="80" width="14" height="40" rx="2" fill="rgba(187,68,42,.4)"/>
-          <rect x="177" y="65" width="14" height="55" rx="2" fill="rgba(187,68,42,.6)"/>
-          <rect x="196" y="72" width="14" height="48" rx="2" fill="rgba(187,68,42,.5)"/>
-          <rect x="215" y="55" width="14" height="65" rx="2" fill="#BB442A"/>
-          <rect x="234" y="68" width="6" height="52" rx="2" fill="rgba(187,68,42,.35)"/>
-          <!-- metric -->
-          <rect x="158" y="136" width="50" height="8" rx="2" fill="rgba(255,255,255,.08)"/>
-          <text x="220" y="145" fill="#BB442A" font-family="Sora,sans-serif" font-weight="800" font-size="14" letter-spacing="-0.5">+34%</text>
-          <!-- left floating card -->
-          <rect x="30" y="80" width="90" height="50" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)" stroke-width="0.5"/>
-          <circle cx="50" cy="98" r="8" fill="#BB442A" opacity=".7"/>
-          <rect x="64" y="93" width="46" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
-          <rect x="64" y="102" width="32" height="4" rx="2" fill="rgba(255,255,255,.12)"/>
-          <!-- right floating card -->
-          <rect x="280" y="100" width="90" height="50" rx="6" fill="rgba(255,255,255,.05)" stroke="rgba(255,255,255,.1)" stroke-width="0.5"/>
-          <rect x="292" y="112" width="66" height="4" rx="2" fill="rgba(255,255,255,.2)"/>
-          <rect x="292" y="121" width="44" height="4" rx="2" fill="rgba(187,68,42,.5)"/>
-          <rect x="292" y="130" width="55" height="4" rx="2" fill="rgba(255,255,255,.12)"/>
-          <circle cx="322" cy="165" r="2" fill="rgba(187,68,42,.5)"/>
-          <circle cx="200" cy="30" r="2" fill="rgba(187,68,42,.4)"/>
-        </svg>
-      </div>
-      <div class="blog-info">
-        <div class="blog-meta">
-          <span class="blog-date">Abril 2026</span>
-          <span class="blog-read">11 min</span>
-        </div>
-        <h3 class="blog-title">El sistema de marketing que usamos con cada cliente antes de invertir en pauta</h3>
-        <div class="blog-tag">Marketing</div>
-      </div>
-    </article>
-
-  </div>
+<section style="background: #0E1016">
+<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">De la demo a operar</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 40px">
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 500; font-size: 52px; line-height: 1.06; color: #4D7CFF; letter-spacing: -0.035em">1</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">Demo con tu negocio</h3>
+<p style="margin: 0; color: #B4B8C4">Ves el recorrido con tus servicios y tarifas, antes de conectar nada.</p>
+</div>
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 500; font-size: 52px; line-height: 1.06; color: #4D7CFF; letter-spacing: -0.035em">2</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">Configuramos tu proceso</h3>
+<p style="margin: 0; color: #B4B8C4">Tarifas, respuestas frecuentes y usuarios de tu equipo, según tu rubro.</p>
+</div>
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 500; font-size: 52px; line-height: 1.06; color: #4D7CFF; letter-spacing: -0.035em">3</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">Conectamos tu WhatsApp</h3>
+<p style="margin: 0; color: #B4B8C4">Tu número pasa a la API oficial de WhatsApp y capacitamos a tu equipo.</p>
+</div>
+<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
+<span style="font-weight: 500; font-size: 52px; line-height: 1.06; color: #4D7CFF; letter-spacing: -0.035em">4</span>
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">Operas con NEURA</h3>
+<p style="margin: 0; color: #B4B8C4">Tu equipo atiende desde el panel y tú recibes qué hacer cada día.</p>
+</div>
+</div>
+</div>
 </section>
 
-<!-- ── CTA ── -->
-<section class="cta-section">
-  <div class="cta-glow"></div>
-  <h2 class="cta-h2">Cuéntame qué estás <span class="cta-trama">TRAMANDO</span> y conversamos.</h2>
-  <p class="cta-sub">Escríbenos por WhatsApp y te cotizamos sin compromiso. Respondemos en menos de 24 horas.</p>
-  <div class="cta-btns">
-    <a href="https://wa.me/51933448692" class="btn-coral">Cotización por WhatsApp →</a>
-    <a href="https://calendly.com/kwoodman-tramaconsultora/30min" class="btn-ghost" target="_blank" rel="noopener noreferrer">Agendar llamada</a>
-  </div>
+<section style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 24px">
+<h3 style="margin: 0; font-weight: 500; font-size: 32px; line-height: 1.06; letter-spacing: -0.035em">Es para ti si</h3>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; font-size: 18px">
+<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Vendes un servicio y cotizas caso por caso.</li>
+<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Tus clientes escriben por WhatsApp y gana quien responde primero.</li>
+<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Quieres saber cuánto cobraste y por qué pierdes ventas.</li>
+<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Hoy todo depende del celular de una persona.</li>
+</ul>
+</div>
+<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 24px">
+<h3 style="margin: 0; font-weight: 500; font-size: 32px; line-height: 1.06; color: #8E94A3; letter-spacing: -0.035em">No es para ti si</h3>
+<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; font-size: 18px; color: #B4B8C4">
+<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Tienes una tienda con catálogo y precio fijo.</li>
+<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Buscas que una IA cierre y cobre sin que nadie revise.</li>
+<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Solo quieres enviar mensajes masivos.</li>
+</ul>
+</div>
 </section>
 
-<!-- ── FOOTER ── -->
-<footer class="site-footer">
-  <div class="footer-main">
+<section id="precio" style="background: #0E1016">
+<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">Dos cifras. <span style="color: #4D7CFF">Sin letra chica.</span></h2>
+<div style="display: flex; flex-wrap: wrap; gap: 56px">
+<div style="flex: 1 1 380px; border-top: 1px solid #2A2E3A; padding-top: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8E94A3">Implementación inicial · pago único</span>
+<span style="font-weight: 500; font-size: 84px; line-height: 1.06; letter-spacing: -0.035em">US$299</span>
+<p style="margin: 0; color: #B4B8C4; max-width: 420px">Desde este monto. Definición del proceso, configuración de WhatsApp y del panel, pruebas y capacitación inicial.</p>
+</div>
+<div style="flex: 1 1 380px; border-top: 1px solid #4D7CFF; padding-top: 28px; display: flex; flex-direction: column; gap: 12px">
+<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #4D7CFF">Plan mensual · NEURA incluido</span>
+<span style="font-weight: 500; font-size: 84px; line-height: 1.06; letter-spacing: -0.035em">US$149</span>
+<p style="margin: 0; color: #B4B8C4; max-width: 420px">Asistente, panel de casos y cotización de tu rubro, mantenimiento y soporte.&nbsp;</p>
+</div>
+</div>
+<div style="font-size: 14px; color: #8E94A3">Los mensajes que cobra Meta por WhatsApp se pagan aparte, según uso. Los procesos a medida se cotizan en la propuesta.</div>
+</div>
+</section>
 
-    <!-- left: logo + tagline -->
-    <div class="footer-brand">
-      <a href="#top" style="text-decoration:none;display:inline-flex;flex-direction:column;gap:0;">
-        <svg width="140" height="28" viewBox="0 0 140 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <text x="0" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">TR</text>
-          <polygon points="40,4 51,22 29,22" fill="#BB442A"/>
-          <text x="54" y="22" font-family="Sora, sans-serif" font-weight="800" font-size="24" letter-spacing="-1" fill="#F8F7F4">MA</text>
-        </svg>
-        <span class="footer-tagline">Arquitectura. Automatización. Resultados.</span>
-      </a>
-    </div>
+<section style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; gap: 56px">
+<h2 class="rv" style="flex: 1 1 300px; margin: 0; font-weight: 500; font-size: 42px; line-height: 1.06; letter-spacing: -0.035em">Lo que suelen preguntar</h2>
+<div style="flex: 2 1 540px; min-width: 0; display: flex; flex-direction: column">
+<div style="border-top: 1px solid #2A2E3A; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">¿La IA le pone precio a mis servicios?</h3>
+<p style="margin: 0; color: #B4B8C4">No. El asistente reúne los datos; la cotización se calcula con tus tarifas y tu equipo la aprueba antes de enviarla.</p>
+</div>
+<div style="border-top: 1px solid #2A2E3A; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">¿Qué pasa cuando el asistente no sabe responder?</h3>
+<p style="margin: 0; color: #B4B8C4">Deriva el caso a una persona de tu equipo y le avisa al cliente. No inventa respuestas.</p>
+</div>
+<div style="border-top: 1px solid #2A2E3A; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
+<h3 style="margin: 0; font-size: 20px; font-weight: 600">¿Tengo que cambiar mi número de WhatsApp?</h3>
+<p style="margin: 0; color: #B4B8C4">Puedes conservarlo. El número pasa a la API oficial de WhatsApp y tu equipo atiende desde el panel en lugar del celular.</p>
+</div>
+</div>
+</section>
 
-    <!-- right: nav links + contact -->
-    <div class="footer-right">
+<section id="demo" style="background: #2457F5; color: #FFFFFF">
+<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 40px">
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(38px, 4.8vw, 68px); line-height: 1.06; max-width: 760px; letter-spacing: -0.035em">Mira tu negocio atendido antes de decidir.</h2>
+<div style="display: flex; flex-direction: column; gap: 16px; max-width: 360px">
+<p style="margin: 0; font-size: 18px">Te mostramos el recorrido completo con tus servicios y tus tarifas. Sin compromiso.</p>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="https://wa.me/51933448692?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20TRAMA%20Atiende" style="background: #08090D; color: #F4F4F2; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px">Agenda tu demo</a>
+<a href="https://wa.me/51933448692" style="border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px">WhatsApp</a>
+</div>
+</div>
+</div>
+</section>
 
-      <nav class="footer-nav">
-        <a href="#casos">Proyectos</a>
-        <a href="#servicios">Servicios</a>
-        <a href="#metodologia">TRAMA Method</a>
-        <a href="#blog">Blog</a>
-        <a href="nosotros.html">Nosotros</a>
-      </nav>
+<a href="https://wa.me/51933448692" aria-label="Escríbenos por WhatsApp al +51 933 448 692" style="position: fixed; right: 24px; bottom: 24px; z-index: 50; display: flex; align-items: center; gap: 10px; background: #1FAF54; color: #06140B; text-decoration: none; font-weight: 600; font-size: 15px; padding: 14px 20px; border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,0.45)"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"></path></svg><span class="wa-t">Escríbenos por WhatsApp</span></a>
 
-      <div class="footer-contact">
-        <a href="mailto:kwoodman@tramaconsultora.com" class="footer-contact-item">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="3" width="13" height="9" rx="1.5" stroke="#BB442A" stroke-width="1.2"/>
-            <path d="M1.5 3.5L7.5 8.5L13.5 3.5" stroke="#BB442A" stroke-width="1.2" stroke-linejoin="round"/>
-          </svg>
-          kwoodman@tramaconsultora.com
-        </a>
-        <a href="tel:+51933448692" class="footer-contact-item">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.5 1.5C4.5 1.5 3 1.5 2.5 3C2 4.5 2.5 6.5 4 8.5C5.5 10.5 7 12 8.5 12.5C10 13 11.5 12.5 12 12L13 11C13.5 10.5 13 9.5 12.5 9L11 7.5C10.5 7 9.5 7 9 7.5L8.5 8C8.5 8 7.5 7.5 6.5 6.5C5.5 5.5 5 4.5 5 4.5L5.5 4C6 3.5 6 2.5 5.5 2L4.5 1.5Z" stroke="#BB442A" stroke-width="1.2" stroke-linejoin="round"/>
-          </svg>
-          +51 933 448 692
-        </a>
-        <a href="https://www.linkedin.com/company/tramalatam/" target="_blank" rel="noopener" class="footer-contact-item">
-          <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="1" y="1" width="13" height="13" rx="2" stroke="#BB442A" stroke-width="1.2"/>
-            <rect x="3.5" y="6" width="1.5" height="5.5" fill="#BB442A"/>
-            <circle cx="4.25" cy="4.25" r="0.85" fill="#BB442A"/>
-            <path d="M7 6V11.5M7 7.5C7 6.5 8 6 9 6C10 6 11 6.5 11 8V11.5" stroke="#BB442A" stroke-width="1.2" stroke-linecap="round"/>
-          </svg>
-          tramalatam
-        </a>
-      </div>
-
-    </div>
-  </div>
-
-  <div class="footer-bottom">
-    <span>© 2026 TRAMA Consultoría · Lima, Perú · Todos los derechos reservados</span>
-  </div>
+<footer>
+<div style="max-width: 1240px; margin: 0 auto; padding: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #8E94A3">
+<span>TRAMA Atiende, un producto de TRAMA Consultora. Lima, Perú.</span>
+<span>Política de privacidad · Términos</span>
+</div>
 </footer>
 
-<!-- ── WHATSAPP FLOAT ── -->
-<a href="https://wa.me/51933448692?text=Hola%20TRAMA%2C%20quiero%20una%20cotización" target="_blank" id="wa-float" style="
-  position: fixed; bottom: 32px; right: 32px; z-index: 400;
-  width: 56px; height: 56px; border-radius: 50%;
-  background: #25D366; display: flex; align-items: center; justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,.4);
-  transition: transform .2s, box-shadow .2s;
-  text-decoration: none;
-" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,.55)'"
-   onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,.4)'">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
-    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-  </svg>
-</a>
-
-<!-- ── MODALS ── -->
-<div class="modal-overlay" id="modal-overlay" onclick="closeModalOutside(event)">
-  <div class="modal" id="modal-content">
-    <div class="modal-header">
-      <div>
-        <div id="modal-tag" class="caso-tag" style="margin-bottom:12px;"></div>
-        <div id="modal-name" class="caso-nombre" style="font-size:28px;margin-bottom:0;"></div>
-      </div>
-      <div class="modal-close" onclick="closeModal()">✕</div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-kpis" id="modal-kpis"></div>
-      <div class="modal-section-title">Sobre el proyecto</div>
-      <p class="modal-desc" id="modal-desc"></p>
-      <div class="modal-section-title" id="modal-tech-label" style="display:none;">Stack tecnológico</div>
-      <div class="modal-pills" id="modal-tech"></div>
-      <div class="modal-section-title">Highlights</div>
-      <div class="modal-highlights" id="modal-highlights"></div>
-    </div>
-  </div>
 </div>
-
-<!-- ── MODAL MARKETING CON IA ── -->
-<div id="mkt-overlay" onclick="closeMktModal()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;backdrop-filter:blur(4px);"></div>
-<div id="mkt-modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);z-index:1001;width:min(680px,95vw);max-height:88vh;overflow-y:auto;background:#161820;border:0.5px solid rgba(248,247,244,0.1);border-radius:16px;padding:40px;">
-
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:28px;">
-    <div>
-      <span style="font-size:11px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;background:rgba(29,158,117,0.15);color:#1D9E75;padding:3px 10px;border-radius:6px;">Marketing con IA</span>
-      <h2 style="font-family:'Sora',sans-serif;font-size:22px;font-weight:800;color:#F8F7F4;margin:12px 0 6px;">¿Qué incluye el servicio?</h2>
-      <p style="font-size:13px;color:rgba(248,247,244,0.45);">Tres capas de trabajo integradas. Un solo equipo.</p>
-    </div>
-    <button onclick="closeMktModal()" style="background:none;border:none;font-size:24px;cursor:pointer;color:rgba(248,247,244,0.4);line-height:1;padding:4px;">×</button>
-  </div>
-
-  <!-- Capa 1 -->
-  <div style="border:0.5px solid rgba(59,130,246,0.3);border-radius:12px;padding:24px;margin-bottom:14px;background:rgba(59,130,246,0.05);">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-      <div style="width:28px;height:28px;border-radius:6px;background:#3b82f6;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0;">01</div>
-      <div>
-        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#3b82f6;">Capa 1</div>
-        <div style="font-size:14px;font-weight:700;color:#F8F7F4;font-family:'Sora',sans-serif;">Diagnóstico e investigación con IA</div>
-      </div>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
-      <span style="font-size:11px;background:rgba(59,130,246,0.15);color:#93c5fd;padding:3px 10px;border-radius:20px;">Perplexity Deep Research</span>
-      <span style="font-size:11px;background:rgba(59,130,246,0.15);color:#93c5fd;padding:3px 10px;border-radius:20px;">Claude</span>
-      <span style="font-size:11px;background:rgba(59,130,246,0.15);color:#93c5fd;padding:3px 10px;border-radius:20px;">ChatGPT</span>
-      <span style="font-size:11px;background:rgba(59,130,246,0.15);color:#93c5fd;padding:3px 10px;border-radius:20px;">Google AI Overview</span>
-    </div>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#3b82f6;">✓</span>Investigación profunda de mercado</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#3b82f6;">✓</span>Buyer persona con datos reales</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#3b82f6;">✓</span>Análisis de competencia</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#3b82f6;">✓</span>Auditoría de marca en buscadores e IA</li>
-    </ul>
-  </div>
-
-  <!-- Capa 2 -->
-  <div style="border:0.5px solid rgba(29,158,117,0.3);border-radius:12px;padding:24px;margin-bottom:14px;background:rgba(29,158,117,0.05);">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-      <div style="width:28px;height:28px;border-radius:6px;background:#1D9E75;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0;">02</div>
-      <div>
-        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#1D9E75;">Capa 2</div>
-        <div style="font-size:14px;font-weight:700;color:#F8F7F4;font-family:'Sora',sans-serif;">Estrategia de contenido y ejecución</div>
-      </div>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
-      <span style="font-size:11px;background:rgba(29,158,117,0.15);color:#6ee7b7;padding:3px 10px;border-radius:20px;">Lovable / Bolt</span>
-      <span style="font-size:11px;background:rgba(29,158,117,0.15);color:#6ee7b7;padding:3px 10px;border-radius:20px;">Claude + ChatGPT</span>
-      <span style="font-size:11px;background:rgba(29,158,117,0.15);color:#6ee7b7;padding:3px 10px;border-radius:20px;">Meta Ads / TikTok / Google</span>
-    </div>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Plan de contenido mensual</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>4 gráficas + 4 reels (incluidos 3 meses)</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Copywriting con voz propia entrenada en IA</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Web/landing page desde cero (mes 1)</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Gestión de pauta Meta/TikTok/Google</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#1D9E75;">✓</span>Activación canales (Rappi, etc.)</li>
-    </ul>
-  </div>
-
-  <!-- Capa 3 -->
-  <div style="border:0.5px solid rgba(187,68,42,0.3);border-radius:12px;padding:24px;margin-bottom:24px;background:rgba(187,68,42,0.05);">
-    <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px;">
-      <div style="width:28px;height:28px;border-radius:6px;background:#BB442A;display:flex;align-items:center;justify-content:center;color:#fff;font-size:11px;font-weight:700;flex-shrink:0;">03</div>
-      <div>
-        <div style="font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#BB442A;">Capa 3</div>
-        <div style="font-size:14px;font-weight:700;color:#F8F7F4;font-family:'Sora',sans-serif;">Automatización y reportería con IA</div>
-      </div>
-    </div>
-    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px;">
-      <span style="font-size:11px;background:rgba(187,68,42,0.15);color:#fca5a5;padding:3px 10px;border-radius:20px;">n8n / Make</span>
-      <span style="font-size:11px;background:rgba(187,68,42,0.15);color:#fca5a5;padding:3px 10px;border-radius:20px;">Claude Artifacts</span>
-      <span style="font-size:11px;background:rgba(187,68,42,0.15);color:#fca5a5;padding:3px 10px;border-radius:20px;">WhatsApp + Email</span>
-      <span style="font-size:11px;background:rgba(187,68,42,0.15);color:#fca5a5;padding:3px 10px;border-radius:20px;">Restaurant.pe</span>
-    </div>
-    <ul style="list-style:none;padding:0;margin:0;display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#BB442A;">✓</span>Reporte de resultados semanal</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#BB442A;">✓</span>Dashboard de KPIs con IA</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#BB442A;">✓</span>Flujos de seguimiento automatizados</li>
-      <li style="font-size:13px;color:rgba(248,247,244,0.7);display:flex;align-items:center;gap:6px;"><span style="color:#BB442A;">✓</span>Ajustes en tiempo real según datos</li>
-    </ul>
-  </div>
-
-  <!-- Footer modal -->
-  <div style="background:rgba(248,247,244,0.03);border-radius:10px;padding:16px 20px;border:0.5px solid rgba(248,247,244,0.07);margin-bottom:20px;">
-    <div style="font-size:12px;font-weight:600;color:rgba(248,247,244,0.7);margin-bottom:4px;">Servicio mensual · Contrato mínimo 3 meses</div>
-    <div style="font-size:12px;color:rgba(248,247,244,0.4);">Incluido en mes 1: Investigación de mercado + buyer persona + página web desde cero + activación de canales.</div>
-  </div>
-
-  <a href="https://wa.me/51933448692?text=Hola%20TRAMA%2C%20quiero%20cotizar%20el%20servicio%20de%20Marketing%20con%20IA" target="_blank" style="display:block;width:100%;padding:14px;border-radius:8px;background:#BB442A;color:#fff;border:none;font-size:14px;font-weight:700;font-family:'Sora',sans-serif;cursor:pointer;text-align:center;text-decoration:none;">Cotizar mi programa →</a>
-</div>
-
-<script src="assets/js/main.js"></script>
 </body>
 </html>
