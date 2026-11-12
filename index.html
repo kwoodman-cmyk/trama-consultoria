@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TRAMA Atiende · No solo responde. Te dice qué hacer.</title>
-<meta name="description" content="TRAMA Atiende responde a tus clientes por WhatsApp al instante y ordena cada caso. NEURA te dice qué cobrar, a quién llamar y por qué perdiste ventas.">
+<meta name="description" content="TRAMA Atiende responde a tus clientes por WhatsApp, Instagram, Messenger, TikTok y tu web al instante y ordena cada caso. NEURA te dice qué cobrar, a quién llamar y por qué perdiste ventas.">
 <meta property="og:title" content="TRAMA Atiende · No solo responde. Te dice qué hacer.">
-<meta property="og:description" content="Atención por WhatsApp para negocios de servicios que cotizan, con NEURA incluido.">
+<meta property="og:description" content="Todos tus canales en una sola bandeja, con NEURA incluido.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://tramaconsultora.com/">
 <meta property="og:image" content="https://tramaconsultora.com/assets/panel-ica-gruas.jpg">
@@ -25,6 +25,16 @@ a{color:#4D7CFF}a:hover{color:#9DBBFF}
 @supports (animation-timeline: view()){.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
 @media (prefers-reduced-motion: reduce){*{animation:none!important}}
 img,video{max-width:100%}
+@keyframes chan{0%{opacity:0;transform:translateY(45%)}3%{opacity:1;transform:none}17%{opacity:1;transform:none}20%{opacity:0;transform:translateY(-45%)}100%{opacity:0}}
+.ch{display:inline-grid;vertical-align:bottom}
+.ch>span{grid-area:1/1;opacity:0;white-space:nowrap;animation:chan 12.5s cubic-bezier(.2,.7,.2,1) infinite}
+.ch>span:nth-child(2){animation-delay:2.5s}.ch>span:nth-child(3){animation-delay:5s}.ch>span:nth-child(4){animation-delay:7.5s}.ch>span:nth-child(5){animation-delay:10s}
+.c-wa{color:#25D366}.c-web{color:#4D7CFF}
+.c-ig{background:linear-gradient(90deg,#F58529,#DD2A7B 55%,#8134AF);-webkit-background-clip:text;background-clip:text;color:transparent}
+.c-ms{background:linear-gradient(90deg,#0099FF,#A033FF 70%,#FF5280);-webkit-background-clip:text;background-clip:text;color:transparent}
+.c-tt{color:#FFFFFF;text-shadow:-2px 0 #25F4EE,2px 0 #FE2C55}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){.ch>span:first-child{opacity:1}}
 @media (max-width:600px){.wa-t{display:none}}
 </style>
 </head>
@@ -35,6 +45,7 @@ img,video{max-width:100%}
 <div style="max-width: 1240px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
 <span style="font-weight: 500; font-size: 21px; letter-spacing: -0.035em">TRAMA <span style="color: #4D7CFF">Atiende</span></span>
 <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px; font-size: 15px">
+<a href="#canales" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">Canales</a>
 <a href="#producto" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">Producto</a>
 <a href="#neura" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">NEURA</a>
 <a href="#precio" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">Precio</a>
@@ -43,10 +54,11 @@ img,video{max-width:100%}
 </div>
 </header>
 
-<section style="max-width: 1240px; margin: 0 auto; padding: 56px 32px 96px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
+<section style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
 <div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
-<div style="font-size: 14px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #B4B8C4">Para negocios que cotizan por WhatsApp</div>
+<div style="font-size: 14px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #B4B8C4">Para negocios que cotizan y atienden por mensajes</div>
 <h1 style="margin: 0; font-weight: 500; font-size: clamp(42px, 5.4vw, 80px); line-height: 1.06; letter-spacing: -0.035em"><span style="display: block; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) both">No solo responde.</span><span style="display: block; color: #4D7CFF; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.18s both">Te dice qué hacer.</span></h1>
+<p style="margin: 0; font-size: clamp(24px, 2.4vw, 34px); font-weight: 500; line-height: 1.2; letter-spacing: -0.03em; color: #F4F4F2; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.28s both">Atiende por <span class="sr">WhatsApp, Instagram, Messenger, TikTok y tu web</span><span class="ch" aria-hidden="true"><span class="c-wa">WhatsApp</span><span class="c-ig">Instagram</span><span class="c-ms">Messenger</span><span class="c-tt">TikTok</span><span class="c-web">tu web</span></span></p>
 <p style="margin: 0; font-size: 20px; line-height: 1.5; color: #B4B8C4; max-width: 500px; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.36s both">Responde a tus clientes al instante y ordena cada caso. NEURA te dice cada mañana qué cobrar, a quién llamar y por qué perdiste ventas.</p>
 <div style="display: flex; flex-wrap: wrap; gap: 12px; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.5s both">
 <a href="#demo" style="background: #4D7CFF; color: #08090D; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px">Agenda tu demo</a>
@@ -60,7 +72,7 @@ img,video{max-width:100%}
 </section>
 
 
-<section style="padding: 8px 0 104px; display: flex; flex-direction: column; gap: 36px">
+<section style="padding: 8px 0 72px; display: flex; flex-direction: column; gap: 36px">
 <div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
 <div style="font-size: 13px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #4D7CFF">Confían en TRAMA</div>
 <h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em">Organizaciones con las que trabajamos</h2>
@@ -90,7 +102,7 @@ img,video{max-width:100%}
 </div>
 </div>
 </section>
-<section style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 112px; display: flex; flex-direction: column; gap: 56px">
+<section style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 72px; display: flex; flex-direction: column; gap: 56px">
 <h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; max-width: 980px; letter-spacing: -0.035em">El cliente escribe. Nadie responde. <br><span style="color: #8E94A3">Se va con otro.</span></h2>
 <div style="display: flex; flex-wrap: wrap; gap: 28px">
 
@@ -124,10 +136,39 @@ img,video{max-width:100%}
 </div>
 </section>
 
-<section id="producto" style="background: #0E1016">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<section id="canales" style="max-width: 1240px; margin: 0 auto; padding: 24px 32px 72px; display: flex; flex-direction: column; gap: 48px">
 <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; max-width: 720px; letter-spacing: -0.035em">Pantallas reales. <br><span style="color: rgb(77, 124, 255)">No maquetas.</span></h2>
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em; max-width: 720px">Todos tus canales. <br><span style="color: #4D7CFF">Una sola bandeja.</span></h2>
+<p style="margin: 0; max-width: 400px; color: #B4B8C4">Cada cliente queda en una sola ficha, aunque te escriba por dos canales. NEURA lee todo y te dice qué hacer.</p>
+</div>
+<div style="display: flex; flex-wrap: wrap; gap: 28px">
+<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<span class="c-wa" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">WhatsApp</span>
+<p style="margin: 0; color: #B4B8C4; font-size: 16px">Responde y cotiza al instante, a cualquier hora.</p>
+</div>
+<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<span class="c-ig" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">Instagram</span>
+<p style="margin: 0; color: #B4B8C4; font-size: 16px">Los mensajes que llegan por tus publicaciones e historias.</p>
+</div>
+<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<span class="c-ms" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">Messenger</span>
+<p style="margin: 0; color: #B4B8C4; font-size: 16px">Las consultas de tu página de Facebook.</p>
+</div>
+<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<span class="c-tt" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">TikTok</span>
+<p style="margin: 0; color: #B4B8C4; font-size: 16px">Quien te escribe después de ver un video.</p>
+</div>
+<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
+<span class="c-web" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">Tu web</span>
+<p style="margin: 0; color: #B4B8C4; font-size: 16px">Formularios y pedidos desde tu página.</p>
+</div>
+</div>
+</section>
+
+<section id="producto" style="background: #0E1016">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 56px">
+<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
+<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; max-width: 720px; letter-spacing: -0.035em">Últimos <span style="color: #4D7CFF">proyectos</span></h2>
 <p style="margin: 0; max-width: 380px; color: #B4B8C4">El asistente responde y reúne los datos. Tu equipo cotiza, atiende y cobra desde un panel. La IA no pone precios ni cierra por su cuenta.</p>
 </div>
 
@@ -170,7 +211,7 @@ img,video{max-width:100%}
 </div>
 </section>
 
-<section id="neura" style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<section id="neura" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 56px">
 <div style="display: flex; flex-direction: column; gap: 20px; max-width: 860px">
 <div style="font-size: 14px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #4D7CFF">NEURA, siempre incluido</div>
 <h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">Otros te dan un vendedor. <span style="color: #4D7CFF">Aquí también tienes un gerente.</span></h2>
@@ -194,7 +235,7 @@ img,video{max-width:100%}
 </section>
 
 <section style="background: #0E1016">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 56px">
 <h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">De la demo a operar</h2>
 <div style="display: flex; flex-wrap: wrap; gap: 40px">
 <div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
@@ -221,12 +262,12 @@ img,video{max-width:100%}
 </div>
 </section>
 
-<section style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; gap: 56px">
+<section style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; gap: 56px">
 <div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 24px">
 <h3 style="margin: 0; font-weight: 500; font-size: 32px; line-height: 1.06; letter-spacing: -0.035em">Es para ti si</h3>
 <ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; font-size: 18px">
 <li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Vendes un servicio y cotizas caso por caso.</li>
-<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Tus clientes escriben por WhatsApp y gana quien responde primero.</li>
+<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Tus clientes escriben por WhatsApp, Instagram o tu web, y gana quien responde primero.</li>
 <li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Quieres saber cuánto cobraste y por qué pierdes ventas.</li>
 <li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Hoy todo depende del celular de una persona.</li>
 </ul>
@@ -242,7 +283,7 @@ img,video{max-width:100%}
 </section>
 
 <section id="precio" style="background: #0E1016">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-direction: column; gap: 56px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 56px">
 <h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">Dos cifras. <span style="color: #4D7CFF">Sin letra chica.</span></h2>
 <div style="display: flex; flex-wrap: wrap; gap: 56px">
 <div style="flex: 1 1 380px; border-top: 1px solid #2A2E3A; padding-top: 28px; display: flex; flex-direction: column; gap: 12px">
@@ -260,7 +301,7 @@ img,video{max-width:100%}
 </div>
 </section>
 
-<section style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; gap: 56px">
+<section style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; gap: 56px">
 <h2 class="rv" style="flex: 1 1 300px; margin: 0; font-weight: 500; font-size: 42px; line-height: 1.06; letter-spacing: -0.035em">Lo que suelen preguntar</h2>
 <div style="flex: 2 1 540px; min-width: 0; display: flex; flex-direction: column">
 <div style="border-top: 1px solid #2A2E3A; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
@@ -279,7 +320,7 @@ img,video{max-width:100%}
 </section>
 
 <section id="demo" style="background: #2457F5; color: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 112px 32px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 40px">
+<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 40px">
 <h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(38px, 4.8vw, 68px); line-height: 1.06; max-width: 760px; letter-spacing: -0.035em">Mira tu negocio atendido antes de decidir.</h2>
 <div style="display: flex; flex-direction: column; gap: 16px; max-width: 360px">
 <p style="margin: 0; font-size: 18px">Te mostramos el recorrido completo con tus servicios y tus tarifas. Sin compromiso.</p>
