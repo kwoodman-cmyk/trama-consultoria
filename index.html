@@ -151,14 +151,14 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
 
 /* Liderazgo */
 .lead-card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:24px;display:grid;gap:24px}
-.mono{display:flex;align-items:center;justify-content:center;width:120px;height:120px;border-radius:6px;background:var(--navy);color:#fff;font:600 40px/1 var(--serif);letter-spacing:.02em}
+.mono{width:140px;height:140px;border-radius:6px;object-fit:cover;background:var(--navy)}
 .lead-card h3{font-size:clamp(30px,6.4vw,40px);line-height:1.2}
 .role{font-weight:600;color:var(--or-d);margin-top:4px}
 .bio{color:var(--ink2);margin-top:16px}
 .memb{display:grid;gap:14px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
 .memb li{display:flex;align-items:center;gap:14px}
-.memb .lg{display:flex;align-items:center;justify-content:center;width:84px;height:48px;flex:none;border:1px solid var(--line);border-radius:4px;background:var(--white);padding:6px;font:700 15px/1 var(--sans);letter-spacing:.04em;color:var(--ink)}
-.memb .lg img{max-height:34px;width:auto}
+.memb .lg{display:flex;align-items:center;justify-content:center;width:104px;height:64px;flex:none;border:1px solid var(--line);border-radius:4px;background:var(--white);padding:8px}
+.memb .lg img{max-height:46px;max-width:100%;width:auto;height:auto}
 .memb small{display:block;font-size:14px;line-height:22px;color:var(--mut)}
 .memb b{font-weight:600}
 
@@ -222,7 +222,7 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
   .vals ul{grid-template-columns:repeat(4,1fr);gap:24px;margin-top:28px}
   .vals li{padding:28px}
   .lead-card{grid-template-columns:220px minmax(0,1fr);gap:56px;padding:48px;align-items:center}
-  .mono{width:220px;height:260px;font-size:72px}
+  .mono{width:220px;height:220px}
   .memb{grid-template-columns:1fr 1fr;gap:16px}
   .cta{padding:112px 0}
   .cta-grid{grid-template-columns:minmax(0,620px) minmax(0,1fr);gap:96px;align-items:center}
@@ -386,14 +386,14 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
   <div class="wrap">
     <div class="head one"><div><span class="kick">Liderazgo</span><h2 id="lid-h">Un equipo profesional detrás de cada proyecto.</h2></div></div>
     <div class="lead-card">
-      <div class="mono" aria-hidden="true">KW</div>
+      <img class="mono" src="/assets/kevin-woodman.jpg" width="400" height="400" loading="lazy" alt="Kevin Woodman, Founder y CEO de TRAMA Consultora">
       <div>
         <h3>Kevin Woodman</h3>
         <p class="role">Founder y CEO · TRAMA Consultora</p>
         <p class="bio">Lidera los proyectos de TRAMA. MBA de CENTRUM PUCP y certificación en inteligencia artificial y automatización empresarial (UPC). Más de siete años de experiencia en innovación, gestión comercial y dirección de proyectos.</p>
         <ul class="memb">
-          <li><span class="lg">BNI</span><div><small>Miembro de</small><b>BNI Crecer Perú</b></div></li>
-          <li><span class="lg"><img loading="lazy" src="/assets/logo-sni.png" width="348" height="160" alt=""></span><div><small>Socio de la</small><b>Sociedad Nacional de Industrias</b></div></li>
+          <li><span class="lg"><img loading="lazy" src="/assets/logo-bni.png" width="301" height="195" alt=""></span><div><small>Miembro de</small><b>BNI Crecer Perú</b></div></li>
+          <li><span class="lg"><img loading="lazy" src="/assets/logo-sni-color.png" width="600" height="277" alt=""></span><div><small>Socio de la</small><b>Sociedad Nacional de Industrias</b></div></li>
         </ul>
       </div>
     </div>

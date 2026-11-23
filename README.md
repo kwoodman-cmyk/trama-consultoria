@@ -13,7 +13,6 @@ Proyecto de Vercel `trama-consultora`. Con el repositorio conectado, cada fusió
 ## Pendiente
 
 - Logotipo oficial de TRAMA (hoy va la marca en texto).
-- Foto de Kevin Woodman para la sección Liderazgo (hoy va un monograma) y logo de BNI.
 - Confirmar los textos de misión, visión, objetivos y valores.
 - Enlaces de Política de privacidad y Términos.
 
