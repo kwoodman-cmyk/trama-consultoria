@@ -3,347 +3,426 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>TRAMA Atiende · No solo responde. Te dice qué hacer.</title>
-<meta name="description" content="TRAMA Atiende responde a tus clientes por WhatsApp, Instagram, Messenger, TikTok y tu web al instante y ordena cada caso. NEURA te dice qué cobrar, a quién llamar y por qué perdiste ventas.">
-<meta property="og:title" content="TRAMA Atiende · No solo responde. Te dice qué hacer.">
-<meta property="og:description" content="Todos tus canales en una sola bandeja, con NEURA incluido.">
+<title>TRAMA Consultora · Automatización de procesos y desarrollo de software</title>
+<meta name="description" content="TRAMA es una agencia de transformación digital en Lima, Perú. Automatizamos procesos y desarrollamos sistemas a medida para empresas, industria e instituciones. Productos propios: NEURA, NEURA Mesa y Conexión Rueda.">
+<meta property="og:title" content="TRAMA Consultora · Automatización de procesos y desarrollo de software">
+<meta property="og:description" content="Agencia de transformación digital: automatización de procesos y desarrollo de sistemas a medida.">
 <meta property="og:type" content="website">
+<meta property="og:locale" content="es_PE">
 <meta property="og:url" content="https://tramaconsultora.com/">
-<meta property="og:image" content="https://tramaconsultora.com/assets/panel-ica-gruas.jpg">
-<meta name="theme-color" content="#08090D">
+<meta property="og:image" content="https://tramaconsultora.com/assets/panel-villa-maria.jpg">
+<meta name="theme-color" content="#0F2233">
+<link rel="canonical" href="https://tramaconsultora.com/">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap">
+<link rel="preload" href="/assets/fonts/source-serif-4-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/fonts/inter-latin.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-html{scroll-behavior:smooth}
-body{margin:0;background:#08090D}
-a{color:#4D7CFF}a:hover{color:#9DBBFF}
-@keyframes rise{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
-@keyframes slide{to{transform:translateX(-50%)}}
-@keyframes float{from{transform:translateY(0)}to{transform:translateY(-8px)}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-@supports (animation-timeline: view()){.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 40%}}
-@media (prefers-reduced-motion: reduce){*{animation:none!important}}
-img,video{max-width:100%}
-@keyframes chan{0%{opacity:0;transform:translateY(45%)}3%{opacity:1;transform:none}17%{opacity:1;transform:none}20%{opacity:0;transform:translateY(-45%)}100%{opacity:0}}
-.ch{display:inline-grid;vertical-align:bottom}
-.ch>span{grid-area:1/1;opacity:0;white-space:nowrap;animation:chan 12.5s cubic-bezier(.2,.7,.2,1) infinite}
-.ch>span:nth-child(2){animation-delay:2.5s}.ch>span:nth-child(3){animation-delay:5s}.ch>span:nth-child(4){animation-delay:7.5s}.ch>span:nth-child(5){animation-delay:10s}
-.c-wa{color:#25D366}.c-web{color:#4D7CFF}
-.c-ig{background:linear-gradient(90deg,#F58529,#DD2A7B 55%,#8134AF);-webkit-background-clip:text;background-clip:text;color:transparent}
-.c-ms{background:linear-gradient(90deg,#0099FF,#A033FF 70%,#FF5280);-webkit-background-clip:text;background-clip:text;color:transparent}
-.c-tt{color:#FFFFFF;text-shadow:-2px 0 #25F4EE,2px 0 #FE2C55}
-.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
-@media (prefers-reduced-motion: reduce){.ch>span:first-child{opacity:1}}
-@media (max-width:600px){.wa-t{display:none}}
+@font-face{font-family:"Inter";src:url("/assets/fonts/inter-latin.woff2") format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Source Serif 4";src:url("/assets/fonts/source-serif-4-latin.woff2") format("woff2");font-weight:200 900;font-display:swap}
+:root{--paper:#F6F4EF;--white:#FFFFFF;--navy:#0F2233;--ink:#14212E;--ink2:#46535F;--mut:#6A7682;--line:#DDD9D0;--or:#C8602B;--or-d:#B4501F;--or-t:#F7ECE4;--navy-mut:#A9B6C2;--navy-line:rgba(255,255,255,.18);
+--sans:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;--serif:"Source Serif 4",Georgia,"Times New Roman",serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.625 var(--sans)}
+h1,h2,h3,h4,p,ul,ol,figure,dl,dd{margin:0;padding:0}ul,ol{list-style:none}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--or);outline-offset:3px;border-radius:4px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--white);padding:10px 14px;border-radius:4px;z-index:50}.skip:focus{top:10px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+section{scroll-margin-top:76px}
+
+/* Barra de contacto y cabecera */
+.util{display:none;background:var(--navy);color:var(--navy-mut);font-size:14px;line-height:22px}
+.util .wrap{display:flex;justify-content:space-between;gap:24px;padding-top:10px;padding-bottom:10px}
+.util a{text-decoration:none}.util a:hover{color:#fff}
+.top{position:sticky;top:0;z-index:30;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:68px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none;min-height:44px}
+.brand b{font-size:22px;font-weight:800;letter-spacing:.07em;color:var(--ink)}
+.brand b i{font-style:normal;color:var(--or)}
+.brand span{font-size:14px;color:var(--mut)}
+.top nav{display:none;gap:36px}
+.top nav a{font-size:14px;font-weight:600;color:var(--ink2);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.top nav a:hover{color:var(--ink)}
+@media(max-width:420px){.top .brand span{display:none}}
+
+/* Botones */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 24px;border-radius:4px;font:600 16px/1 var(--sans);text-decoration:none;border:1px solid transparent;transition:background .15s,border-color .15s,color .15s}
+.btn.primary{background:var(--navy);color:#fff}.btn.primary:hover{background:#1B3349}
+.btn.ghost{color:var(--ink);border-color:var(--ink)}.btn.ghost:hover{background:var(--ink);color:#fff}
+.btn.light{background:#fff;color:var(--ink)}.btn.light:hover{background:var(--or-t)}
+.btn.line{color:#fff;border-color:var(--navy-line)}.btn.line:hover{border-color:#fff}
+.btn.sm{min-height:44px;padding:0 18px;font-size:15px;white-space:nowrap}
+
+/* Tipografía */
+.kick{display:block;font-size:12px;line-height:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--or-d);margin-bottom:14px}
+.kick.mut{color:var(--mut)}
+.kick.flat{margin:0}
+h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--ink)}
+h1{font-size:clamp(34px,8.6vw,60px);line-height:1.1;letter-spacing:-.015em}
+h2{font-size:clamp(30px,6.4vw,40px);line-height:1.2;letter-spacing:-.01em}
+h3{font-size:26px;line-height:32px;letter-spacing:-.005em}
+h4{font-size:19px;line-height:26px;font-weight:600;letter-spacing:-.01em}
+.lead{font-size:16px;line-height:26px;color:var(--ink2)}
+.sec{padding:56px 0;border-top:1px solid var(--line)}
+.sec.white{background:var(--white)}
+.head{display:grid;gap:16px;margin-bottom:32px}
+
+/* Portada */
+.hero{padding:40px 0 48px}
+.hero-grid{display:grid;gap:40px}
+.hero h1{margin-bottom:20px}
+.acts{display:flex;flex-direction:column;gap:12px;margin-top:28px}
+.shot{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 24px 48px -12px rgba(15,34,51,.16)}
+.shot .bar{display:flex;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.shot .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.shot img{width:100%;height:auto}
+figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
+.facts{display:grid;margin-top:48px}
+.facts li{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
+.facts b,.steps b{font-size:44px;line-height:48px;font-weight:700;letter-spacing:-.02em;color:var(--or)}
+.facts b{min-width:36px}
+.facts span{color:var(--ink2)}
+
+/* Organizaciones */
+.orgs{padding:40px 0 48px;overflow:hidden}
+.marquee{display:flex;margin-top:24px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.marquee ul{display:flex;flex:none;gap:16px;padding-right:16px;animation:slide 40s linear infinite}
+.marquee:hover ul{animation-play-state:paused}
+.marquee li{display:flex;align-items:center;justify-content:center;height:96px;padding:18px 28px;border-radius:8px;background:var(--white);border:1px solid var(--line);flex:none}
+.marquee li.dark{background:#14161B;border-color:#14161B}
+.marquee li.brown{background:#5A3A2B;border-color:#5A3A2B}
+.marquee img{height:56px;width:auto;max-width:none}
+@keyframes slide{to{transform:translateX(-100%)}}
+
+/* Servicios */
+.serv{display:grid;gap:0}
+.serv article{padding:28px 0;border-top:1px solid var(--ink)}
+.serv .n{display:block;font-size:14px;line-height:22px;font-weight:600;color:var(--or-d);margin-bottom:14px}
+.serv h3{margin-bottom:14px}
+.serv p{color:var(--ink2)}
+.ticks{display:grid;gap:8px;margin-top:20px}
+.ticks li{position:relative;padding-left:18px;color:var(--ink2)}
+.ticks li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;background:var(--or)}
+.for{display:grid;gap:12px;padding-top:24px;border-top:1px solid var(--line)}
+.for ul{display:flex;flex-wrap:wrap;gap:8px 28px}
+.for li{font-weight:600}
+
+/* Productos */
+.grid{display:grid;gap:16px}
+.card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:24px;display:flex;flex-direction:column;gap:14px}
+.card p{color:var(--ink2)}
+.more{margin-top:auto;padding-top:10px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;min-height:44px}
+.more:hover{color:var(--or-d)}
+.more svg{transition:transform .15s}.more:hover svg{transform:translateX(3px)}
+
+/* Proyectos */
+.caps figure{display:grid;gap:12px}
+.caps img{width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:left top;border:1px solid var(--line);border-radius:6px;background:var(--paper)}
+.caps figcaption{margin:0;font-weight:600;color:var(--ink)}
+.work{margin-top:40px}
+.work .th{display:none}
+.work li{display:grid;gap:4px;padding:18px 0;border-top:1px solid var(--line)}
+.work li p{color:var(--ink2)}
+.work li small{font-size:14px;line-height:22px;color:var(--mut)}
+.note{font-size:14px;line-height:22px;color:var(--mut);margin-top:18px}
+
+/* Método */
+.steps{display:grid}
+.steps li{display:grid;grid-template-columns:36px 1fr;gap:6px 20px;padding:20px 0;border-top:2px solid var(--line)}
+.steps b{grid-row:1/3}
+.steps p{color:var(--ink2)}
+
+/* Nosotros */
+.mvo{display:grid}
+.mvo article{padding:24px 0;border-top:1px solid var(--ink)}
+.mvo h3{margin-bottom:12px}
+.mvo p,.mvo li{color:var(--ink2)}
+.mvo ul{display:grid;gap:6px}
+.vals{margin-top:16px}
+.vals ul{display:grid;gap:12px;margin-top:16px}
+.vals li{background:var(--paper);border-radius:6px;padding:22px;display:grid;gap:10px;align-content:start}
+.vals li p{color:var(--ink2)}
+.vals li.main{background:var(--navy)}
+.vals li.main h4{color:#fff}.vals li.main p{color:var(--navy-mut)}
+
+/* Liderazgo */
+.lead-card{background:var(--white);border:1px solid var(--line);border-radius:6px;padding:24px;display:grid;gap:24px}
+.mono{width:140px;height:140px;border-radius:6px;object-fit:cover;background:var(--navy)}
+.lead-card h3{font-size:clamp(30px,6.4vw,40px);line-height:1.2}
+.role{font-weight:600;color:var(--or-d);margin-top:4px}
+.bio{color:var(--ink2);margin-top:16px}
+.memb{display:grid;gap:14px;margin-top:20px;padding-top:20px;border-top:1px solid var(--line)}
+.memb li{display:flex;align-items:center;gap:14px}
+.memb .lg{display:flex;align-items:center;justify-content:center;width:104px;height:64px;flex:none;border:1px solid var(--line);border-radius:4px;background:var(--white);padding:8px}
+.memb .lg img{max-height:46px;max-width:100%;width:auto;height:auto}
+.memb small{display:block;font-size:14px;line-height:22px;color:var(--mut)}
+.memb b{font-weight:600}
+
+/* Contacto */
+.cta{background:var(--navy);color:#fff;padding:56px 0}
+.cta .kick{color:var(--navy-mut)}
+.cta h2{color:#fff}
+.cta .lead{color:var(--navy-mut);margin-top:18px}
+.cta-grid{display:grid;gap:36px}
+.contact li{display:grid;gap:4px;padding:18px 0;border-top:1px solid var(--navy-line)}
+.contact small{font-size:12px;line-height:16px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--navy-mut)}
+.contact a,.contact span{font-size:19px;line-height:30px;color:#fff;text-decoration:none;overflow-wrap:anywhere}
+.contact a:hover{text-decoration:underline}
+
+/* Pie */
+.foot{background:var(--white);padding:32px 0;font-size:14px;line-height:22px;color:var(--mut)}
+.foot .wrap{display:grid;gap:20px}
+.foot nav{display:flex;flex-wrap:wrap;gap:4px 18px}
+.foot nav a{color:var(--ink2);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+.foot nav a:hover{color:var(--ink)}
+
+@keyframes rise{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}
+@supports (animation-timeline: view()){.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
+
+@media(min-width:640px){
+  .acts{flex-direction:row;flex-wrap:wrap}
+  .grid.g3{grid-template-columns:repeat(3,1fr)}
+  .caps{grid-template-columns:repeat(3,1fr)}
+  .vals ul{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .facts li{flex-direction:column;align-items:flex-start;gap:6px;padding:24px 32px 28px 0}
+}
+@media(min-width:960px){
+  .wrap{padding:0 40px}
+  .util{display:block}
+  .top nav{display:flex}
+  .lead{font-size:19px;line-height:30px}
+  .sec{padding:112px 0}
+  .head{grid-template-columns:minmax(0,620px) minmax(0,1fr);gap:80px;align-items:end;margin-bottom:64px}
+  .head.one{grid-template-columns:minmax(0,880px)}
+  .hero{padding:96px 0 88px}
+  .hero-grid{grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:72px;align-items:center}
+  .hero h1{margin-bottom:28px}
+  .facts{margin-top:88px}
+  .orgs{padding:64px 0 88px}
+  .serv{grid-template-columns:1fr 1fr;gap:0 48px;margin-bottom:56px}
+  .serv article{padding:28px 0 0}
+  .for{grid-template-columns:auto 1fr;align-items:center;gap:32px}
+  .grid{gap:24px}
+  .card{padding:36px}
+  .work{margin-top:64px}
+  .work .th{display:grid;padding:0 0 14px;border:0}
+  .work .th,.work li{grid-template-columns:380px minmax(0,1fr) 220px;gap:32px;align-items:center}
+  .work li{padding:22px 0}
+  .steps{grid-template-columns:repeat(5,1fr);gap:32px}
+  .steps li{display:block;padding:0;border:0}
+  .steps b{display:block;padding-bottom:22px;margin-bottom:22px;border-bottom:2px solid var(--line)}
+  .steps h4{margin-bottom:8px}
+  .mvo{grid-template-columns:repeat(3,1fr);gap:48px;margin-bottom:64px}
+  .mvo article{padding:24px 0 0}
+  .vals ul{grid-template-columns:repeat(4,1fr);gap:24px;margin-top:28px}
+  .vals li{padding:28px}
+  .lead-card{grid-template-columns:220px minmax(0,1fr);gap:56px;padding:48px;align-items:center}
+  .mono{width:220px;height:220px}
+  .memb{grid-template-columns:1fr 1fr;gap:16px}
+  .cta{padding:112px 0}
+  .cta-grid{grid-template-columns:minmax(0,620px) minmax(0,1fr);gap:96px;align-items:center}
+  .foot{padding:40px 0}
+  .foot .wrap{grid-template-columns:auto 1fr auto;align-items:center;gap:40px}
+  .foot nav{justify-content:center;gap:4px 32px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}.marquee{overflow-x:auto}}
 </style>
 </head>
 <body>
-<div style="background: #08090D; color: #F4F4F2; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 17px; line-height: 1.5">
+<a class="skip" href="#servicios">Saltar al contenido</a>
 
-<header>
-<div style="max-width: 1240px; margin: 0 auto; padding: 20px 32px; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px">
-<span style="font-weight: 500; font-size: 21px; letter-spacing: -0.035em">TRAMA <span style="color: #4D7CFF">Atiende</span></span>
-<nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 32px; font-size: 15px">
-<a href="#canales" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">Canales</a>
-<a href="#producto" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">Producto</a>
-<a href="#neura" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">NEURA</a>
-<a href="#precio" style="color: #B4B8C4; text-decoration: none; padding: 12px 0">Precio</a>
-<a href="#demo" style="background: #F4F4F2; color: #08090D; text-decoration: none; font-weight: 600; padding: 12px 22px; border-radius: 999px">Agenda tu demo</a>
-</nav>
-</div>
+<div class="util"><div class="wrap"><span>Agencia de transformación digital · Lima, Perú</span><span><a href="tel:+51933448692">+51 933 448 692</a> &nbsp;·&nbsp; <a href="mailto:kwoodman@tramaconsultora.com">kwoodman@tramaconsultora.com</a></span></div></div>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="TRAMA Consultora, inicio"><b>TRAMA<i>.</i></b><span>Consultora</span></a>
+    <nav aria-label="Principal"><a href="#servicios">Servicios</a><a href="#productos">Productos</a><a href="#proyectos">Proyectos</a><a href="#metodo">Cómo trabajamos</a><a href="#nosotros">Nosotros</a></nav>
+    <a class="btn primary sm" href="#contacto">Solicitar diagnóstico</a>
+  </div>
 </header>
 
-<section style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 72px; display: flex; flex-wrap: wrap; align-items: center; gap: 56px">
-<div style="flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 28px">
-<div style="font-size: 14px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #B4B8C4">Para negocios que cotizan y atienden por mensajes</div>
-<h1 style="margin: 0; font-weight: 500; font-size: clamp(42px, 5.4vw, 80px); line-height: 1.06; letter-spacing: -0.035em"><span style="display: block; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) both">No solo responde.</span><span style="display: block; color: #4D7CFF; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.18s both">Te dice qué hacer.</span></h1>
-<p style="margin: 0; font-size: clamp(24px, 2.4vw, 34px); font-weight: 500; line-height: 1.2; letter-spacing: -0.03em; color: #F4F4F2; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.28s both">Atiende por <span class="sr">WhatsApp, Instagram, Messenger, TikTok y tu web</span><span class="ch" aria-hidden="true"><span class="c-wa">WhatsApp</span><span class="c-ig">Instagram</span><span class="c-ms">Messenger</span><span class="c-tt">TikTok</span><span class="c-web">tu web</span></span></p>
-<p style="margin: 0; font-size: 20px; line-height: 1.5; color: #B4B8C4; max-width: 500px; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.36s both">Responde a tus clientes al instante y ordena cada caso. NEURA te dice cada mañana qué cobrar, a quién llamar y por qué perdiste ventas.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px; animation: rise 0.9s cubic-bezier(0.2,0.7,0.2,1) 0.5s both">
-<a href="#demo" style="background: #4D7CFF; color: #08090D; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px">Agenda tu demo</a>
-<a href="#producto" style="border: 1px solid #3A3F4D; color: #F4F4F2; text-decoration: none; font-weight: 500; padding: 16px 28px; border-radius: 999px">Ver el producto</a>
-</div>
-</div>
-
-<div style="flex: 1 1 440px; min-width: 0; position: relative; animation: rise 1s cubic-bezier(0.2,0.7,0.2,1) 0.3s both">
-<video src="assets/trama-atiende.mp4" autoplay loop muted playsinline preload="metadata" poster="assets/trama-atiende-poster.jpg" aria-label="Video de TRAMA Atiende: del mensaje de WhatsApp a la ficha, el seguimiento con NEURA y la inversión" style="display: block; width: 100%; max-width: 400px; margin: 0 auto; aspect-ratio: 9 / 16; object-fit: cover; border-radius: 24px; border: 1px solid #262A36; box-shadow: 0 30px 80px rgba(0,0,0,0.55)"></video>
-</div>
+<main>
+<section class="hero" aria-labelledby="hero-h">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="kick">Automatización de procesos · Desarrollo de software</span>
+      <h1 id="hero-h">Automatizamos procesos y desarrollamos sistemas para su organización.</h1>
+      <p class="lead">TRAMA es una empresa peruana de transformación digital. Unimos conocimiento de negocios y tecnología, y acompañamos a nuestros clientes desde el diagnóstico hasta después de la entrega.</p>
+      <div class="acts"><a class="btn primary" href="#contacto">Solicitar un diagnóstico</a><a class="btn ghost" href="#servicios">Ver servicios</a></div>
+    </div>
+    <figure>
+      <div class="shot"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="/assets/panel-villa-maria.jpg" width="1345" height="800" alt="Panel de gestión de admisiones desarrollado por TRAMA, con indicadores y embudo de seguimiento" fetchpriority="high"></div>
+      <figcaption>Sistema de admisiones desarrollado para el Colegio Villa María. Captura sin datos reales.</figcaption>
+    </figure>
+  </div>
+  <div class="wrap">
+    <ul class="facts">
+      <li><b>3</b><span>productos propios desarrollados</span></li>
+      <li><b>8</b><span>organizaciones con las que trabajamos</span></li>
+      <li><b>5</b><span>etapas de trabajo, del diagnóstico a la implementación</span></li>
+    </ul>
+  </div>
 </section>
 
-
-<section style="padding: 8px 0 72px; display: flex; flex-direction: column; gap: 36px">
-<div style="max-width: 1240px; margin: 0 auto; padding: 0 32px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 12px">
-<div style="font-size: 13px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #4D7CFF">Confían en TRAMA</div>
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(30px, 3.4vw, 46px); line-height: 1.06; letter-spacing: -0.035em">Organizaciones con las que trabajamos</h2>
-</div>
-<div style="overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent); mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent)">
-<div style="display: flex; gap: 20px; width: max-content; padding-right: 20px; animation: slide 38s linear infinite">
-<div style="display: flex; gap: 20px">
-<span style="flex: 0 0 auto; height: 76px; padding: 0 30px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-villa-maria.png" alt="Colegio Villa María" style="height: 64px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 30px; border: 1px solid #232733; border-radius: 14px; background: #0E1016; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-ica-gruas.png" alt="Ica Grúas" style="height: 44px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #000000; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-tizon-rojo.png" alt="Tizón Rojo" style="height: 60px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 22px; border-radius: 14px; background: #533628; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-zano.png" alt="Cafetería Zano" style="height: 52px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-sni.png" alt="SNI" style="height: 50px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 22px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-ahk.png" alt="AHK Perú" style="height: 40px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-mercaritec.png" alt="Mercaritec" style="height: 40px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 28px; border-radius: 14px; background: #0F2238; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-expotextil.png" alt="Expotextil Perú 2026" style="height: 46px; width: auto; display: block"></span>
-</div>
-<div aria-hidden="true" style="display: flex; gap: 20px">
-<span style="flex: 0 0 auto; height: 76px; padding: 0 30px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-villa-maria.png" alt="" style="height: 64px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 30px; border: 1px solid #232733; border-radius: 14px; background: #0E1016; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-ica-gruas.png" alt="" style="height: 44px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #000000; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-tizon-rojo.png" alt="" style="height: 60px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 22px; border-radius: 14px; background: #533628; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-zano.png" alt="" style="height: 52px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-sni.png" alt="" style="height: 50px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 22px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-ahk.png" alt="" style="height: 40px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 26px; border-radius: 14px; background: #FFFFFF; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-mercaritec.png" alt="" style="height: 40px; width: auto; display: block"></span>
-<span style="flex: 0 0 auto; height: 76px; padding: 0 28px; border-radius: 14px; background: #0F2238; display: flex; align-items: center"><img loading="lazy" decoding="async" src="assets/logo-expotextil.png" alt="" style="height: 46px; width: auto; display: block"></span>
-</div>
-</div>
-</div>
-</section>
-<section style="max-width: 1240px; margin: 0 auto; padding: 48px 32px 72px; display: flex; flex-direction: column; gap: 56px">
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; max-width: 980px; letter-spacing: -0.035em">El cliente escribe. Nadie responde. <br><span style="color: #8E94A3">Se va con otro.</span></h2>
-<div style="display: flex; flex-wrap: wrap; gap: 28px">
-
-<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<div style="position: relative">
-<img loading="lazy" decoding="async" src="assets/mecanico.jpg" alt="Mecánico trabajando en un motor mientras su celular suena sobre la mesa de trabajo" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px">
-<span style="position: absolute; left: 14px; bottom: 14px; background: #FFFFFF; color: #14161B; font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 999px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #C8372D"></span>14 mensajes sin leer</span>
-</div>
-<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.06; letter-spacing: -0.035em">Las manos ocupadas</h3>
-<p style="margin: 0; color: #B4B8C4">El WhatsApp suena mientras se trabaja. Cuando por fin se contesta, el cliente ya contrató a otro.</p>
-</div>
-
-<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<div style="position: relative">
-<img loading="lazy" decoding="async" src="assets/recepcion.jpg" alt="Recepcionista atendiendo una llamada con el celular en el hombro mientras anota en un cuaderno" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px">
-<span style="position: absolute; left: 14px; bottom: 14px; background: #FFFFFF; color: #14161B; font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 999px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #B5760A"></span>Cotizó hace 3 días · sin seguimiento</span>
-</div>
-<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.06; letter-spacing: -0.035em">Todo en un cuaderno</h3>
-<p style="margin: 0; color: #B4B8C4">Se cotiza por chat y se anota a mano. Nadie vuelve a preguntar, y la venta se pierde sin dejar rastro.</p>
-</div>
-
-<div style="flex: 1 1 320px; min-width: 0; display: flex; flex-direction: column; gap: 18px">
-<div style="position: relative">
-<img loading="lazy" decoding="async" src="assets/dueno.jpg" alt="Dueño de negocio de noche revisando un cuaderno de cuentas con una calculadora" style="display: block; width: 100%; aspect-ratio: 4 / 3; object-fit: cover; border-radius: 16px">
-<span style="position: absolute; left: 14px; bottom: 14px; background: #FFFFFF; color: #14161B; font-size: 14px; font-weight: 600; padding: 8px 12px; border-radius: 999px; display: flex; align-items: center; gap: 8px"><span aria-hidden="true" style="width: 8px; height: 8px; border-radius: 50%; background: #5B6170"></span>Por cobrar: no se sabe</span>
-</div>
-<h3 style="margin: 0; font-weight: 600; font-size: 22px; line-height: 1.06; letter-spacing: -0.035em">El cierre a ciegas</h3>
-<p style="margin: 0; color: #B4B8C4">Al final del día, el dueño no sabe cuánto cobró, cuánto le deben ni por qué se cayeron las ventas.</p>
-</div>
-
-</div>
+<section class="orgs" aria-labelledby="orgs-h">
+  <div class="wrap"><span class="kick mut flat" id="orgs-h">Organizaciones con las que trabajamos</span></div>
+  <div class="marquee">
+    <ul>
+      <li><img src="/assets/logo-sni.png" width="348" height="160" alt="Sociedad Nacional de Industrias"></li>
+      <li><img src="/assets/logo-ahk.png" width="789" height="160" alt="AHK Perú, Cámara de Comercio e Industria Peruano-Alemana"></li>
+      <li><img src="/assets/logo-villa-maria.png" width="122" height="200" alt="Colegio Villa María"></li>
+      <li class="dark"><img src="/assets/logo-expotextil.png" width="399" height="140" alt="Expotextil Perú 2026"></li>
+      <li><img src="/assets/logo-mercaritec.png" width="579" height="160" alt="Mercaritec"></li>
+      <li class="dark"><img src="/assets/logo-ica-gruas.png" width="471" height="160" alt="Ica Grúas"></li>
+      <li class="dark"><img src="/assets/logo-tizon-rojo.png" width="119" height="160" alt="Tizón Rojo"></li>
+      <li class="brown"><img src="/assets/logo-zano.png" width="229" height="160" alt="Cafetería Zano"></li>
+    </ul>
+    <ul aria-hidden="true">
+      <li><img src="/assets/logo-sni.png" width="348" height="160" alt=""></li>
+      <li><img src="/assets/logo-ahk.png" width="789" height="160" alt=""></li>
+      <li><img src="/assets/logo-villa-maria.png" width="122" height="200" alt=""></li>
+      <li class="dark"><img src="/assets/logo-expotextil.png" width="399" height="140" alt=""></li>
+      <li><img src="/assets/logo-mercaritec.png" width="579" height="160" alt=""></li>
+      <li class="dark"><img src="/assets/logo-ica-gruas.png" width="471" height="160" alt=""></li>
+      <li class="dark"><img src="/assets/logo-tizon-rojo.png" width="119" height="160" alt=""></li>
+      <li class="brown"><img src="/assets/logo-zano.png" width="229" height="160" alt=""></li>
+    </ul>
+  </div>
 </section>
 
-<section id="canales" style="max-width: 1240px; margin: 0 auto; padding: 24px 32px 72px; display: flex; flex-direction: column; gap: 48px">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em; max-width: 720px">Todos tus canales. <br><span style="color: #4D7CFF">Una sola bandeja.</span></h2>
-<p style="margin: 0; max-width: 400px; color: #B4B8C4">Cada cliente queda en una sola ficha, aunque te escriba por dos canales. NEURA lee todo y te dice qué hacer.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 28px">
-<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
-<span class="c-wa" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">WhatsApp</span>
-<p style="margin: 0; color: #B4B8C4; font-size: 16px">Responde y cotiza al instante, a cualquier hora.</p>
-</div>
-<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
-<span class="c-ig" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">Instagram</span>
-<p style="margin: 0; color: #B4B8C4; font-size: 16px">Los mensajes que llegan por tus publicaciones e historias.</p>
-</div>
-<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
-<span class="c-ms" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">Messenger</span>
-<p style="margin: 0; color: #B4B8C4; font-size: 16px">Las consultas de tu página de Facebook.</p>
-</div>
-<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
-<span class="c-tt" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">TikTok</span>
-<p style="margin: 0; color: #B4B8C4; font-size: 16px">Quien te escribe después de ver un video.</p>
-</div>
-<div style="flex: 1 1 200px; min-width: 0; border-top: 1px solid #2A2E3A; padding-top: 24px; display: flex; flex-direction: column; gap: 10px">
-<span class="c-web" style="font-size: 30px; font-weight: 600; letter-spacing: -0.03em; line-height: 1.1; align-self: flex-start">Tu web</span>
-<p style="margin: 0; color: #B4B8C4; font-size: 16px">Formularios y pedidos desde tu página.</p>
-</div>
-</div>
+<section class="sec white" id="servicios" aria-labelledby="serv-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick">Servicios</span><h2 id="serv-h">Qué hacemos por su empresa.</h2></div>
+      <p class="lead">Prestamos servicios de transformación digital: ordenamos el proceso, construimos el sistema y lo dejamos funcionando.</p>
+    </div>
+    <div class="serv">
+      <article class="rv"><span class="n">01</span><h3>Automatización de procesos</h3><p>Convertimos tareas manuales y repetitivas en flujos automáticos, con reglas claras y control de su equipo.</p><ul class="ticks"><li>Levantamiento y rediseño de procesos</li><li>Flujos por área: ventas, operaciones, administración y recursos humanos</li><li>Integración entre los sistemas que ya utiliza</li></ul></article>
+      <article class="rv"><span class="n">02</span><h3>Desarrollo de sistemas a medida</h3><p>Diseñamos y programamos plataformas que se ajustan a la forma de trabajar de su organización.</p><ul class="ticks"><li>Plataformas web y paneles de gestión</li><li>Sistemas internos: CRM, admisiones, solicitudes</li><li>Bases de datos, seguridad y control de accesos</li></ul></article>
+    </div>
+    <div class="for"><span class="kick mut flat">Para quién trabajamos</span><ul><li>Empresas</li><li>Industria</li><li>Gremios, cámaras y asociaciones</li><li>Instituciones educativas</li></ul></div>
+  </div>
 </section>
 
-<section id="producto" style="background: #0E1016">
-<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 56px">
-<div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 24px">
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; max-width: 720px; letter-spacing: -0.035em">Últimos <span style="color: #4D7CFF">proyectos</span></h2>
-<p style="margin: 0; max-width: 380px; color: #B4B8C4">El asistente responde y reúne los datos. Tu equipo cotiza, atiende y cobra desde un panel. La IA no pone precios ni cierra por su cuenta.</p>
-</div>
-
-<figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div style="border: 1px solid #262A36; border-radius: 16px; overflow: hidden; background: #12151C; box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
-<div style="display: flex; align-items: center; gap: 7px; padding: 11px 16px; border-bottom: 1px solid #262A36">
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-</div>
-<img loading="lazy" decoding="async" src="assets/panel-ica-gruas.jpg" alt="Panel de atención de Ica Grúas con la bandeja de solicitudes por estado" style="display: block; width: 100%; height: auto">
-</div>
-<figcaption style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 15px"><span style="font-weight: 600">Ica Grúas</span><span style="color: #8E94A3">Bandeja de solicitudes, con NEURA en el menú</span></figcaption>
-</figure>
-<div style="display: flex; flex-wrap: wrap; gap: 28px">
-<div style="flex: 1 1 420px; min-width: 0"><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div style="border: 1px solid #262A36; border-radius: 16px; overflow: hidden; background: #12151C; box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
-<div style="display: flex; align-items: center; gap: 7px; padding: 11px 16px; border-bottom: 1px solid #262A36">
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-</div>
-<img loading="lazy" decoding="async" src="assets/panel-villa-maria.jpg" alt="Panel de admisiones del Colegio Villa María con indicadores y embudo" style="display: block; width: 100%; height: auto">
-</div>
-<figcaption style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 15px"><span style="font-weight: 600">Colegio Villa María</span><span style="color: #8E94A3">Admisiones: interesados, visitas y matrículas</span></figcaption>
-</figure></div>
-<div style="flex: 1 1 420px; min-width: 0"><figure style="margin: 0; display: flex; flex-direction: column; gap: 14px; min-width: 0">
-<div style="border: 1px solid #262A36; border-radius: 16px; overflow: hidden; background: #12151C; box-shadow: 0 30px 80px rgba(0,0,0,0.5)">
-<div style="display: flex; align-items: center; gap: 7px; padding: 11px 16px; border-bottom: 1px solid #262A36">
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-<span aria-hidden="true" style="width: 9px; height: 9px; border-radius: 50%; background: #343946"></span>
-</div>
-<img loading="lazy" decoding="async" src="assets/panel-expotextil.jpg" alt="Panel de la rueda de negocios de Expotextil Perú 2026" style="display: block; width: 100%; height: auto">
-</div>
-<figcaption style="display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: 15px"><span style="font-weight: 600">Expotextil Perú 2026</span><span style="color: #8E94A3">Rueda de negocios: cruce de compradores y expositores</span></figcaption>
-</figure></div>
-</div>
-<div style="font-size: 13px; color: #8E94A3">Capturas reales de plataformas construidas por TRAMA, sin datos reales.</div>
-</div>
+<section class="sec" id="productos" aria-labelledby="prod-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick">Productos propios</span><h2 id="prod-h">Tres plataformas desarrolladas por TRAMA.</h2></div>
+      <p class="lead">Además de prestar servicios, diseñamos y mantenemos nuestros propios productos de software.</p>
+    </div>
+    <div class="grid g3">
+      <article class="card rv"><span class="kick flat">Atención de clientes</span><h3>NEURA</h3><p>Reúne las consultas de WhatsApp, Instagram, Messenger, TikTok y la web en una sola bandeja, con seguimiento para cada cliente.</p><a class="more" href="https://emprende.neura-app.com/" rel="noopener">Conocer NEURA <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+      <article class="card rv"><span class="kick flat">Restaurantes</span><h3>NEURA Mesa</h3><p>Plataforma de inteligencia y automatización para restaurantes: ventas, costos, inventario y operación.</p><a class="more" href="https://mesa.neura-app.com/" rel="noopener">Conocer NEURA Mesa <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+      <article class="card rv"><span class="kick flat">Ruedas de negocio</span><h3>Conexión Rueda</h3><p>Organiza ruedas de negocio: relaciona compradores con expositores y ordena las reuniones.</p><a class="more" href="#contacto">Solicitar información <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></article>
+    </div>
+  </div>
 </section>
 
-<section id="neura" style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 56px">
-<div style="display: flex; flex-direction: column; gap: 20px; max-width: 860px">
-<div style="font-size: 14px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: #4D7CFF">NEURA, siempre incluido</div>
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">Otros te dan un vendedor. <span style="color: #4D7CFF">Aquí también tienes un gerente.</span></h2>
-<p style="margin: 0; font-size: 19px; color: #B4B8C4; max-width: 620px">NEURA trabaja distinto según tu rubro y te lo dice en una frase.</p>
-</div>
-<div style="display: flex; flex-wrap: wrap; gap: 0 40px">
-<div style="flex: 1 1 300px; border-top: 1px solid #2A2E3A; padding: 28px 0 36px; display: flex; flex-direction: column; gap: 16px">
-<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8E94A3">Grúas</span>
-<p style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 500">Ayer perdiste 4 servicios por demora en cotizar.</p>
-</div>
-<div style="flex: 1 1 300px; border-top: 1px solid #2A2E3A; padding: 28px 0 36px; display: flex; flex-direction: column; gap: 16px">
-<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8E94A3">Talleres</span>
-<p style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 500">6 clientes no respondieron su cotización. Estos 3 valen la llamada.</p>
-</div>
-<div style="flex: 1 1 300px; border-top: 1px solid #2A2E3A; padding: 28px 0 36px; display: flex; flex-direction: column; gap: 16px">
-<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8E94A3">Consultorios</span>
-<p style="margin: 0; font-size: 24px; line-height: 1.3; font-weight: 500">Mañana hay 5 citas sin confirmar. Conviene recordarlas hoy.</p>
-</div>
-</div>
-<div style="font-size: 13px; color: #8E94A3; margin-top: -32px">Frases de ejemplo. El contenido real sale de los datos de tu negocio.</div>
+<section class="sec white" id="proyectos" aria-labelledby="proj-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick">Proyectos</span><h2 id="proj-h">Trabajos recientes.</h2></div>
+      <p class="lead">Sistemas y automatizaciones que TRAMA ha diseñado, construido e implementado.</p>
+    </div>
+    <div class="grid caps">
+      <figure class="rv"><img loading="lazy" src="/assets/panel-villa-maria.jpg" width="1345" height="800" alt="Panel de admisiones del Colegio Villa María"><figcaption>Colegio Villa María · Admisiones</figcaption></figure>
+      <figure class="rv"><img loading="lazy" src="/assets/panel-ica-gruas.jpg" width="1894" height="790" alt="Bandeja de solicitudes de Ica Grúas"><figcaption>Ica Grúas · Bandeja de solicitudes</figcaption></figure>
+      <figure class="rv"><img loading="lazy" src="/assets/panel-expotextil.jpg" width="1834" height="940" alt="Plataforma de rueda de negocios de Expotextil Perú 2026"><figcaption>Expotextil Perú 2026 · Rueda de negocios</figcaption></figure>
+    </div>
+    <p class="note">Capturas de plataformas construidas por TRAMA, sin datos reales.</p>
+    <ul class="work">
+      <li class="th" aria-hidden="true"><span class="kick mut flat">Organización</span><span class="kick mut flat">Trabajo realizado</span><span class="kick mut flat">Sector</span></li>
+      <li><h4>Colegio Villa María</h4><p>Automatización del proceso de admisiones</p><small>Educación</small></li>
+      <li><h4>Ica Grúas</h4><p>Automatización de la atención y de las solicitudes de servicio</p><small>Servicios</small></li>
+      <li><h4>Sociedad Nacional de Industrias</h4><p>Plataforma para la rueda de negocios de Expoindustria</p><small>Gremios y ferias</small></li>
+      <li><h4>AHK Perú</h4><p>Plataforma para la gestión de la rueda de negocios</p><small>Cámaras de comercio</small></li>
+      <li><h4>TRAMY</h4><p>Desarrollo de la plataforma</p><small>Producto propio</small></li>
+      <li><h4>NEURA Mesa</h4><p>Desarrollo de la plataforma completa</p><small>Producto propio</small></li>
+    </ul>
+  </div>
 </section>
 
-<section style="background: #0E1016">
-<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 56px">
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">De la demo a operar</h2>
-<div style="display: flex; flex-wrap: wrap; gap: 40px">
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-weight: 500; font-size: 52px; line-height: 1.06; color: #4D7CFF; letter-spacing: -0.035em">1</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Demo con tu negocio</h3>
-<p style="margin: 0; color: #B4B8C4">Ves el recorrido con tus servicios y tarifas, antes de conectar nada.</p>
-</div>
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-weight: 500; font-size: 52px; line-height: 1.06; color: #4D7CFF; letter-spacing: -0.035em">2</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Configuramos tu proceso</h3>
-<p style="margin: 0; color: #B4B8C4">Tarifas, respuestas frecuentes y usuarios de tu equipo, según tu rubro.</p>
-</div>
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-weight: 500; font-size: 52px; line-height: 1.06; color: #4D7CFF; letter-spacing: -0.035em">3</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Conectamos tu WhatsApp</h3>
-<p style="margin: 0; color: #B4B8C4">Tu número pasa a la API oficial de WhatsApp y capacitamos a tu equipo.</p>
-</div>
-<div style="flex: 1 1 220px; display: flex; flex-direction: column; gap: 10px">
-<span style="font-weight: 500; font-size: 52px; line-height: 1.06; color: #4D7CFF; letter-spacing: -0.035em">4</span>
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">Operas con NEURA</h3>
-<p style="margin: 0; color: #B4B8C4">Tu equipo atiende desde el panel y tú recibes qué hacer cada día.</p>
-</div>
-</div>
-</div>
+<section class="sec" id="metodo" aria-labelledby="met-h">
+  <div class="wrap">
+    <div class="head one"><div><span class="kick">Cómo trabajamos</span><h2 id="met-h">Cinco etapas, y seguimos con usted después de la entrega.</h2></div></div>
+    <ol class="steps">
+      <li><b>1</b><h4>Diagnóstico</h4><p>Entendemos su operación y qué necesita resolver.</p></li>
+      <li><b>2</b><h4>Levantamiento</h4><p>Documentamos el proceso actual con las personas que lo ejecutan.</p></li>
+      <li><b>3</b><h4>Diseño y alcance</h4><p>Definimos la solución, el alcance, los plazos y la inversión.</p></li>
+      <li><b>4</b><h4>Desarrollo</h4><p>Construimos el sistema y le mostramos avances para su validación.</p></li>
+      <li><b>5</b><h4>Implementación</h4><p>Lo ponemos en marcha y acompañamos a su equipo en el uso.</p></li>
+    </ol>
+  </div>
 </section>
 
-<section style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; gap: 56px">
-<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 24px">
-<h3 style="margin: 0; font-weight: 500; font-size: 32px; line-height: 1.06; letter-spacing: -0.035em">Es para ti si</h3>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; font-size: 18px">
-<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Vendes un servicio y cotizas caso por caso.</li>
-<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Tus clientes escriben por WhatsApp, Instagram o tu web, y gana quien responde primero.</li>
-<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Quieres saber cuánto cobraste y por qué pierdes ventas.</li>
-<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Hoy todo depende del celular de una persona.</li>
-</ul>
-</div>
-<div style="flex: 1 1 380px; display: flex; flex-direction: column; gap: 24px">
-<h3 style="margin: 0; font-weight: 500; font-size: 32px; line-height: 1.06; color: #8E94A3; letter-spacing: -0.035em">No es para ti si</h3>
-<ul style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; font-size: 18px; color: #B4B8C4">
-<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Tienes una tienda con catálogo y precio fijo.</li>
-<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Buscas que una IA cierre y cobre sin que nadie revise.</li>
-<li style="border-top: 1px solid #2A2E3A; padding: 16px 0">Solo quieres enviar mensajes masivos.</li>
-</ul>
-</div>
+<section class="sec white" id="nosotros" aria-labelledby="nos-h">
+  <div class="wrap">
+    <div class="head">
+      <div><span class="kick">Nosotros</span><h2 id="nos-h">De la mano con el cliente, de principio a fin.</h2></div>
+      <p class="lead">Tenemos un enfoque de gestión de procesos y de operaciones del negocio. Combinamos el conocimiento de negocios con la automatización y el desarrollo de software.</p>
+    </div>
+    <div class="mvo">
+      <article><h3>Misión</h3><p>Ayudar a empresas e instituciones a operar mejor, uniendo conocimiento de negocios, automatización de procesos y desarrollo de software.</p></article>
+      <article><h3>Visión</h3><p>Ser el aliado de transformación digital de referencia para empresas, industria e instituciones del Perú y la región.</p></article>
+      <article><h3>Objetivos</h3><ul><li>Ordenar cada proceso antes de automatizarlo.</li><li>Entregar sistemas que el equipo del cliente realmente use.</li><li>Acompañar al cliente después de la entrega.</li></ul></article>
+    </div>
+    <div class="vals">
+      <span class="kick mut flat">Nuestros valores</span>
+      <ul>
+        <li class="main"><h4>Acompañamiento</h4><p>Trabajamos de la mano con el cliente y lo acompañamos en todo momento, desde el inicio hasta después de la entrega.</p></li>
+        <li><h4>Enfoque en el proceso</h4><p>Primero entendemos cómo opera el negocio; la tecnología viene después.</p></li>
+        <li><h4>Negocio y tecnología</h4><p>Cada solución responde a un objetivo del negocio, no a una moda.</p></li>
+        <li><h4>Claridad</h4><p>Alcance, plazos e inversión definidos antes de empezar.</p></li>
+      </ul>
+    </div>
+  </div>
 </section>
 
-<section id="precio" style="background: #0E1016">
-<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-direction: column; gap: 56px">
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(34px, 4vw, 58px); line-height: 1.06; letter-spacing: -0.035em">Dos cifras. <span style="color: #4D7CFF">Sin letra chica.</span></h2>
-<div style="display: flex; flex-wrap: wrap; gap: 56px">
-<div style="flex: 1 1 380px; border-top: 1px solid #2A2E3A; padding-top: 28px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #8E94A3">Implementación inicial · pago único</span>
-<span style="font-weight: 500; font-size: 84px; line-height: 1.06; letter-spacing: -0.035em">US$299</span>
-<p style="margin: 0; color: #B4B8C4; max-width: 420px">Desde este monto. Definición del proceso, configuración de WhatsApp y del panel, pruebas y capacitación inicial.</p>
-</div>
-<div style="flex: 1 1 380px; border-top: 1px solid #4D7CFF; padding-top: 28px; display: flex; flex-direction: column; gap: 12px">
-<span style="font-size: 13px; font-weight: 500; letter-spacing: 0.2em; text-transform: uppercase; color: #4D7CFF">Plan mensual · NEURA incluido</span>
-<span style="font-weight: 500; font-size: 84px; line-height: 1.06; letter-spacing: -0.035em">US$149</span>
-<p style="margin: 0; color: #B4B8C4; max-width: 420px">Asistente, panel de casos y cotización de tu rubro, mantenimiento y soporte.&nbsp;</p>
-</div>
-</div>
-<div style="font-size: 14px; color: #8E94A3">Los mensajes que cobra Meta por WhatsApp se pagan aparte, según uso. Los procesos a medida se cotizan en la propuesta.</div>
-</div>
+<section class="sec" id="liderazgo" aria-labelledby="lid-h">
+  <div class="wrap">
+    <div class="head one"><div><span class="kick">Liderazgo</span><h2 id="lid-h">Un equipo profesional detrás de cada proyecto.</h2></div></div>
+    <div class="lead-card">
+      <img class="mono" src="/assets/kevin-woodman.jpg" width="400" height="400" loading="lazy" alt="Kevin Woodman, Founder y CEO de TRAMA Consultora">
+      <div>
+        <h3>Kevin Woodman</h3>
+        <p class="role">Founder y CEO · TRAMA Consultora</p>
+        <p class="bio">Lidera los proyectos de TRAMA. MBA de CENTRUM PUCP y certificación en inteligencia artificial y automatización empresarial (UPC). Más de siete años de experiencia en innovación, gestión comercial y dirección de proyectos.</p>
+        <ul class="memb">
+          <li><span class="lg"><img loading="lazy" src="/assets/logo-bni.png" width="301" height="195" alt=""></span><div><small>Miembro de</small><b>BNI Crecer Perú</b></div></li>
+          <li><span class="lg"><img loading="lazy" src="/assets/logo-sni-color.png" width="600" height="277" alt=""></span><div><small>Socio de la</small><b>Sociedad Nacional de Industrias</b></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </section>
 
-<section style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; gap: 56px">
-<h2 class="rv" style="flex: 1 1 300px; margin: 0; font-weight: 500; font-size: 42px; line-height: 1.06; letter-spacing: -0.035em">Lo que suelen preguntar</h2>
-<div style="flex: 2 1 540px; min-width: 0; display: flex; flex-direction: column">
-<div style="border-top: 1px solid #2A2E3A; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">¿La IA le pone precio a mis servicios?</h3>
-<p style="margin: 0; color: #B4B8C4">No. El asistente reúne los datos; la cotización se calcula con tus tarifas y tu equipo la aprueba antes de enviarla.</p>
-</div>
-<div style="border-top: 1px solid #2A2E3A; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">¿Qué pasa cuando el asistente no sabe responder?</h3>
-<p style="margin: 0; color: #B4B8C4">Deriva el caso a una persona de tu equipo y le avisa al cliente. No inventa respuestas.</p>
-</div>
-<div style="border-top: 1px solid #2A2E3A; padding: 24px 0; display: flex; flex-direction: column; gap: 8px">
-<h3 style="margin: 0; font-size: 20px; font-weight: 600">¿Tengo que cambiar mi número de WhatsApp?</h3>
-<p style="margin: 0; color: #B4B8C4">Puedes conservarlo. El número pasa a la API oficial de WhatsApp y tu equipo atiende desde el panel en lugar del celular.</p>
-</div>
-</div>
+<section class="cta" id="contacto" aria-labelledby="cta-h">
+  <div class="wrap cta-grid">
+    <div>
+      <span class="kick">Contacto</span>
+      <h2 id="cta-h">Conversemos sobre el proceso que quiere mejorar.</h2>
+      <p class="lead">Nos cuenta su caso y le indicamos cómo lo abordaríamos, sin compromiso.</p>
+      <div class="acts"><a class="btn light" href="https://wa.me/51933448692?text=Hola%2C%20quiero%20solicitar%20un%20diagn%C3%B3stico%20para%20mi%20empresa" rel="noopener">Escribir por WhatsApp</a><a class="btn line" href="https://calendly.com/kwooodman/15min" rel="noopener">Agendar una reunión</a></div>
+    </div>
+    <ul class="contact">
+      <li><small>Correo</small><a href="mailto:kwoodman@tramaconsultora.com">kwoodman@tramaconsultora.com</a></li>
+      <li><small>Teléfono y WhatsApp</small><a href="tel:+51933448692">+51 933 448 692</a></li>
+      <li><small>Ubicación</small><span>Lima, Perú</span></li>
+    </ul>
+  </div>
 </section>
+</main>
 
-<section id="demo" style="background: #2457F5; color: #FFFFFF">
-<div style="max-width: 1240px; margin: 0 auto; padding: 72px 32px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 40px">
-<h2 class="rv" style="margin: 0; font-weight: 500; font-size: clamp(38px, 4.8vw, 68px); line-height: 1.06; max-width: 760px; letter-spacing: -0.035em">Mira tu negocio atendido antes de decidir.</h2>
-<div style="display: flex; flex-direction: column; gap: 16px; max-width: 360px">
-<p style="margin: 0; font-size: 18px">Te mostramos el recorrido completo con tus servicios y tus tarifas. Sin compromiso.</p>
-<div style="display: flex; flex-wrap: wrap; gap: 12px">
-<a href="https://wa.me/51933448692?text=Hola%2C%20quiero%20agendar%20una%20demo%20de%20TRAMA%20Atiende" style="background: #08090D; color: #F4F4F2; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px">Agenda tu demo</a>
-<a href="https://wa.me/51933448692" style="border: 1px solid #FFFFFF; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 16px 28px; border-radius: 999px">WhatsApp</a>
-</div>
-</div>
-</div>
-</section>
-
-<a href="https://wa.me/51933448692" aria-label="Escríbenos por WhatsApp al +51 933 448 692" style="position: fixed; right: 24px; bottom: 24px; z-index: 50; display: flex; align-items: center; gap: 10px; background: #1FAF54; color: #06140B; text-decoration: none; font-weight: 600; font-size: 15px; padding: 14px 20px; border-radius: 999px; box-shadow: 0 10px 30px rgba(0,0,0,0.45)"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.5 8.5 0 0 1-12.6 7.4L3 20l1.2-5.1A8.5 8.5 0 1 1 21 11.5z"></path></svg><span class="wa-t">Escríbenos por WhatsApp</span></a>
-
-<footer>
-<div style="max-width: 1240px; margin: 0 auto; padding: 32px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; font-size: 14px; color: #8E94A3">
-<span>TRAMA Atiende, un producto de TRAMA Consultora. Lima, Perú.</span>
-<span>Política de privacidad · Términos</span>
-</div>
+<footer class="foot">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="TRAMA Consultora, inicio"><b>TRAMA<i>.</i></b><span>Consultora</span></a>
+    <nav aria-label="Pie"><a href="#servicios">Servicios</a><a href="#productos">Productos</a><a href="#proyectos">Proyectos</a><a href="#nosotros">Nosotros</a><a href="https://www.linkedin.com/company/tramalatam/" rel="noopener">LinkedIn</a></nav>
+    <span>© 2026 TRAMA Consultora · Lima, Perú</span>
+  </div>
 </footer>
-
-</div>
 </body>
 </html>
