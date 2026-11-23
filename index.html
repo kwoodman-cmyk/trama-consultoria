@@ -76,10 +76,34 @@ h4{font-size:19px;line-height:26px;font-weight:600;letter-spacing:-.01em}
 .hero-grid{display:grid;gap:40px}
 .hero h1{margin-bottom:20px}
 .acts{display:flex;flex-direction:column;gap:12px;margin-top:28px}
-.shot{background:var(--white);border:1px solid var(--line);border-radius:8px;overflow:hidden;box-shadow:0 24px 48px -12px rgba(15,34,51,.16)}
-.shot .bar{display:flex;gap:6px;padding:12px 16px;border-bottom:1px solid var(--line)}
-.shot .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
-.shot img{width:100%;height:auto}
+.xf{display:grid;gap:12px;background:var(--white);border:1px solid var(--line);border-radius:8px;padding:20px;box-shadow:0 24px 48px -12px rgba(15,34,51,.16)}
+.xf-p{display:grid;gap:14px;align-content:start;padding:16px;border-radius:6px;background:var(--paper)}
+.xf-p.on{background:var(--white);border:1px solid var(--line)}
+.xf svg{display:block;width:100%;height:auto;font-family:var(--sans)}
+.xf-a{display:flex;align-items:center;justify-content:center;color:var(--or);transform:rotate(90deg)}
+.xf .b{fill:#fff;stroke:#B9B4A8;stroke-width:1.5}
+.xf .l{fill:none;stroke:#B9B4A8;stroke-width:1.5;stroke-dasharray:5 5}
+.xf .t{font-size:13px;font-weight:600;fill:var(--ink2)}
+.xf .t.q{font-size:18px;fill:var(--mut)}
+.xf .w circle{fill:var(--or)}.xf .w text{font-size:13px;font-weight:700;fill:#fff}
+.xf .e{font-size:12px;font-style:italic;font-weight:600;fill:var(--or-d)}
+.xf .nd{fill:#fff;stroke:var(--navy);stroke-width:1.5}
+.xf .nd.h{fill:var(--or-t);stroke:var(--or)}
+.xf .nd.f{fill:var(--navy)}
+.xf .pl{fill:none;stroke:var(--or);stroke-width:3.5;opacity:0;animation:lit 6s linear infinite}
+.xf .p1{animation-delay:1.1s}.xf .p2{animation-delay:2.2s}.xf .p3{animation-delay:3.3s}.xf .p4{animation-delay:4.4s}
+.xf .l{animation:ants 1.6s linear infinite}
+.xf .xf-p:first-child g{animation:drift 5s ease-in-out infinite}
+.xf .xf-p:first-child g:nth-of-type(2){animation-delay:-1s}.xf .xf-p:first-child g:nth-of-type(3){animation-delay:-2s}.xf .xf-p:first-child g:nth-of-type(4){animation-delay:-3s}.xf .xf-p:first-child g:nth-of-type(5){animation-delay:-4s}
+.xf g.w{animation:blink 2.4s ease-in-out infinite}
+.xf-a svg{width:28px;height:28px;animation:nudge 2s ease-in-out infinite}
+@keyframes lit{0%{opacity:0}4%,14%{opacity:1}22%,100%{opacity:0}}
+@keyframes ants{to{stroke-dashoffset:-20}}
+@keyframes drift{50%{translate:0 -4px}}
+@keyframes blink{50%{opacity:.35}}
+@keyframes nudge{50%{translate:4px 0}}
+.xf .t.n,.xf .t.h{fill:var(--ink)}.xf .t.f{fill:#fff}
+.xf .a{fill:none;stroke:var(--navy);stroke-width:1.5}.xf .ah{fill:var(--navy)}
 figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
 .facts{display:grid;margin-top:48px}
 .facts li{display:flex;align-items:center;gap:16px;padding:16px 0;border-top:1px solid var(--line)}
@@ -132,9 +156,15 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
 
 /* Método */
 .steps{display:grid}
-.steps li{display:grid;grid-template-columns:36px 1fr;gap:6px 20px;padding:20px 0;border-top:2px solid var(--line)}
+.steps li{display:grid;grid-template-columns:40px 1fr;gap:6px 20px;padding:20px 0;border-top:2px solid var(--line)}
 .steps b{grid-row:1/3}
 .steps p{color:var(--ink2)}
+.steps small{grid-column:2;display:block;font-size:14px;line-height:22px;font-weight:600;color:var(--ink);margin-top:6px}
+.method b{font-family:var(--serif);font-weight:600}
+.princ{margin-top:40px;padding-top:28px;border-top:1px solid var(--line)}
+.princ ul{display:grid;gap:20px;margin-top:20px}
+.princ li{display:grid;gap:6px;align-content:start}
+.princ p{color:var(--ink2)}
 
 /* Nosotros */
 .mvo{display:grid}
@@ -184,6 +214,8 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
 @supports (animation-timeline: view()){.rv{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}}
 
 @media(min-width:640px){
+  .xf{grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr);align-items:center}
+  .xf-a{transform:none}
   .acts{flex-direction:row;flex-wrap:wrap}
   .grid.g3{grid-template-columns:repeat(3,1fr)}
   .caps{grid-template-columns:repeat(3,1fr)}
@@ -200,7 +232,7 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
   .head{grid-template-columns:minmax(0,620px) minmax(0,1fr);gap:80px;align-items:end;margin-bottom:64px}
   .head.one{grid-template-columns:minmax(0,880px)}
   .hero{padding:96px 0 88px}
-  .hero-grid{grid-template-columns:minmax(0,640px) minmax(0,1fr);gap:72px;align-items:center}
+  .hero-grid{grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:64px;align-items:center}
   .hero h1{margin-bottom:28px}
   .facts{margin-top:88px}
   .orgs{padding:64px 0 88px}
@@ -217,6 +249,9 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
   .steps li{display:block;padding:0;border:0}
   .steps b{display:block;padding-bottom:22px;margin-bottom:22px;border-bottom:2px solid var(--line)}
   .steps h4{margin-bottom:8px}
+  .steps small{margin-top:14px;padding-top:14px;border-top:1px solid var(--line)}
+  .princ{margin-top:72px;padding-top:40px}
+  .princ ul{grid-template-columns:repeat(4,1fr);gap:32px;margin-top:28px}
   .mvo{grid-template-columns:repeat(3,1fr);gap:48px;margin-bottom:64px}
   .mvo article{padding:24px 0 0}
   .vals ul{grid-template-columns:repeat(4,1fr);gap:24px;margin-top:28px}
@@ -240,7 +275,7 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="/" aria-label="TRAMA Consultora, inicio"><b>TRAMA<i>.</i></b><span>Consultora</span></a>
-    <nav aria-label="Principal"><a href="#servicios">Servicios</a><a href="#productos">Productos</a><a href="#proyectos">Proyectos</a><a href="#metodo">Cómo trabajamos</a><a href="#nosotros">Nosotros</a></nav>
+    <nav aria-label="Principal"><a href="#servicios">Servicios</a><a href="#productos">Productos</a><a href="#proyectos">Proyectos</a><a href="#metodo">Metodología</a><a href="#nosotros">Nosotros</a></nav>
     <a class="btn primary sm" href="#contacto">Solicitar diagnóstico</a>
   </div>
 </header>
@@ -255,15 +290,19 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
       <div class="acts"><a class="btn primary" href="#contacto">Solicitar un diagnóstico</a><a class="btn ghost" href="#servicios">Ver servicios</a></div>
     </div>
     <figure>
-      <div class="shot"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="/assets/panel-villa-maria.jpg" width="1345" height="800" alt="Panel de gestión de admisiones desarrollado por TRAMA, con indicadores y embudo de seguimiento" fetchpriority="high"></div>
-      <figcaption>Sistema de admisiones desarrollado para el Colegio Villa María. Captura sin datos reales.</figcaption>
+      <div class="xf">
+        <div class="xf-p"><span class="kick mut flat">Antes</span><svg viewBox="0 0 220 290" role="img" aria-label="Proceso desordenado: cuaderno, Excel, WhatsApp, correo y llamadas conectados sin orden, con esperas y puntos de dolor"><path class="l" d="M55 52C90 92 150 58 160 72M163 74C192 112 92 98 72 112M72 150C58 192 172 148 168 176M168 178C150 222 112 198 92 216M140 236L160 233M100 40C120 20 130 60 124 50"/><g transform="rotate(-5 55.0 33)"><rect x="10" y="14" width="90" height="38" rx="4" class="b"/><text x="55.0" y="37.5" text-anchor="middle" class="t">Cuaderno</text></g><g transform="rotate(6 163.0 53)"><rect x="124" y="34" width="78" height="38" rx="4" class="b"/><text x="163.0" y="57.5" text-anchor="middle" class="t">Excel</text></g><g transform="rotate(4 72.0 131)"><rect x="22" y="112" width="100" height="38" rx="4" class="b"/><text x="72.0" y="135.5" text-anchor="middle" class="t">WhatsApp</text></g><g transform="rotate(-7 169.0 157)"><rect x="130" y="138" width="78" height="38" rx="4" class="b"/><text x="169.0" y="161.5" text-anchor="middle" class="t">Correo</text></g><g transform="rotate(-4 92.0 235)"><rect x="44" y="216" width="96" height="38" rx="4" class="b"/><text x="92.0" y="239.5" text-anchor="middle" class="t">Llamadas</text></g><circle cx="182" cy="234" r="18" class="b"/><text x="182" y="240" text-anchor="middle" class="t q">?</text><g class="w"><circle cx="112" cy="20" r="10"/><text x="112" y="24.5" text-anchor="middle">!</text><circle cx="120" cy="196" r="10"/><text x="120" y="200.5" text-anchor="middle">!</text></g><text x="150" y="112" class="e">esperas</text></svg></div>
+        <span class="xf-a" aria-hidden="true"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+        <div class="xf-p on"><span class="kick flat">Con el Método TRAMA</span><svg viewBox="0 0 220 290" role="img" aria-label="El mismo proceso ordenado en un flujo: ingreso de la solicitud, registro automático, revisión de su equipo, seguimiento y resultado medido"><defs><marker id="ah" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" class="ah"/></marker></defs><path class="a" d="M110 46V62" marker-end="url(#ah)"/><rect x="20" y="6" width="180" height="40" rx="4" class="nd n"/><rect x="20" y="6" width="180" height="40" rx="4" class="pl p0"/><text x="110" y="30.5" text-anchor="middle" class="t n">Ingreso de la solicitud</text><path class="a" d="M110 104V120" marker-end="url(#ah)"/><rect x="20" y="64" width="180" height="40" rx="4" class="nd n"/><rect x="20" y="64" width="180" height="40" rx="4" class="pl p1"/><text x="110" y="88.5" text-anchor="middle" class="t n">Registro automático</text><path class="a" d="M110 162V178" marker-end="url(#ah)"/><rect x="20" y="122" width="180" height="40" rx="4" class="nd h"/><rect x="20" y="122" width="180" height="40" rx="4" class="pl p2"/><text x="110" y="146.5" text-anchor="middle" class="t h">Revisión de su equipo</text><path class="a" d="M110 220V236" marker-end="url(#ah)"/><rect x="20" y="180" width="180" height="40" rx="4" class="nd n"/><rect x="20" y="180" width="180" height="40" rx="4" class="pl p3"/><text x="110" y="204.5" text-anchor="middle" class="t n">Seguimiento</text><rect x="20" y="238" width="180" height="40" rx="4" class="nd f"/><rect x="20" y="238" width="180" height="40" rx="4" class="pl p4"/><text x="110" y="262.5" text-anchor="middle" class="t f">Resultado medido</text></svg></div>
+      </div>
+      <figcaption>Ilustración: un mismo proceso antes y después de transformarlo y digitalizarlo.</figcaption>
     </figure>
   </div>
   <div class="wrap">
     <ul class="facts">
       <li><b>3</b><span>productos propios desarrollados</span></li>
       <li><b>8</b><span>organizaciones con las que trabajamos</span></li>
-      <li><b>5</b><span>etapas de trabajo, del diagnóstico a la implementación</span></li>
+      <li><b>5</b><span>etapas del Método TRAMA, del proceso actual al sistema en uso</span></li>
     </ul>
   </div>
 </section>
@@ -348,14 +387,26 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
 
 <section class="sec" id="metodo" aria-labelledby="met-h">
   <div class="wrap">
-    <div class="head one"><div><span class="kick">Cómo trabajamos</span><h2 id="met-h">Cinco etapas, y seguimos con usted después de la entrega.</h2></div></div>
-    <ol class="steps">
-      <li><b>1</b><h4>Diagnóstico</h4><p>Entendemos su operación y qué necesita resolver.</p></li>
-      <li><b>2</b><h4>Levantamiento</h4><p>Documentamos el proceso actual con las personas que lo ejecutan.</p></li>
-      <li><b>3</b><h4>Diseño y alcance</h4><p>Definimos la solución, el alcance, los plazos y la inversión.</p></li>
-      <li><b>4</b><h4>Desarrollo</h4><p>Construimos el sistema y le mostramos avances para su validación.</p></li>
-      <li><b>5</b><h4>Implementación</h4><p>Lo ponemos en marcha y acompañamos a su equipo en el uso.</p></li>
+    <div class="head">
+      <div><span class="kick">Metodología propia</span><h2 id="met-h">Método TRAMA: primero el proceso, después el sistema.</h2></div>
+      <p class="lead">No digitalizamos el desorden. Levantamos el proceso, medimos dónde se pierde tiempo, lo rediseñamos y recién entonces lo convertimos en un sistema.</p>
+    </div>
+    <ol class="steps method">
+      <li><b>T</b><h4>Trazar</h4><p>Levantamos el proceso actual paso a paso: quién hace qué, con qué herramienta y cuánto demora.</p><small>Entregable: mapa del proceso actual</small></li>
+      <li><b>R</b><h4>Revelar</h4><p>Medimos tiempos y esperas para ubicar los puntos de dolor y el cuello de botella.</p><small>Entregable: diagnóstico con tiempos y puntos de dolor</small></li>
+      <li><b>A</b><h4>Afinar</h4><p>Rediseñamos el flujo, separamos las mejoras rápidas y priorizamos por impacto y esfuerzo.</p><small>Entregable: proceso rediseñado y plan priorizado</small></li>
+      <li><b>M</b><h4>Materializar</h4><p>Convertimos el flujo en un sistema: reglas claras primero e inteligencia artificial solo donde aporta.</p><small>Entregable: sistema funcionando y validado con su equipo</small></li>
+      <li><b>A</b><h4>Acompañar</h4><p>Implementamos, capacitamos y medimos el antes y el después. Seguimos con usted después de la entrega.</p><small>Entregable: medición de impacto y acompañamiento</small></li>
     </ol>
+    <div class="princ">
+      <span class="kick mut flat">Principios del método</span>
+      <ul>
+        <li><h4>Se automatiza donde está la fricción medida</h4><p>Medimos antes de proponer. La tecnología va donde realmente se pierde tiempo.</p></li>
+        <li><h4>Reglas por defecto, inteligencia artificial por excepción</h4><p>Lo predecible se resuelve con reglas. La IA entra solo donde hace falta interpretar.</p></li>
+        <li><h4>Las personas aprueban lo importante</h4><p>Las decisiones delicadas siempre pasan por alguien de su equipo.</p></li>
+        <li><h4>Se decide con números</h4><p>Cada propuesta llega con su estimación de ahorro y de retorno.</p></li>
+      </ul>
+    </div>
   </div>
 </section>
 
@@ -420,7 +471,7 @@ figcaption{font-size:14px;line-height:22px;color:var(--mut);margin-top:12px}
 <footer class="foot">
   <div class="wrap">
     <a class="brand" href="/" aria-label="TRAMA Consultora, inicio"><b>TRAMA<i>.</i></b><span>Consultora</span></a>
-    <nav aria-label="Pie"><a href="#servicios">Servicios</a><a href="#productos">Productos</a><a href="#proyectos">Proyectos</a><a href="#nosotros">Nosotros</a><a href="https://www.linkedin.com/company/tramalatam/" rel="noopener">LinkedIn</a></nav>
+    <nav aria-label="Pie"><a href="#servicios">Servicios</a><a href="#productos">Productos</a><a href="#proyectos">Proyectos</a><a href="#metodo">Metodología</a><a href="#nosotros">Nosotros</a><a href="https://www.linkedin.com/company/tramalatam/" rel="noopener">LinkedIn</a></nav>
     <span>© 2026 TRAMA Consultora · Lima, Perú</span>
   </div>
 </footer>
